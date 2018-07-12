@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SkillsStyles from '../Styles/SkillsStyles.css';
+import SkillsChart from '../Assets/SkillsChart';
 
 
 
@@ -12,6 +13,9 @@ class Skills extends Component {
     return (
         <div className="skills-page">
           Skills Page
+          <div>
+            <SkillsChart />
+          </div>
         </div>
     );
   }
