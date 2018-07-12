@@ -5,7 +5,7 @@ import SkillsChart from '../Assets/SkillsChart';
 
 
 
-class SkillsPage extends Component {
+class Skills extends Component {
 
 
 
@@ -38,4 +38,4 @@ class SkillsPage extends Component {
   }
 }
 
-export default SkillsPage;
+export default Skills;
