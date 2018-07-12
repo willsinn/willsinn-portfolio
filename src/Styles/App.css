@@ -1,12 +1,5 @@
 .App {
-  display: flex;
-  flex-direction: column;
-  height: 500%;
+  height: 100%;
   width: 100%;
-  justify-content: space-between;
 
-}
-
-.image-underlay {
-  z-index: -1;
 }
