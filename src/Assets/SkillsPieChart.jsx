@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ResponsiveContainer, PieChart, Pie } from 'recharts';
+import SkillsStyles from '../Styles/SkillsStyles.css';
 
 
 
@@ -22,8 +23,8 @@ class SkillsPieChart extends Component {
     return(
 
 
-        <ResponsiveContainer width={800} height={800}>
-        <PieChart width={800} height={400}>
+        <ResponsiveContainer className="pie-container">
+        <PieChart>
           <Pie data={languages} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={100} fill="#8884d8" label />
           <Pie data={focus} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={110} outerRadius={140} fill="#82ca9d" label />
         </PieChart>

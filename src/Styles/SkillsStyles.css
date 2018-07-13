@@ -1,5 +1,36 @@
 .skills-page {
   height: 100%;
   width: 100%;
-  background-color: silver;
+  background-color: skyblue;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------
+        PIE CHART                                                                                                        */
+
+
+.pie-container {
+  height: 100%;
+  flex-basis: 75%;
+}
+
+
+
+
+/* ------------------------------------------------------------------------------------------------------------------
+        BAR CHART                                                                                                        */
+
+
+
+
+.bar-container {
+  height: 100%;
+  flex-basis: 25%;
+}
+
+.bar-chart {
+  height: 75%;
 }
