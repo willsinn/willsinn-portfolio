@@ -19,13 +19,13 @@ class SkillsBarChart extends Component {
     ];
     return(
     <ResponsiveContainer className="bar-container">
-        <BarChart width={730} height={250} data={focus}>
+        <BarChart  width={730} height={250} data={focus}>
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis nameKey="name" />
-        <YAxis dataKey="value" />
+        <XAxis dataKey="value" />
+        <YAxis nameKey="name" />
         <Tooltip />
         <Legend />
-              <Bar dataKey="value" fill="#8884d8" />
+              <Bar layout="vertical" dataKey="value" fill="#8884d8" />
         </BarChart>
     </ResponsiveContainer>
     );
