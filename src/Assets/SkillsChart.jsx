@@ -8,20 +8,24 @@ class SkillsChart extends Component {
 
 
 
-
-
-
   render() {
-    {props.languages}
-    {props.focus}
+    const languages = [{name: 'JavaScript', value: 500},
+                    {name: 'CSS StylesSheets', value: 150},
+                    {name: 'HTML', value: 150}
+                  ];
+
+    const focus = [
+      {name: 'React', value: 300},
+      {name: 'Group D', value: 300}
+    ];
 
     return(
 
 
-        <ResponsiveContainer width={600} height={600}>
-        <PieChart width={730} height={250}>
-          <Pie data={languages} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
-          <Pie data={focus} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label />
+        <ResponsiveContainer width={800} height={800}>
+        <PieChart width={800} height={400}>
+          <Pie data={languages} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={100} fill="#8884d8" label />
+          <Pie data={focus} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={110} outerRadius={140} fill="#82ca9d" label />
         </PieChart>
         </ResponsiveContainer>
     );
