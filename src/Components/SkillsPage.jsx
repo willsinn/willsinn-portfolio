@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import SkillsStyles from '../Styles/SkillsStyles.css';
-import SkillsChart from '../Assets/SkillsChart';
+import SkillsPieChart from '../Assets/SkillsPieChart';
 
 
 
 
-class Skills extends Component {
+class SkillsPage extends Component {
 
 
 
@@ -14,11 +14,11 @@ class Skills extends Component {
         <div className="skills-page">
           Skills Page
           <div>
-            <SkillsChart />
+            <SkillsPieChart />
           </div>
         </div>
     );
   }
 }
 
-export default Skills;
+export default SkillsPage;

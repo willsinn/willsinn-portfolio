@@ -4,7 +4,7 @@ import ContactStyles from '../Styles/ContactStyles.css';
 
 
 
-class Contact extends Component {
+class ContactPage extends Component {
 
 
 
@@ -17,4 +17,4 @@ class Contact extends Component {
   }
 }
 
-export default Contact;
+export default ContactPage;

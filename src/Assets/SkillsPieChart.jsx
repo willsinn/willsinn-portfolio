@@ -4,7 +4,7 @@ import { ResponsiveContainer, PieChart, Pie } from 'recharts';
 
 
 
-class SkillsChart extends Component {
+class SkillsPieChart extends Component {
 
 
 
@@ -32,4 +32,4 @@ class SkillsChart extends Component {
   }
 }
 
-export default SkillsChart;
+export default SkillsPieChart;

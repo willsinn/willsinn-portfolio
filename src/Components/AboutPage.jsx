@@ -4,7 +4,7 @@ import AboutStyles from '../Styles/AboutStyles.css';
 
 
 
-class About extends Component {
+class AboutPage extends Component {
 
 
 
@@ -17,4 +17,4 @@ class About extends Component {
   }
 }
 
-export default About;
+export default AboutPage;

@@ -5,7 +5,7 @@ import AbsoluteImage from '../Images/AbsoluteImage.jpeg';
 
 
 
-class Landing extends Component {
+class LandingPage extends Component {
 
 
 
@@ -19,4 +19,4 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+export default LandingPage;

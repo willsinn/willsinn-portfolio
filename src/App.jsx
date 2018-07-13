@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './Styles/App.css';
-import Landing from './Components/Landing';
-import About from './Components/About';
-import Portfolio from './Components/Portfolio';
-import Skills from './Components/Skills';
-import Work from './Components/Work';
-import Contact from './Components/Contact';
+import LandingPage from './Components/LandingPage';
+import AboutPage from './Components/AboutPage';
+import PortfolioPage from './Components/PortfolioPage';
+import SkillsPage from './Components/SkillsPage';
+import WorkPage from './Components/WorkPage';
+import ContactPage from './Components/ContactPage';
 
 
 
@@ -15,12 +15,12 @@ class App extends Component {
     return (
       <div className="App">
 
-            <Landing />
-            <About />
-            <Portfolio />
-            <Skills />
-            <Work />
-            <Contact />
+            <LandingPage />
+            <AboutPage />
+            <PortfolioPage />
+            <SkillsPage />
+            <WorkPage />
+            <ContactPage />
 
       </div>
     );

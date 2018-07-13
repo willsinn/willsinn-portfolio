@@ -4,7 +4,7 @@ import WorkStyles from '../Styles/WorkStyles.css';
 
 
 
-class Work extends Component {
+class WorkPage extends Component {
 
 
 
@@ -17,4 +17,4 @@ class Work extends Component {
   }
 }
 
-export default Work;
+export default WorkPage;

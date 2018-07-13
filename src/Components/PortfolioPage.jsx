@@ -4,7 +4,7 @@ import PortfolioStyles from '../Styles/PortfolioStyles.css';
 
 
 
-class Portfolio extends Component {
+class PortfolioPage extends Component {
 
 
 
@@ -17,4 +17,4 @@ class Portfolio extends Component {
   }
 }
 
-export default Portfolio;
+export default PortfolioPage;
