@@ -11,6 +11,7 @@ import ContactPage from './Components/ContactPage';
 
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
