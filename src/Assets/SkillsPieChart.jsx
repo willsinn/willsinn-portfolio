@@ -3,6 +3,9 @@ import { ResponsiveContainer, PieChart, Pie, Label, Cell, Sector } from 'rechart
 import SkillsStyles from '../Styles/SkillsStyles.css';
 import { scaleOrdinal, schemeCategory10 } from 'd3-scale';
 
+
+
+
 const colors = scaleOrdinal(schemeCategory10).range();
 
 
@@ -14,12 +17,10 @@ class SkillsPieChart extends Component {
       skills: {},
       activeIndex: [0],
       animation: false,
-      entry: false,
     }
   }
 
-
-  onPieEnter = (data, index, e) => {
+  onPieOver = (data, index, e) => {
     this.setState({
       activeIndex: index,
     });
@@ -31,14 +32,9 @@ class SkillsPieChart extends Component {
       });
     };
 
-    handlePieChartEnter = (entry, index, e) => {
-     this.setState({
-     entry: !this.state.entry,
-      });    };
+  handleOver = (e, activeIndex) => this.setState({ activeIndex: []  });
 
-  handleEnter = (e, activeIndex) => this.setState({ activeIndex: []  });
-
-  handleLeave = () => this.setState({ activeIndex: [-1] });
+  handleOut = () => this.setState({ activeIndex: [-1] });
 
 
 renderLabelContent = (props) => {
@@ -65,7 +61,7 @@ const { value, percent, x, y, midAngle } = props;
 
     return (
       <g>
-        <text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>{payload.name}</text>
+
         <Sector
           cx={cx}
           cy={cy}
@@ -86,11 +82,18 @@ const { value, percent, x, y, midAngle } = props;
         />
         <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none"/>
         <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none"/>
-        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill="#333">
-          {`Count ${payload.value}`}
+
+        <text className="hover-text-name" x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill={fill} >
+          {payload.name}
         </text>
-        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="#999">
-          {`(percent: ${(percent * 100).toFixed(2)}%)`}
+
+
+        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="green">
+          {`Focus: ${(percent * 100).toFixed(2)}%`}
+        </text>
+
+        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={36} textAnchor={textAnchor} fill="purple" >
+          {`Value: ${payload.value}`}
         </text>
       </g>
     );
@@ -120,16 +123,16 @@ const { value, percent, x, y, midAngle } = props;
 
 
         <ResponsiveContainer className="pie-container">
-        <PieChart onMouseEnter= {this.handlePieChartEnter}>
+        <PieChart onMouseOver= {this.handlePieChartOver}>
           <Pie
            data={web}
            dataKey="value"
            nameKey="name"
            cx="50%"
            cy="50%"
-           outerRadius={100}
+           outerRadius="40%"
            fill="red"
-           label
+           label=""
            />
           <Pie
           data={focus}
@@ -137,13 +140,12 @@ const { value, percent, x, y, midAngle } = props;
           nameKey="name"
           cx="50%"
           cy="50%"
-          innerRadius={110}
-          outerRadius={140}
+          innerRadius="40%"
+          outerRadius="50%"
           fill="red"
-          label
           activeIndex={this.state.activeIndex}
           activeShape={renderActiveShape}
-          onMouseEnter={this.onPieEnter}
+          onMouseOver={this.onPieOver}
           isAnimationActive={false}
           >
           {
@@ -151,7 +153,6 @@ const { value, percent, x, y, midAngle } = props;
           <Cell key={`slice-${index}`} fill={colors[index % 10]}/>
            ))
           }
-            <Label value="test" />
          </Pie>
         </PieChart>
         </ResponsiveContainer>
