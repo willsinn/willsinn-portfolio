@@ -30,9 +30,7 @@ class ContactPage extends Component {
     return (
 
         <div className="contact-page">
-        <Grid container classes={{
-          root: classes.root,
-        }}>
+        <Grid container>
           <Grid item>
            <Paper>Thanks for Visiting </Paper>
           </Grid>
