@@ -11,7 +11,7 @@ class WorkPage extends Component {
   render() {
     return (
         <div className="work-page">
-          Work Page
+          Work page
         </div>
     );
   }
