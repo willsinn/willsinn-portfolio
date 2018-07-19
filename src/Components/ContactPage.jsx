@@ -1,19 +1,7 @@
 import React, { Component } from 'react';
 import ContactStyles from '../Styles/ContactStyles.css';
 import { withStyles } from '@material-ui/core/styles';
-import { Grid, GridList, GridListTile, Paper } from '@material-ui/core';
-
-const styles = theme => ({
-  root: {
-
-  },
-  paper: {
-    padding: theme.spacing.unit * 2,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-
-});
+import { Grid, Paper } from '@material-ui/core';
 
 
 
@@ -30,40 +18,58 @@ class ContactPage extends Component {
     return (
 
         <div className="contact-page">
-        <Grid container>
-          <Grid item>
-           <Paper>Thanks for Visiting </Paper>
+          <div className="grid-wrapper">
+            <Grid
+            container
+            spacing={16}
+            className={classes.contact}
+            >
+              <Grid item xs={12}>
+               <Paper>Thanks for Visiting </Paper>
+              </Grid>
+
+              <Grid item xs={12}>
+                <Paper>Contact Me </Paper>
+              </Grid>
+
+              <Grid item xs={3}>
+                <Paper> Facebook </Paper>
+              </Grid>
+
+              <Grid item xs={3}>
+                <Paper> Other  </Paper>
+              </Grid>
+
+              <Grid item xs={3}>
+                <Paper> Third </Paper>
+              </Grid>
+
+              <Grid item xs={3}>
+                <Paper> Last </Paper>
+              </Grid>
+
           </Grid>
 
-          <Grid item>
-            <Paper>Contact Me </Paper>
-          </Grid>
-
-          <Grid item>
-            <GridList>
-                <GridListTile>
-                  <Paper> Facebook </Paper>
-                </GridListTile>
-
-                <GridListTile>
-                  <Paper> Other  </Paper>
-                </GridListTile>
-
-                <GridListTile>
-                  <Paper> Third </Paper>
-                </GridListTile>
-
-                <GridListTile>
-                  <Paper> Last </Paper>
-                </GridListTile>
-            </GridList>
-          </Grid>
-        </Grid>
-
+        </div>
         </div>
     );
   }
 }
+const styles = theme => ({
+  contact: {
+    direction: 'row',
+    alignItems: 'center',
+    justify: 'center',
+
+  },
+  paper: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+
+});
+
 
 
 

@@ -2,4 +2,10 @@
   height: 100%;
   width: 100%;
   background-color: yellow;
+
+}
+
+.grid-wrapper {
+  max-height: 150px;
+  max-width: 400px
 }
