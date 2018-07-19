@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ContactStyles from '../Styles/ContactStyles.css';
 import { withStyles } from '@material-ui/core/styles';
 import { Grid, Paper } from '@material-ui/core';
 
@@ -12,17 +11,14 @@ class ContactPage extends Component {
   render() {
     const { classes } = this.props;
 
-
-
-
     return (
 
-        <div className="contact-page">
-          <div className="grid-wrapper">
+        <div className={classes.root}>
+          <div className={classes.wrapper}>
             <Grid
             container
+            className={classes.main}
             spacing={16}
-            className={classes.contact}
             >
               <Grid item xs={12}>
                <Paper>Thanks for Visiting </Paper>
@@ -56,18 +52,33 @@ class ContactPage extends Component {
   }
 }
 const styles = theme => ({
-  contact: {
+  root: {
+    height: '100%',
+    width: '100%',
+    backgroundColor: 'yellow',
+
+
+  },
+
+  wrapper: {
+    maxHeight: 150,
+    maxWidth: 400,
+  },
+
+
+  main: {
     direction: 'row',
     alignItems: 'center',
     justify: 'center',
 
   },
+
   paper: {
+
     padding: theme.spacing.unit * 2,
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
-
 });
 
 
