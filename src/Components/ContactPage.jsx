@@ -14,71 +14,96 @@ class ContactPage extends Component {
     return (
 
         <div className={classes.root}>
-          <div className={classes.wrapper}>
-            <Grid
-            container
-            className={classes.main}
-            spacing={16}
-            >
-              <Grid item xs={12}>
-               <Paper>Thanks for Visiting </Paper>
+
+            <Grid container  className={classes.gridWrapper}  spacing={16}>
+
+
+                <Grid  item   className={classes.titleWrapper}  xs={12}>
+                    <Paper className={classes.titleThanks}> Thanks! </Paper>
+                    <Paper className={classes.titleQuestion}> Want To chat about something? </Paper>
+                </Grid>
+
+
+
+              <Grid item className={classes.contactWrapper}  xs={12}>
+                <a className={classes.contactButton} href='/'  onClick > Contact Me </a>
               </Grid>
 
-              <Grid item xs={12}>
-                <Paper>Contact Me </Paper>
+              <Grid item xs={3} className={classes.socialWrapper}>
+                <Paper> FB </Paper>
               </Grid>
 
-              <Grid item xs={3}>
-                <Paper> Facebook </Paper>
+              <Grid item xs={3} className={classes.socialWrapper}>
+                <Paper> Git  </Paper>
               </Grid>
 
-              <Grid item xs={3}>
-                <Paper> Other  </Paper>
+              <Grid item xs={3} className={classes.socialWrapper}>
+                <Paper> E-Mail </Paper>
               </Grid>
 
-              <Grid item xs={3}>
-                <Paper> Third </Paper>
-              </Grid>
-
-              <Grid item xs={3}>
-                <Paper> Last </Paper>
+              <Grid item xs={3} className={classes.socialWrapper}>
+                <Paper> Insta </Paper>
               </Grid>
 
           </Grid>
 
-        </div>
+
         </div>
     );
   }
 }
 const styles = theme => ({
+
   root: {
-    height: '100%',
+    height: '50%',
     width: '100%',
     backgroundColor: 'yellow',
-
-
-  },
-
-  wrapper: {
-    maxHeight: 150,
-    maxWidth: 400,
-  },
-
-
-  main: {
-    direction: 'row',
+    display: 'flex',
+    flexDirection: 'column',
     alignItems: 'center',
-    justify: 'center',
+    paddingTop: '10%'
+
+  },
+  gridWrapper: {
+    maxHeight: 100,
+    maxWidth: 250,
 
   },
 
-  paper: {
+  titleWrapper: {
+    height: '100%',
 
-    padding: theme.spacing.unit * 2,
+  },
+  titleThanks: {
+    fontSize: 'large',
     textAlign: 'center',
-    color: theme.palette.text.secondary,
+    height: '50%',
+
   },
+  titleQuestion: {
+    fontSize: 'small',
+    textAlign: 'center',
+    height: '50%',
+
+  },
+  contactWrapper: {
+    height: '25%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+
+  },
+  contactButton: {
+
+  },
+  socialWrapper: {
+    height: '60%',
+    textAlign: 'center',
+
+  },
+
+
+
 });
 
 
