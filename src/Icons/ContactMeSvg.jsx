@@ -53,7 +53,7 @@ function ContactMeSvg(props) {
         assert.strictEqual(wrapper.props()['aria-hidden'], 'false');
       });
 
-
+// 
 
   return (
     <Component
