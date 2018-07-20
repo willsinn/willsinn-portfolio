@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Grid, Paper } from '@material-ui/core';
+import { Grid, Paper, SvgIcon } from '@material-ui/core';
+import { ContactMeSvg } from '../Icons/ContactMeSvg';
 
 
 
@@ -8,8 +9,20 @@ class ContactPage extends Component {
 
 
 
+
+  IconLink(props) {
+    const icon = props;
+   <svg className={`icon icon-${props.icon}`}>
+     <use xlinkHref={`#icons_${props.icon}`} />
+   </svg>
+ };
+
+
+
+
   render() {
     const { classes } = this.props;
+
 
     return (
 
@@ -26,7 +39,14 @@ class ContactPage extends Component {
 
 
               <Grid item className={classes.contactWrapper}  xs={12}>
-                <a className={classes.contactButton} href='/'  onClick > Contact Me </a>
+
+                    <a className={classes.contactButton} href='/'  onClick>
+                      <Paper>
+                          <SvgIcon>  </SvgIcon>
+                          Contact Me
+                      </Paper>
+                    </a>
+
               </Grid>
 
               <Grid item xs={3} className={classes.socialWrapper}>
@@ -44,6 +64,11 @@ class ContactPage extends Component {
               <Grid item xs={3} className={classes.socialWrapper}>
                 <Paper> Insta </Paper>
               </Grid>
+
+              <Grid item className={classes.creationWrapper}  xs={12}>
+              </Grid>
+
+
 
           </Grid>
 
@@ -109,4 +134,4 @@ const styles = theme => ({
 
 
 
-export default withStyles(styles)(ContactPage);
+export default withStyles(styles, { })(ContactPage);

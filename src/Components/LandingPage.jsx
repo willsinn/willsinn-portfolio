@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LandingStyles from '../Styles/LandingStyles.css';
-import AbsoluteImage from '../Images/AbsoluteImage.jpeg';
+import AbsoluteProfile from '../Images/AbsoluteProfile.jpeg';
 
 
 
@@ -12,7 +12,7 @@ class LandingPage extends Component {
   render() {
     return (
         <div className="landing-page">
-         <img className="absolute-background" src={AbsoluteImage} />
+         <img className="profile-background" src={AbsoluteProfile} />
           Landing Page with Sticky Header
         </div>
     );
