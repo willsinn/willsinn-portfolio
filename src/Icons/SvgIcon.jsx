@@ -1,30 +1,62 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import { SvgIcon } from '@material-ui/core';
-
 import classNames from 'classnames';
+import withStyles from '../styles/withStyles';
+import { capitalize } from '../utils/helpers';
 
+export const styles = theme => ({
+  /* Styles applied to the root element. */
+  root: {
+    userSelect: 'none',
+    width: '1em',
+    height: '1em',
+    display: 'inline-block',
+    fill: 'currentColor',
+    flexShrink: 0,
+    fontSize: 24,
+    transition: theme.transitions.create('fill', {
+      duration: theme.transitions.duration.shorter,
+    }),
+  },
+  /* Styles applied to the root element if `color="primary"`. */
+  colorPrimary: {
+    color: theme.palette.primary.main,
+  },
+  /* Styles applied to the root element if `color="secondary"`. */
+  colorSecondary: {
+    color: theme.palette.secondary.main,
+  },
+  /* Styles applied to the root element if `color="saction"`. */
+  colorAction: {
+    color: theme.palette.action.active,
+  },
+  /* Styles applied to the root element if `color="error"`. */
+  colorError: {
+    color: theme.palette.error.main,
+  },
+  /* Styles applied to the root element if `color="disabled"`. */
+  colorDisabled: {
+    color: theme.palette.action.disabled,
+  },
+  /* Styles applied to the root element if `fontSize="inherit"`. */
+  fontSizeInherit: {
+    fontSize: 'inherit',
+  },
+});
 
-
-
-
-
-function ContactMeSvg(props) {
+function SvgIcon(props) {
   const {
     children,
     classes,
-    className: Icons,
+    className: Name,
     color,
     component: Component,
     fontSize,
     nativeColor,
     titleAccess,
     viewBox,
-
-
+    ...other
   } = props;
-
 
   const className = classNames(
     classes.root,
@@ -32,28 +64,8 @@ function ContactMeSvg(props) {
       [classes.fontSizeInherit]: fontSize === 'inherit',
       [classes[`color${capitalize(color)}`]]: color !== 'inherit',
     },
-    icons,
+    Name,
   );
-
-// Functionality goes in the component, ContactPage
-    iconLink(titleAccess, () => {
-
-    let shallow;
-    let mount;
-    let classes;
-    const path=   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-     ;
-      it('should be able to make an icon accessible', () => {
-        const wrapper = shallow(
-          <SvgIcon title="Go to link" titleAccess="Network">
-            {path}
-          </SvgIcon>,
-        );
-        assert.strictEqual(wrapper.find('title').text(), 'Network');
-        assert.strictEqual(wrapper.props()['aria-hidden'], 'false');
-      });
-
-// 
 
   return (
     <Component
@@ -62,16 +74,13 @@ function ContactMeSvg(props) {
       viewBox={viewBox}
       color={nativeColor}
       aria-hidden={titleAccess ? 'false' : 'true'}
-      path={<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>}
+      {...other}
     >
-
       {children}
       {titleAccess ? <title>{titleAccess}</title> : null}
     </Component>
   );
 }
-
-
 
 SvgIcon.propTypes = {
   /**
@@ -120,16 +129,14 @@ SvgIcon.propTypes = {
   viewBox: PropTypes.string,
 };
 
-ContactMeSvg.defaultProps = {
+SvgIcon.defaultProps = {
   color: 'inherit',
   component: 'svg',
   fontSize: 'default',
   viewBox: '0 0 24 24',
+  name: '',
+};
 
+SvgIcon.contact = 'SvgIcon';
 
-},
-
-
-ContactMeSvg.iconLink = 'IconLink';
-
-export default withStyles(styles, { icon: 'IconLink'  })(SvgIcon);
+export default withStyles(styles, { name: 'Contact' })(SvgIcon);

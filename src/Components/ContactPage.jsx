@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Grid, Paper, SvgIcon } from '@material-ui/core';
-import { ContactMeSvg } from '../Icons/ContactMeSvg';
+import SvgIcon from '../Icons/SvgIcon';
 
 
 
@@ -10,12 +10,7 @@ class ContactPage extends Component {
 
 
 
-  IconLink(props) {
-    const icon = props;
-   <svg className={`icon icon-${props.icon}`}>
-     <use xlinkHref={`#icons_${props.icon}`} />
-   </svg>
- };
+
 
 
 
