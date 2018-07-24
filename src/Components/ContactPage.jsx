@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Grid, Paper, SvgIcon } from '@material-ui/core';
-import SvgIcon from '../Icons/SvgIcon';
+import { Grid, Paper } from '@material-ui/core';
 
 
 
@@ -17,7 +16,6 @@ class ContactPage extends Component {
 
   render() {
     const { classes } = this.props;
-
 
     return (
 
@@ -35,12 +33,14 @@ class ContactPage extends Component {
 
               <Grid item className={classes.contactWrapper}  xs={12}>
 
-                    <a className={classes.contactButton} href='/'  onClick>
-                      <Paper>
-                          <SvgIcon>  </SvgIcon>
-                          Contact Me
+                    <a className={classes.contactButtonWrapper} href='/'  onClick>
+                      <Paper className={classes.contactButton}>
+                      <i class="material-icons">
+                        email
+                      </i>
+                      Contact Me
                       </Paper>
-                    </a>
+                   </a>
 
               </Grid>
 
@@ -61,13 +61,11 @@ class ContactPage extends Component {
               </Grid>
 
               <Grid item className={classes.creationWrapper}  xs={12}>
+                <Paper>
+                  Created in ReactJS, MaterialUI
+                </Paper>
               </Grid>
-
-
-
           </Grid>
-
-
         </div>
     );
   }
@@ -113,16 +111,23 @@ const styles = theme => ({
     alignItems: 'center',
 
   },
-  contactButton: {
+
+  contactButtonWrapper: {
+    textDecoration: 'none',
 
   },
+
+  contactButton: {
+    display: 'flex',
+
+  },
+
+
   socialWrapper: {
     height: '60%',
     textAlign: 'center',
 
   },
-
-
 
 });
 
