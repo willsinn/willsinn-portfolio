@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import LandingStyles from '../Styles/LandingStyles.css';
 import AbsoluteProfile from '../Images/AbsoluteProfile.jpeg';
+import ContactForm from '../Assets/ContactForm';
 
 
 
@@ -13,8 +14,8 @@ class LandingPage extends Component {
     return (
         <div className="landing-page">
          <img className="profile-background" src={AbsoluteProfile} />
-          Landing Page with Sticky Header
-        </div>
+          <ContactForm />
+         </div>
     );
   }
 }
