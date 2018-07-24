@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Grid, Paper } from '@material-ui/core';
+import Git from '../Icons/Git.png';
+import Instagram from '../Icons/Instagram.png';
+import Facebook from '../Icons/Facebook.png';
+
 
 
 
 class ContactPage extends Component {
-
-
-
-
-
-
-
 
 
   render() {
@@ -20,18 +17,18 @@ class ContactPage extends Component {
     return (
 
         <div className={classes.root}>
-
-            <Grid container  className={classes.gridWrapper}  spacing={16}>
-
+            <Grid container className={classes.gridWrapper}  spacing={8}>
 
                 <Grid  item   className={classes.titleWrapper}  xs={12}>
-                    <Paper className={classes.titleThanks}> Thanks! </Paper>
-                    <Paper className={classes.titleQuestion}> Want To chat about something? </Paper>
+                    <Paper className={classes.titleThanks}>
+                        Thanks!
+                    </Paper>
+                    <Paper className={classes.titleQuestion}>
+                        Want To chat about something?
+                    </Paper>
                 </Grid>
 
-
-
-              <Grid item className={classes.contactWrapper}  xs={12}>
+                <Grid item className={classes.contactWrapper}  xs={12}>
 
                     <a className={classes.contactButtonWrapper} href='/'  onClick>
                       <Paper className={classes.contactButton}>
@@ -45,28 +42,46 @@ class ContactPage extends Component {
               </Grid>
 
               <Grid item xs={3} className={classes.socialWrapper}>
-                <Paper> FB </Paper>
-              </Grid>
-
-              <Grid item xs={3} className={classes.socialWrapper}>
-                <Paper> Git  </Paper>
-              </Grid>
-
-              <Grid item xs={3} className={classes.socialWrapper}>
-                <Paper> E-Mail </Paper>
-              </Grid>
-
-              <Grid item xs={3} className={classes.socialWrapper}>
-                <Paper> Insta </Paper>
-              </Grid>
-
-              <Grid item className={classes.creationWrapper}  xs={12}>
-                <Paper>
-                  Created in ReactJS, MaterialUI
+                <Paper className={classes.socialBackground}>
+                  <img className={classes.socialLink}
+                        src={Facebook}
+                  />
                 </Paper>
               </Grid>
+
+              <Grid item xs={3} className={classes.socialWrapper}>
+                <Paper className={classes.socialBackground}>
+                  <img className={classes.socialLink}
+                        src={Git}
+                  />
+                </Paper>
+              </Grid>
+
+              <Grid item xs={3} className={classes.socialWrapper}>
+                <Paper className={classes.socialBackground}>
+                  <i className={classes.socialLink} class="material-icons">
+                        email
+                  </i>
+                </Paper>
+              </Grid>
+
+              <Grid item xs={3} className={classes.socialWrapper}>
+                <Paper className={classes.socialBackground}>
+                  <img className={classes.socialLink}
+                      src={Instagram}
+                  />
+                </Paper>
+              </Grid>
+
+              <Grid item xs={12} className={classes.creationWrapper} >
+                <Paper className={classes.creationText}>
+                    Created with ReactJS, MaterialUI
+                </Paper>
+              </Grid>
+
           </Grid>
         </div>
+
     );
   }
 }
@@ -75,21 +90,22 @@ const styles = theme => ({
   root: {
     height: '50%',
     width: '100%',
-    backgroundColor: 'yellow',
+    backgroundColor: 'gray',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    paddingTop: '10%'
+    paddingTop: '10%',
+    paddingBottom: '10%',
 
   },
   gridWrapper: {
-    maxHeight: 100,
+    maxHeight: 120,
     maxWidth: 250,
 
   },
 
   titleWrapper: {
-    height: '100%',
+    height: '70%',
 
   },
   titleThanks: {
@@ -124,8 +140,43 @@ const styles = theme => ({
 
 
   socialWrapper: {
-    height: '60%',
-    textAlign: 'center',
+    display: 'flex',
+    justifyContent: 'space-around',
+    height: '40%',
+
+  },
+
+  socialBackground: {
+    height: '38px',
+    width: '38px',
+    backgroundColor: 'white',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: '18px',
+
+  },
+
+  socialLink: {
+    height: '24px',
+    width: '24px',
+    padding: '0',
+    margin: '0',
+
+  },
+
+  creationWrapper: {
+    height: '25%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: '0',
+    margin: '0',
+
+  },
+
+  creationText: {
+
 
   },
 
