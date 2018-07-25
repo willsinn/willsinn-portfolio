@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { ResponsiveContainer, PieChart, Pie, Label, Cell, Sector } from 'recharts';
-import SkillsStyles from '../Styles/SkillsStyles.css';
+import { ResponsiveContainer, PieChart, Pie, Cell, Sector } from 'recharts';
 import { scaleOrdinal, schemeCategory10 } from 'd3-scale';
 
 
