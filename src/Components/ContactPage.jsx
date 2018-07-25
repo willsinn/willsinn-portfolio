@@ -29,7 +29,9 @@ class ContactPage extends Component {
                 </Grid>
 
                 <Grid item className={classes.contactWrapper}  xs={12}>
-                  <ContactFormDrawer />
+                  <ContactFormDrawer
+                    className={classes.contactButton}
+                  />
                 </Grid>
 
               <Grid item xs={3} className={classes.socialWrapper}>
@@ -111,14 +113,13 @@ const styles = theme => ({
     height: '50%',
 
   },
+
   contactWrapper: {
-    height: '25%',
     display: 'flex',
+    height: '40%',
     justifyContent: 'center',
     alignItems: 'center',
-
   },
-
 
 
   contactButton: {
@@ -127,6 +128,7 @@ const styles = theme => ({
     alignItems: 'center',
 
   },
+
 
 
   socialWrapper: {
@@ -166,12 +168,6 @@ const styles = theme => ({
   },
 
   creationText: {
-
-
-  },
-
-  closeDrawerButton: {
-    color: 'blue',
   },
 
 });

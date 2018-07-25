@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Paper, SwipeableDrawer } from '@material-ui/core';
+import { Paper, SwipeableDrawer, TextField } from '@material-ui/core';
 
 
 
@@ -10,7 +10,9 @@ class ContactFormDrawer extends Component {
 
   state = {
     right: false,
+
   };
+
   toggleDrawer = (side, open) => () => {
     this.setState({
       [side]: open,
@@ -21,22 +23,34 @@ class ContactFormDrawer extends Component {
     const { classes } = this.props;
 
     const sideForm = (
-      <form onSubmit="onSubmit">
-        <input name="firstName" type="text" />
-            First
-        <input name="lastName" type="text"/>
-            Last
-        <input name="email" type="text" />,
-            Email
+      <form  className={classes.formContainer} onSubmit="onSubmit">
+      <ul className={classes.inputListWrapper}>
 
-          <textarea name="message" rows="10" cols="50" />
+        <Paper>
+        <li> What should I call you?* </li>
 
+        <li><input type="text" name="firstName"  />
+            <input type="text"  name="lastName" /></li>
 
+        <li>First       Last</li>
+        </Paper>
+        <li>Email</li>
+        <li><input type="email" name="user_email"  /></li>
 
-        <button onClick="onSubmit">
-          Submit
-        </button>
+        <li>Phone</li>
+        <li>
+          1 - <input type="text" name="phone" pattern="[0-9]{3}" title="areaCode" min="3" max="3"  />
+          - <input type="text" name="phone" pattern="[0-9]{3}" title="firstThreeDigits" min="3" max="3" />
+          - <input type="text" name="phone" pattern="[0-9]{4}" title="lastFourDigits" min="4" max="4"/>
+        </li>
+
+        <li><textarea name="message" rows="10" cols="50">
+            </textarea></li>
+        <input type="Submit" value="submit" />
+
+        </ul>
         </form>
+
     );
 
 
@@ -52,13 +66,13 @@ class ContactFormDrawer extends Component {
         Contact Me
         </Paper>
       </button>
-      <SwipeableDrawer
-         className={classes.formDrawerContainer}
-         anchor='right'
-         open={this.state.right}
-         onClose={this.toggleDrawer('right', false)}
-         onOpen={this.toggleDrawer('right', true)}
-       >
+        <SwipeableDrawer
+          className={classes.formDrawerContainer}
+          anchor='right'
+          open={this.state.right}
+          onClose={this.toggleDrawer('right', false)}
+          onOpen={this.toggleDrawer('right', true)}
+        >
          <button
            className={classes.closeDrawerButton}
            onClick={this.toggleDrawer('right', false)}>
@@ -83,6 +97,20 @@ const styles = theme => ({
     position: 'relative',
 
   },
+  formDrawerContainer: {
+
+  },
+
+  sideFormContainer: {
+
+  },
+  formContainer: {
+  },
+  inputListWrapper: {
+    listStyle: 'none',
+  },
+
+
 
 });
 
