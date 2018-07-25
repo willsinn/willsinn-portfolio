@@ -13,34 +13,37 @@ class ContactForm extends Component {
     }
 }
 
-  handleFocus = (event, focused) => {
-
-    this.setState(state => (!state.focused ? { focused: true } : null));
-    console.log('clicked' );
-
-  }
-
-
 
   render() {
 
 
     return(
-      <div>
+      <div className="formContainer">
         <form onSubmit="onSubmit">
-          <input name="firstName" type="text" focused="false" handleFocus={handleFocus}  />
-            First
-          <input name="lastName" type="text" focused="false" />
+        <input className="contactInput"
+          name="highlight" type="text"
+          value='basic input, bottom border'
+        />
+        <span className='highlightInput'>
+          basic input, bottom border
+        </span>
+          <input name="firstName" type="text"   />
+            First {this.handleFocus}
+          <input name="lastName" type="text"/>
             Last
-          <input name="email" type="text" focused="false" />
+          <input name="email" type="text"  />
             Email
           <textarea name="message" rows="10" cols="50">
 
           </textarea>
+          <button onClick="onSubmit">
+            Submit
+          </button>
         </form>
       </div>
     );
   }
+
 }
 
 const styles = theme => ({
@@ -50,6 +53,31 @@ const styles = theme => ({
     position: 'relative',
 
   },
+  formContainer: {
+    backgroundColor: 'white',
+
+  },
+
+  contactInput: {
+    height: '30px',
+    width: '100%',
+    minWidth: '100%',
+    padding: '0',
+    borderRadius: '0',
+    backgroundColor: 'white',
+    color: 'white',
+    border: 'none',
+    outline: 'none',
+  },
+
+  highlightInput: {
+    maxWidth: '100%',
+ borderTop: '3px solid white',
+ position: 'absolute',
+ left: 0,
+ bottom: 0,
+ height: 0,
+  }
 
 });
 
