@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Grid, Paper } from '@material-ui/core';
+import { Grid, Paper, SwipeableDrawer } from '@material-ui/core';
+import ContactForm from '../Assets/ContactForm';
 import Git from '../Icons/Git.png';
 import Instagram from '../Icons/Instagram.png';
 import Facebook from '../Icons/Facebook.png';
@@ -9,10 +10,33 @@ import Facebook from '../Icons/Facebook.png';
 
 
 class ContactPage extends Component {
+  state = {
+    right: false,
+  };
+  toggleDrawer = (side, open) => () => {
+    this.setState({
+      [side]: open,
+    });
+  };
+
+  handleDrawerClose = (side, close) => () => {
+    this.setState({
+      [side]: close,
+    });
+  };
+
+
 
 
   render() {
     const { classes } = this.props;
+
+
+    const sideForm = (
+
+        <ContactForm />
+
+    );
 
     return (
 
@@ -30,14 +54,35 @@ class ContactPage extends Component {
 
                 <Grid item className={classes.contactWrapper}  xs={12}>
 
-                    <a className={classes.contactButtonWrapper} href='/'  onClick>
+                    <button className={classes.contactButtonWrapper}
+                    onClick={this.toggleDrawer('right', true)}
+                    >
+
                       <Paper className={classes.contactButton}>
                       <i class="material-icons">
                         email
                       </i>
                       Contact Me
                       </Paper>
-                   </a>
+                   </button>
+                   <SwipeableDrawer
+                      anchor='right'
+                      open={this.state.right}
+                      close={!this.state.right}
+                      onClose={this.toggleDrawer('right', false)}
+                      onOpen={this.toggleDrawer('right', true)}
+                    >
+                    <div
+                    role="button"
+                    onClick={this.handleDrawerClose('right', false)}
+                    >
+                    <button onClick={this.toggleDrawer('right', false)}>
+                    Close
+                    </button>
+            {sideForm}
+          </div>
+
+        </SwipeableDrawer>
 
               </Grid>
 

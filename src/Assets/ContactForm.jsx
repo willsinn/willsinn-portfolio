@@ -5,37 +5,38 @@ import { withStyles } from '@material-ui/core/styles';
 
 
 class ContactForm extends Component {
-
-  constructor(props){
-    super(props);
-    this.state = {
-      focused: false,
+    constructor(props){
+      super(props);
+      this.state = {
+        selected: false,
+      }
     }
-}
+
+    handleSelected() {
+      this.setState({ selected: '!selected'  })
+    }
 
 
-  render() {
+    render() {
+    const { classes } = this.props;
 
 
-    return(
-      <div className="formContainer">
+    return (
+      <div className={classes.formContainer}>
+
+
         <form onSubmit="onSubmit">
-        <input className="contactInput"
-          name="highlight" type="text"
-          value='basic input, bottom border'
-        />
-        <span className='highlightInput'>
-          basic input, bottom border
-        </span>
-          <input name="firstName" type="text"   />
-            First {this.handleFocus}
+          <input name="firstName" type="text" />
+              First
           <input name="lastName" type="text"/>
-            Last
-          <input name="email" type="text"  />
-            Email
-          <textarea name="message" rows="10" cols="50">
+              Last
+          <input name="email" type="text" />,
+              Email
 
-          </textarea>
+            <textarea name="message" rows="10" cols="50" />
+
+
+
           <button onClick="onSubmit">
             Submit
           </button>
@@ -43,12 +44,12 @@ class ContactForm extends Component {
       </div>
     );
   }
-
 }
+
 
 const styles = theme => ({
   root:  {
-    display: 'inline-flex',
+    display: 'flex',
     flexDirection: 'column',
     position: 'relative',
 
@@ -57,27 +58,6 @@ const styles = theme => ({
     backgroundColor: 'white',
 
   },
-
-  contactInput: {
-    height: '30px',
-    width: '100%',
-    minWidth: '100%',
-    padding: '0',
-    borderRadius: '0',
-    backgroundColor: 'white',
-    color: 'white',
-    border: 'none',
-    outline: 'none',
-  },
-
-  highlightInput: {
-    maxWidth: '100%',
- borderTop: '3px solid white',
- position: 'absolute',
- left: 0,
- bottom: 0,
- height: 0,
-  }
 
 });
 
