@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import WorkStyles from '../Styles/WorkStyles.css';
+import { withStyles } from '@material-ui/core/styles';
 
 
 
@@ -9,12 +9,23 @@ class WorkPage extends Component {
 
 
   render() {
+    const { classes } = this.props;
     return (
-        <div className="work-page">
+        <div className={classes.root}>
           Work page
         </div>
     );
   }
 }
 
-export default WorkPage;
+const styles = theme => ({
+  root: {
+    height: '100%',
+    width: '100%',
+    backgroundColor: 'orange',
+
+  },
+
+});
+
+export default withStyles(styles, {})(WorkPage);

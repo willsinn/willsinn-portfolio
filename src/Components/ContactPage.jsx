@@ -81,7 +81,7 @@ class ContactPage extends Component {
 const styles = theme => ({
 
   root: {
-    height: '50%',
+    height: '40%',
     width: '100%',
     backgroundColor: 'gray',
     display: 'flex',
