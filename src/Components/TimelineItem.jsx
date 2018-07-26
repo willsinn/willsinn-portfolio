@@ -38,8 +38,9 @@ renderItem = (props) => {
         <div className={classes.timelineContainer}>
 
             <div className={classes.timelineHeader}>
-             {this.props.header}
-            </div>
+            <text
+              {this.props.renderItem(header, content)}>
+
             <div className={classes.timelineBody}>
             </div>
         </div>
