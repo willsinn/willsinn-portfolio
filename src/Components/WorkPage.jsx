@@ -4,8 +4,8 @@ import TimelineItem from './TimelineItem';
 
 
 
-
 class WorkPage extends Component {
+
 
 
 
@@ -14,11 +14,14 @@ class WorkPage extends Component {
     return (
         <div className={classes.root}>
           <h1> WorkPage Header </h1>
-        <TimelineItem />
+              <TimelineItem
+
+              />
         </div>
     );
   }
 }
+
 
 const styles = theme => ({
   root: {
