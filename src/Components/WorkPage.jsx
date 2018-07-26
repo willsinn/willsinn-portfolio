@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import TimelineItem from './TimelineItem';
 
 
 
@@ -12,7 +13,8 @@ class WorkPage extends Component {
     const { classes } = this.props;
     return (
         <div className={classes.root}>
-          Work page
+          <h1> WorkPage Header </h1>
+        <TimelineItem />
         </div>
     );
   }
