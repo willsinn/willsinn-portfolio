@@ -7,10 +7,8 @@ class TimelineList extends Component {
   constructor(props){
     super(props);
     this.state = {
-      id:[],
-      title:'',
-      content:'',
-      posts:[]
+      header:'',
+      detail:'',
     }
   }
 
@@ -23,19 +21,12 @@ class TimelineList extends Component {
 
     return(
       <div>
-      <ul>
-      {
-        this.props.posts.map((post, id) => {
-          return <TimelineItem
-                    key={post.id}
-                    title={title}
-                    content={content}
-                    posts={posts}
-                    post={post}
 
-            />;
-        })}
-        </ul>
+
+            <TimelineItem
+
+            />
+
       </div>
     );
   }

@@ -7,31 +7,18 @@ import { withStyles } from '@material-ui/core/styles';
 class TimelineItem extends Component {
 
   static defaultProps = {
-
-    posts:[
-      {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
-      {id: 2, title: 'Installation', content: 'You can install React from npm.'}]
-  }
-
-  itemList(props) {
-    const posts = props.posts;
-    const item = (
-      <ul>
-      {props.posts.map((post) => (
-            <li
-            key={post.id}>
-              {post.title}
-             </li>)
-
-)}</ul>
-
-);
-return(<div>{itemList}</div>);
+    headers: ['Header 1', 'Header 2', 'Header 2'],
+    details: ['Detail 1', 'Detail 2', 'Detail 3']
 }
-
   render() {
     const { classes } = this.props;
-    const post = this.props.post;
+
+    const headerItems = this.props.headers.map(header => {
+      return <li key={header} value={header}>{header}</li>
+    });
+    const detailItems = this.props.details.map(detail => {
+      return <li key={detail} value={detail}>{detail}</li>
+    });
 
 
 
@@ -40,15 +27,14 @@ return(<div>{itemList}</div>);
     return(
       <li className={classes.root}>
         <div className={classes.timelineContainer}>
-            {
-              posts.map((post, id) => {})
-            }
-            <div className={classes.timelineHeader}>
 
-            </div>
+            <ul className={classes.timelineHeader}>
+              {headerItems}
+            </ul>
 
-            <div className={classes.timelineBody}>
-            </div>
+            <ul className={classes.timelineBody}>
+              {detailItems}
+            </ul>
         </div>
       </li>
 
