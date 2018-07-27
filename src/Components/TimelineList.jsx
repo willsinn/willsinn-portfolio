@@ -1,3 +1,21 @@
+import React, { Component } from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import TimelineItem from './TimelineItem';
+
+
+class TimelineList extends Component {
+  render(){
+    const { classes } = this.props;
+
+    return(
+      <div>
+        <TimelineItem
+        />
+      </div>
+    );
+  }
+}
+
 function Blog(props) {
   const sidebar = (
     <ul>
@@ -28,4 +46,7 @@ const posts = [
   {id: 2, title: 'Installation', content: 'You can install React from npm.'}
 ];
 
-export default Blog(props);
+const styles = theme => ({
+  root: {},
+});
+export default withStyles(styles, {})(TimelineList);

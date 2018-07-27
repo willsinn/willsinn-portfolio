@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import TimelineItem from './TimelineItem';
+import TimelineList from './TimelineList';
 
 
 
@@ -14,7 +14,7 @@ class WorkPage extends Component {
     return (
         <div className={classes.root}>
           <h1> WorkPage Header </h1>
-              <TimelineItem
+              <TimelineList
 
               />
         </div>
@@ -30,7 +30,6 @@ const styles = theme => ({
     backgroundColor: 'orange',
 
   },
-
 });
 
 export default withStyles(styles, {})(WorkPage);
