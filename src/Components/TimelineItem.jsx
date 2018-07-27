@@ -25,7 +25,7 @@ class TimelineItem extends Component {
 
 
     return(
-      <li className={classes.root}>
+      <div className={classes.root}>
         <div className={classes.timelineContainer}>
 
             <ul className={classes.timelineHeader}>
@@ -36,7 +36,7 @@ class TimelineItem extends Component {
               {detailItems}
             </ul>
         </div>
-      </li>
+      </div>
 
     );
   }
@@ -47,15 +47,23 @@ const styles = theme => ({
     height: '20%',
     width: '80%',
     backgroundColor: 'purple',
+  
+  },
+
+  timelineContainer: {
+    display: 'flex',
 
   },
 
-  timelineContainer: {},
 
+  timelineHeader: {
+    listStyle: 'none',
+  },
 
-  timelineHeader: {},
+  timelineBody: {
+    listStyle: 'none',
 
-  timelineBody: {},
+  },
 
 });
 

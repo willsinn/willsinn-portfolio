@@ -17,10 +17,9 @@ class TimelineList extends Component {
 
 
     const { classes } = this.props;
-    const posts = this.props.posts;
 
     return(
-      <div>
+      <div className={classes.root}>
 
 
             <TimelineItem
@@ -37,6 +36,11 @@ class TimelineList extends Component {
 
 
 const styles = theme => ({
-  root: {},
+  root: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+
+  },
 });
 export default withStyles(styles, {})(TimelineList);
