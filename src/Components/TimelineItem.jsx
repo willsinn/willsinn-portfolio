@@ -14,10 +14,22 @@ class TimelineItem extends Component {
     const { classes } = this.props;
 
     const headerItems = this.props.headers.map(header => {
-      return <li key={header} value={header}>{header}</li>
+      return <ul className={classes.headerWrapper}>
+                <li className={classes.headerContent}
+                    key={header}
+                    value={header}>
+                        {header}
+                </li>
+            </ul>
     });
     const detailItems = this.props.details.map(detail => {
-      return <li key={detail} value={detail}>{detail}</li>
+      return <ul className={classes.bodyWrapper}>
+                <li className={classes.bodyContent}
+                    key={detail}
+                    value={detail}>
+                        {detail}
+                </li>
+            </ul>
     });
 
 
@@ -28,13 +40,13 @@ class TimelineItem extends Component {
       <div className={classes.root}>
         <div className={classes.timelineContainer}>
 
-            <ul className={classes.timelineHeader}>
+            <div className={classes.headerContainer}>
               {headerItems}
-            </ul>
+            </div>
 
-            <ul className={classes.timelineBody}>
+            <div className={classes.bodyContainer}>
               {detailItems}
-            </ul>
+            </div>
         </div>
       </div>
 
@@ -47,7 +59,7 @@ const styles = theme => ({
     height: '20%',
     width: '80%',
     backgroundColor: 'purple',
-  
+
   },
 
   timelineContainer: {
@@ -55,13 +67,31 @@ const styles = theme => ({
 
   },
 
+  headerContainer: {
+    border: '1px solid black',
 
-  timelineHeader: {
-    listStyle: 'none',
   },
 
-  timelineBody: {
+  headerWrapper: {
     listStyle: 'none',
+    border: '1px solid black',
+
+  },
+
+  headerContent: {
+    border: '1px solid black',
+  },
+
+  bodyContainer: {
+
+  },
+
+  bodyWrapper: {
+    listStyle: 'none',
+
+  },
+
+  bodyContent: {
 
   },
 
