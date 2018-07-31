@@ -39,7 +39,8 @@ class TimelineItem extends Component {
     return(
       <div className={classes.root}>
         <div className={classes.timelineContainer}>
-
+            <div className={classes.timelineLadder}>
+            </div>
             <div className={classes.headerContainer}>
               {headerItems}
             </div>
@@ -65,10 +66,21 @@ const styles = theme => ({
   timelineContainer: {
     display: 'flex',
 
+
+  },
+
+  timelineLadder: {
+    left: '10%',
+    width: '5px',
+    height: '20%',
+    borderLeft: '5px solid #cc8f19',
+    position: 'absolute',
+    display: 'block'
   },
 
   headerContainer: {
     border: '1px solid black',
+
 
   },
 
@@ -79,8 +91,11 @@ const styles = theme => ({
   },
 
   headerContent: {
-    border: '1px solid black',
+    border: '1px solid white',
+    paddingTop: '15%',
+
   },
+
 
   bodyContainer: {
 
