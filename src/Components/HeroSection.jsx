@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import AbsoluteProfile from '../Images/AbsoluteProfile.jpeg';
+import HeroImage from '../Images/HeroImage.jpg';
 import ContactFormDrawer from '../Assets/ContactFormDrawer';
 
 
 
 
-class LandingPage extends Component {
+class HeroSection extends Component {
 
 
   render() {
@@ -14,7 +14,7 @@ class LandingPage extends Component {
 
     return (
         <div className={classes.root}>
-         <img className={classes.backgroundImage} src={AbsoluteProfile}/>
+         <img className={classes.backgroundImage} src={HeroImage}/>
         <ContactFormDrawer className={classes.contactButton} />
         </div>
     );
@@ -25,7 +25,7 @@ const styles = theme => ({
     height: '100%',
     width: '100%',
     zIndex: '0',
-    opacity: '0.5',
+    opacity: '1.',
   },
 
 
@@ -34,7 +34,7 @@ const styles = theme => ({
     backgroundImage: 'cover',
     width: '100%',
     height: '100%',
-    opactity: '0.3',
+    opactity: '0.8',
     position: 'absolute',
 
   },
@@ -44,4 +44,4 @@ const styles = theme => ({
 
 });
 
-export default withStyles(styles, {})(LandingPage);
+export default withStyles(styles, {})(HeroSection);

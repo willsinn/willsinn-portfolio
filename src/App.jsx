@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Styles/App.css';
-import LandingPage from './Components/LandingPage';
+import HeroSection from './Components/HeroSection';
 import AboutPage from './Components/AboutPage';
 import PortfolioPage from './Components/PortfolioPage';
 import SkillsPage from './Components/SkillsPage';
@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className="App">
 
-            <LandingPage />
+            <HeroSection />
             <AboutPage />
             <PortfolioPage />
             <SkillsPage />
