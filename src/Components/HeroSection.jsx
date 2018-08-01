@@ -8,15 +8,14 @@ import ContactFormDrawer from '../Assets/ContactFormDrawer';
 
 class HeroSection extends Component {
 
-
   render() {
     const { classes } = this.props;
 
     return (
-        <div className={classes.root}>
+        <section className={classes.root}>
          <img className={classes.backgroundImage} src={HeroImage}/>
         <ContactFormDrawer className={classes.contactButton} />
-        </div>
+        </section>
     );
   }
 }
@@ -25,7 +24,7 @@ const styles = theme => ({
     height: '100%',
     width: '100%',
     zIndex: '0',
-    opacity: '1.',
+    opacity: '1',
   },
 
 
@@ -35,7 +34,6 @@ const styles = theme => ({
     width: '100%',
     height: '100%',
     opactity: '0.8',
-    position: 'absolute',
 
   },
 

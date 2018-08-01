@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-
-
+import CA from '../Images/States/CA.png';
+import LA from '../Images/States/LA.png';
+import TX from '../Images/States/TX.png';
 
 class AboutSection extends Component {
-
-
-
   render() {
     const { classes } = this.props;
+    var backgroundCA = {
+      width: "33%",
+      backgroundImage: `url(${ CA })`,
+      backgroundSize: 'cover',
+    };
 
     return (
-        <div className={classes.root}>
+      <div className="section">
+      
+        <div className={classes.aboutContainer}>
           <div className={classes.aboutIntroduction}>
             <h1>
               About Kyle
@@ -24,13 +29,16 @@ class AboutSection extends Component {
             </h2>
           </div>
           <div className={classes.aboutContent}>
-            <div classname={classes.contentColumn}> </div>
-            <div classname={classes.contentColumn}> </div>
-            <div classname={classes.contentColumn}> </div>
+            <div style={ backgroundCA } classname={classes.contentColumn}>
 
+            </div>
+            <div classname={classes.contentColumn}>
+            </div>
+            <div classname={classes.contentColumn}>
+            </div>
           </div>
-
         </div>
+      </div>
     );
   }
 }
@@ -39,26 +47,28 @@ const styles = theme => ({
     height: '100%',
     width: '100%',
     backgroundColor: 'gray',
-    display: 'flex',
-    flexDirection: 'column',
-
+  },
+  aboutContainer: {
+      padding: '0 10% 0 10%',
+      height: '70%',
+      display: 'flex',
+      alignItems: 'center',
+      flexDirection: 'column',
+      justifyContent: 'center',
   },
   aboutIntroduction: {
-    height: '50%',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
-    padding: '10% 10% 0 10%'
+    height: '30%',
 
   },
-
   aboutContent: {
-    height: '50%'
+    height: '30%',
+    display: 'flex',
 
   },
-
-
+  contentColumn: {
+    width: '33%',
+    height: '100%'
+  },
 });
 
 export default withStyles(styles, {})(AboutSection);
