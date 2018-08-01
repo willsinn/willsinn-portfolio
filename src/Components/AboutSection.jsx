@@ -8,9 +8,10 @@ class AboutSection extends Component {
   render() {
     const { classes } = this.props;
     var backgroundCA = {
-      width: "33%",
+      width: '33%',
       backgroundImage: `url(${ CA })`,
       backgroundSize: 'cover',
+      height: '50%',
     };
 
     return (
@@ -44,30 +45,25 @@ class AboutSection extends Component {
 }
 const styles = theme => ({
   root: {
-    height: '100%',
     width: '100%',
     backgroundColor: 'gray',
   },
   aboutContainer: {
       padding: '0 10% 0 10%',
-      height: '70%',
       display: 'flex',
       alignItems: 'center',
       flexDirection: 'column',
       justifyContent: 'center',
   },
   aboutIntroduction: {
-    height: '30%',
 
   },
   aboutContent: {
-    height: '30%',
     display: 'flex',
 
   },
   contentColumn: {
     width: '33%',
-    height: '100%'
   },
 });
 
