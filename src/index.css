@@ -2,6 +2,9 @@ html, body  {
   margin: 0;
 }
 
-html, body, section {
+html, body {
   height: 100%;
+}
+section {
+  height: 100vh;
 }

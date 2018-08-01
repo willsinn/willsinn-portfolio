@@ -106,7 +106,7 @@ const styles = theme => ({
   },
   formContainer: {
     backgroundColor:'gray',
-    width: '100%',
+    width: '20%',
   },
   inputListWrapper: {
     listStyle: 'none',

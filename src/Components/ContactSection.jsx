@@ -81,7 +81,6 @@ class ContactSection extends Component {
 const styles = theme => ({
 
   root: {
-    height: '40%',
     width: '100%',
     backgroundColor: 'gray',
     display: 'flex',
@@ -98,25 +97,21 @@ const styles = theme => ({
   },
 
   titleWrapper: {
-    height: '70%',
 
   },
   titleThanks: {
     fontSize: 'large',
     textAlign: 'center',
-    height: '50%',
 
   },
   titleQuestion: {
     fontSize: 'small',
     textAlign: 'center',
-    height: '50%',
 
   },
 
   contactWrapper: {
     display: 'flex',
-    height: '40%',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -134,7 +129,6 @@ const styles = theme => ({
   socialWrapper: {
     display: 'flex',
     justifyContent: 'space-around',
-    height: '40%',
 
   },
 
@@ -158,7 +152,6 @@ const styles = theme => ({
   },
 
   creationWrapper: {
-    height: '25%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

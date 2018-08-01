@@ -11,7 +11,6 @@ class AboutSection extends Component {
       width: '33%',
       backgroundImage: `url(${ CA })`,
       backgroundSize: 'cover',
-      height: '50%',
     };
 
     return (
@@ -45,8 +44,9 @@ class AboutSection extends Component {
 }
 const styles = theme => ({
   root: {
-    width: '100%',
     backgroundColor: 'gray',
+    height: '100%',
+    
   },
   aboutContainer: {
       padding: '0 10% 0 10%',
