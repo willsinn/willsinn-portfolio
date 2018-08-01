@@ -7,11 +7,6 @@ import TX from '../Images/States/TX.png';
 class AboutSection extends Component {
   render() {
     const { classes } = this.props;
-    var backgroundCA = {
-      width: '33%',
-      backgroundImage: `url(${ CA })`,
-      backgroundSize: 'cover',
-    };
 
     return (
       <section className={classes.root}>
@@ -29,12 +24,12 @@ class AboutSection extends Component {
             </h2>
           </div>
           <div className={classes.aboutContent}>
-            <div style={ backgroundCA } classname={classes.contentColumn}>
+            <div classname={classes.contentColumnState1}>
 
             </div>
-            <div classname={classes.contentColumn}>
+            <div classname={classes.contentColumnState2}>
             </div>
-            <div classname={classes.contentColumn}>
+            <div classname={classes.contentColumnState3}>
             </div>
           </div>
         </div>
@@ -45,8 +40,7 @@ class AboutSection extends Component {
 const styles = theme => ({
   root: {
     backgroundColor: 'gray',
-    height: '100%',
-    
+
   },
   aboutContainer: {
       padding: '0 10% 0 10%',
@@ -62,8 +56,9 @@ const styles = theme => ({
     display: 'flex',
 
   },
-  contentColumn: {
+  contentColumnState1: {
     width: '33%',
+    backgroundImage: `url(${ CA })`,
   },
 });
 

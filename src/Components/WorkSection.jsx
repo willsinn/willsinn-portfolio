@@ -25,7 +25,6 @@ class WorkSection extends Component {
 
 const styles = theme => ({
   root: {
-    height: '100%',
     width: '100%',
     backgroundColor: 'yellow',
 

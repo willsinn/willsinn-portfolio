@@ -13,7 +13,7 @@ class HeroSection extends Component {
 
     return (
         <section className={classes.root}>
-         <div className={classes.backgroundImage}>
+         <div className={classes.heroImage}>
          </div>
 
         <ContactFormDrawer className={classes.contactButton} />
@@ -23,19 +23,17 @@ class HeroSection extends Component {
 }
 const styles = theme => ({
   root: {
-    height: '100%',
     width: '100%',
     zIndex: '0',
   },
 
 
-  backgroundImage: {
+  heroImage: {
     zIndex: '-1',
     backgroundImage: `url(${ HeroImage })`,
     width: '100%',
     height: '100%',
     opactity: '0.8',
-    background
 
   },
 

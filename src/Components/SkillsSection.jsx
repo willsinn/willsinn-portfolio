@@ -3,34 +3,29 @@ import SkillsStyles from '../Styles/SkillsStyles.css';
 import SkillsPieChart from '../Assets/SkillsPieChart';
 import SkillsBarChart from '../Assets/SkillsBarChart';
 import LinearDeterminate from '../Assets/LinearDeterminate';
-
-
-
+import { withStyles } from '@material-ui/core/styles';
 
 class SkillsSection extends Component {
-
-
-
-
-
   render() {
-
-
-
-
+    const { classes } = this.props;
     return (
-        <section className="skills-page">
+
+        <section className={classes.root}>
           Skills Page
-
-            <SkillsPieChart
-
-              />
-
-            <LinearDeterminate
-             />
+            <SkillsPieChart/>
+            <LinearDeterminate/>
         </section>
     );
   }
 }
 
-export default SkillsSection;
+const styles = theme => ({
+  root: {
+    display: 'flex',
+    
+  },
+
+});
+
+
+export default withStyles(styles, {})(SkillsSection);
