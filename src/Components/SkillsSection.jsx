@@ -7,7 +7,7 @@ import LinearDeterminate from '../Assets/LinearDeterminate';
 
 
 
-class SkillsPage extends Component {
+class SkillsSection extends Component {
 
 
 
@@ -19,7 +19,7 @@ class SkillsPage extends Component {
 
 
     return (
-        <div className="skills-page">
+        <section className="skills-page">
           Skills Page
 
             <SkillsPieChart
@@ -28,9 +28,9 @@ class SkillsPage extends Component {
 
             <LinearDeterminate
              />
-        </div>
+        </section>
     );
   }
 }
 
-export default SkillsPage;
+export default SkillsSection;

@@ -4,7 +4,7 @@ import TimelineList from './TimelineList';
 
 
 
-class WorkPage extends Component {
+class WorkSection extends Component {
 
 
 
@@ -12,12 +12,12 @@ class WorkPage extends Component {
   render() {
     const { classes } = this.props;
     return (
-        <div className={classes.root}>
-          <h1> WorkPage Header </h1>
+        <section className={classes.root}>
+          <h1> WorkSection Header </h1>
               <TimelineList
 
               />
-        </div>
+        </section>
     );
   }
 }
@@ -32,4 +32,4 @@ const styles = theme => ({
   },
 });
 
-export default withStyles(styles, {})(WorkPage);
+export default withStyles(styles, {})(WorkSection);

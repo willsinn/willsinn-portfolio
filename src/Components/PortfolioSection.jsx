@@ -4,17 +4,17 @@ import PortfolioStyles from '../Styles/PortfolioStyles.css';
 
 
 
-class PortfolioPage extends Component {
+class PortfolioSection extends Component {
 
 
 
   render() {
     return (
-        <div className="portfolio-page">
+        <section className="portfolio-page">
           Portfolio Page
-        </div>
+        </section>
     );
   }
 }
 
-export default PortfolioPage;
+export default PortfolioSection;

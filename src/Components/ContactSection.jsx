@@ -9,14 +9,14 @@ import Facebook from '../Icons/Facebook.png';
 
 
 
-class ContactPage extends Component {
+class ContactSection extends Component {
 
   render() {
     const { classes } = this.props;
 
     return (
 
-        <div className={classes.root}>
+        <section className={classes.root}>
             <Grid container className={classes.gridWrapper}  spacing={8}>
 
                 <Grid  item   className={classes.titleWrapper}  xs={12}>
@@ -73,7 +73,7 @@ class ContactPage extends Component {
               </Grid>
 
           </Grid>
-        </div>
+        </section>
 
     );
   }
@@ -175,4 +175,4 @@ const styles = theme => ({
 
 
 
-export default withStyles(styles, { })(ContactPage);
+export default withStyles(styles, { })(ContactSection);

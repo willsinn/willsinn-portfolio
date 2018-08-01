@@ -14,8 +14,8 @@ class AboutSection extends Component {
     };
 
     return (
-      <div className="section">
-      
+      <section className={classes.root}>
+
         <div className={classes.aboutContainer}>
           <div className={classes.aboutIntroduction}>
             <h1>
@@ -38,7 +38,7 @@ class AboutSection extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     );
   }
 }
