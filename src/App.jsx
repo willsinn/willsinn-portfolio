@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Styles/App.css';
 import HeroSection from './Components/HeroSection';
-import AboutPage from './Components/AboutPage';
+import AboutSection from './Components/AboutSection';
 import PortfolioPage from './Components/PortfolioPage';
 import SkillsPage from './Components/SkillsPage';
 import WorkPage from './Components/WorkPage';
@@ -17,7 +17,7 @@ class App extends Component {
       <div className="App">
 
             <HeroSection />
-            <AboutPage />
+            <AboutSection />
             <PortfolioPage />
             <SkillsPage />
             <WorkPage />
