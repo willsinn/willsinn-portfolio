@@ -13,9 +13,14 @@ class AboutSection extends Component {
         <div className={classes.aboutWrapper}>
         <div className={classes.aboutContainer}>
           <div className={classes.aboutIntroduction}>
-            <h1 className={classes.introName}>
-              ABOUT KYLE
-            </h1>
+            <div className={classes.introName}>
+              <div className={classes.nameLineBefore}>
+              _______________</div>
+            <h1 className={classes.aboutName}>ABOUT</h1>
+            <h1 className={classes.aboutName}>KYLE</h1>
+              <div className={classes.nameLineAfter}>
+              _______________</div>
+          </div>
             <h2 className={classes.introDescribe}>
               My career began in Louisiana designing Flash and 3D animation, and I’ve arrived as an all around UX designer working in Texas & California.
             </h2>
@@ -66,16 +71,33 @@ const styles = theme => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+
   },
   introName: {
-    padding: '14% 0% 0.5% 0%',
+    paddingTop: '10%',
     margin: '0',
     fontSize: '36px',
     fontWeight: '600',
     color: 'white',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+
+  },
+  nameLineBefore: {
+    paddingRight: '20%',
+    marginBottom: '4%',
+  },
+  aboutName: {
+    paddingRight:'1%',
+    paddingLeft: '1%',
+  },
+  nameLineAfter: {
+    paddingLeft: '20%',
+    marginBottom: '4%',
   },
   introDescribe: {
-    padding: '0.5%',
+    padding: '0',
     margin: '0',
     textAlign: 'center',
     width: '92%',
@@ -84,7 +106,7 @@ const styles = theme => ({
     fontWeight: '50',
   },
   introNext: {
-    padding: '0.5%',
+    paddingTop: '1%',
     margin: '0',
     color: 'white',
     fontSize: '30px',
@@ -142,7 +164,7 @@ const styles = theme => ({
     paddingTop: '5%',
   },
   aboutViewDesignsButton: {
-    fontSize: '21px',
+    fontSize: '20px',
   },
 });
 
