@@ -13,15 +13,18 @@ class AboutSection extends Component {
         <div className={classes.aboutWrapper}>
         <div className={classes.aboutContainer}>
           <div className={classes.aboutIntroduction}>
-            <h1>
-              About Kyle
+            <h1 className={classes.introName}>
+              ABOUT KYLE
             </h1>
-            <h2>
+            <h2 className={classes.introDescribe}>
               My career began in Louisiana designing Flash and 3D animation, and I’ve arrived as an all around UX designer working in Texas & California.
             </h2>
-            <h2>
+            <h2 className={classes.introNext}>
               I wonder what’s next...
             </h2>
+            <div className={classes.aboutLine}>
+              _______________________________________
+            </div>
           </div>
           <div className={classes.aboutContent}>
             <div className={classes.contentColumnState1}>
@@ -59,16 +62,43 @@ const styles = theme => ({
       alignItems: 'center',
   },
   aboutIntroduction: {
-    paddingTop: '10%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
   },
+  introName: {
+    padding: '14% 0% 0.5% 0%',
+    margin: '0',
+    fontSize: '36px',
+    fontWeight: '600',
+    color: 'white',
+  },
+  introDescribe: {
+    padding: '0.5%',
+    margin: '0',
+    textAlign: 'center',
+    width: '92%',
+    fontSize: '30px',
+    color: 'white',
+    fontWeight: '50',
+  },
+  introNext: {
+    padding: '0.5%',
+    margin: '0',
+    color: 'white',
+    fontSize: '30px',
+    fontWeight: '50',
+  },
+  aboutLine: {
+    borderBottom: '5px solid white',
+    color: 'gray',
+  },
   aboutContent: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: '2%',
   },
   contentColumnState1: {
     display: 'flex',
@@ -79,7 +109,6 @@ const styles = theme => ({
     backgroundImage: `url(${ LA })`,
     backgroundSize: '300px 400px',
     backgroundRepeat: 'no-repeat',
-
   },
   contentColumnState2: {
     display: 'flex',
@@ -105,14 +134,15 @@ const styles = theme => ({
   },
   columnStateText: {
     color: 'white',
-    fontSize: '18px',
-    width: '70%',
+    fontSize: '19px',
+    width: '92%',
+    fontWeight: '10',
   },
   aboutButtonWrapper: {
-    paddingTop: '10%',
+    paddingTop: '5%',
   },
   aboutViewDesignsButton: {
-    fontSize: '22px',
+    fontSize: '21px',
   },
 });
 
