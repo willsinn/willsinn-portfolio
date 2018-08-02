@@ -79,7 +79,6 @@ class ContactSection extends Component {
   }
 }
 const styles = theme => ({
-
   root: {
     backgroundColor: 'gray',
     display: 'flex',
