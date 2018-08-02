@@ -10,9 +10,9 @@ class HeroSection extends Component {
     return (
         <section className={classes.root}>
           <div className={classes.heroImage}>
+            <ContactFormDrawer className={classes.contactButton}
+            />
           </div>
-          <ContactFormDrawer className={classes.contactButton}
-          />
         </section>
     );
   }

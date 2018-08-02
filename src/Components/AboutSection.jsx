@@ -63,18 +63,16 @@ const styles = theme => ({
   aboutContainer: {
       display: 'flex',
       flexDirection: 'column',
-      width: '65%',
+      width: '75%',
       alignItems: 'center',
   },
   aboutIntroduction: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center',
     alignItems: 'center',
-
   },
   introName: {
-    paddingTop: '10%',
+    paddingTop: '5%',
     margin: '0',
     fontSize: '36px',
     fontWeight: '600',
@@ -98,12 +96,13 @@ const styles = theme => ({
   },
   introDescribe: {
     padding: '0',
-    margin: '0',
+    marginTop: '0',
     textAlign: 'center',
     width: '92%',
     fontSize: '30px',
     color: 'white',
     fontWeight: '50',
+
   },
   introNext: {
     paddingTop: '1%',
@@ -119,17 +118,17 @@ const styles = theme => ({
   aboutContent: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
-    paddingTop: '2%',
+    justifyContent: 'space-between',
+    paddingTop: '1%',
   },
   contentColumnState1: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     width: '30%',
-    height: '400px',
+    height: '325px',
     backgroundImage: `url(${ LA })`,
-    backgroundSize: '300px 400px',
+    backgroundSize: '300px 325px',
     backgroundRepeat: 'no-repeat',
   },
   contentColumnState2: {
@@ -137,9 +136,9 @@ const styles = theme => ({
     flexDirection: 'column',
     justifyContent: 'center',
     width: '30%',
-    height: '400px',
+    height: '325px',
     backgroundImage: `url(${ TX })`,
-    backgroundSize: '300px 400px',
+    backgroundSize: '300px 325px',
     backgroundRepeat: 'no-repeat',
 
   },
@@ -148,23 +147,23 @@ const styles = theme => ({
     flexDirection: 'column',
     justifyContent: 'center',
     width: '30%',
-    height: '400px',
+    height: '325px',
     backgroundImage: `url(${ CA })`,
-    backgroundSize: '300px 400px',
+    backgroundSize: '300px 325px',
     backgroundRepeat: 'no-repeat',
 
   },
   columnStateText: {
     color: 'white',
     fontSize: '19px',
-    width: '92%',
+    width: '100%',
     fontWeight: '10',
   },
   aboutButtonWrapper: {
-    paddingTop: '5%',
+    paddingTop: '3%',
   },
   aboutViewDesignsButton: {
-    fontSize: '20px',
+    fontSize: '18px',
   },
 });
 export default withStyles(styles, {})(AboutSection);
