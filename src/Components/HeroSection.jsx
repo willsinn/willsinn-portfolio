@@ -3,20 +3,16 @@ import { withStyles } from '@material-ui/core/styles';
 import HeroImage from '../Images/HeroImage.jpg';
 import ContactFormDrawer from '../Assets/ContactFormDrawer';
 
-
-
-
 class HeroSection extends Component {
-
   render() {
     const { classes } = this.props;
 
     return (
         <section className={classes.root}>
-         <div className={classes.heroImage}>
-         </div>
-
-        <ContactFormDrawer className={classes.contactButton} />
+          <div className={classes.heroImage}>
+          </div>
+          <ContactFormDrawer className={classes.contactButton}
+          />
         </section>
     );
   }
@@ -24,21 +20,16 @@ class HeroSection extends Component {
 const styles = theme => ({
   root: {
     width: '100%',
-    zIndex: '0',
   },
-
-
   heroImage: {
-    zIndex: '-1',
     backgroundImage: `url(${ HeroImage })`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
     width: '100%',
     height: '100%',
-    opactity: '0.8',
-
   },
-
-    contactButton: {
-    },
+  contactButton: {
+  },
 
 });
 

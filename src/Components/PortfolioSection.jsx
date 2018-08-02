@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import PortfolioStyles from '../Styles/PortfolioStyles.css';
 
-
-
-
 class PortfolioSection extends Component {
-
-
-
   render() {
     return (
         <section className="portfolio-page">
@@ -16,5 +10,4 @@ class PortfolioSection extends Component {
     );
   }
 }
-
 export default PortfolioSection;

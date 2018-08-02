@@ -7,13 +7,10 @@ import SkillsSection from './Components/SkillsSection';
 import WorkSection from './Components/WorkSection';
 import ContactSection from './Components/ContactSection';
 
-
-
-
 class App extends Component {
-
   render() {
     return (
+
       <section className="App">
             <HeroSection />
             <AboutSection />
@@ -25,5 +22,4 @@ class App extends Component {
     );
   }
 }
-
 export default App;

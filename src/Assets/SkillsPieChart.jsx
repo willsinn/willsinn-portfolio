@@ -2,13 +2,7 @@ import React, { Component } from 'react';
 import { ResponsiveContainer, PieChart, Pie, Cell, Sector } from 'recharts';
 import { scaleOrdinal, schemeCategory10 } from 'd3-scale';
 
-
-
-
 const colors = scaleOrdinal(schemeCategory10).range();
-
-
-
 class SkillsPieChart extends Component {
   constructor(props) {
     super(props);
@@ -18,32 +12,22 @@ class SkillsPieChart extends Component {
       animation: false,
     }
   }
-
   onPieOver = (data, index, e) => {
     this.setState({
       activeIndex: index,
     });
   };
-
   handleChangeAnimation = () => {
       this.setState({
         animation: !this.state.animation,
       });
     };
-
   handleOver = (e, activeIndex) => this.setState({ activeIndex: []  });
-
   handleOut = () => this.setState({ activeIndex: [-1] });
-
-
 renderLabelContent = (props) => {
 const { value, percent, x, y, midAngle } = props;
  return(<text x={0} y={0}>{`Count: ${value}`}</text>);}
-
-
-
   render() {
-
     const renderActiveShape = (props) => {
     const RADIAN = Math.PI / 180;
     const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle,
@@ -60,7 +44,6 @@ const { value, percent, x, y, midAngle } = props;
 
     return (
       <g>
-
         <Sector
           cx={cx}
           cy={cy}
@@ -81,29 +64,23 @@ const { value, percent, x, y, midAngle } = props;
         />
         <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none"/>
         <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none"/>
-
         <text className="hover-text-name" x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill={fill} >
           {payload.name}
         </text>
-
-
         <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="green">
           {`Focus: ${(percent * 100).toFixed(2)}%`}
         </text>
-
         <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={36} textAnchor={textAnchor} fill="purple" >
           {`Value: ${payload.value}`}
         </text>
       </g>
     );
   };
-
   const web = [
     { name: 'JavaScript', value: 500 },
     { name: 'CSS StylesSheets', value: 150},
     { name: 'HTML', value: 150}
   ];
-
   const focus = [
     { name: 'React', value: 200 },
     { name: 'Charts', value: 40 },
@@ -116,11 +93,7 @@ const { value, percent, x, y, midAngle } = props;
   ];
     const skills = { web, focus };
 
-
-
     return(
-
-
         <ResponsiveContainer className="pie-container">
         <PieChart onMouseOver= {this.handlePieChartOver}>
           <Pie
@@ -158,5 +131,4 @@ const { value, percent, x, y, midAngle } = props;
     );
   }
 }
-
 export default SkillsPieChart;

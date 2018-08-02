@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import { DataTable, TableHeader, ProgressBar } from 'react-mdl';
 
-
-
-
-
 class SkillsProgressChart extends Component {
-
   render() {
+    
     return(
       <DataTable
     shadow={0}
