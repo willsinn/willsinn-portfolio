@@ -14,10 +14,10 @@ class TimelineItem extends Component {
                 'SEARS HOLDINGS',
               ],
     details:  [
-                'Planning & designing entirely new experiences for a new fleet of big data products spanning from customers to developers for both analyst consumption & dba/scientist productivity',
                 'Currently doing R&D for next-gen analytics platform interfaces and experiences built on simplicity and natural language processing (NLP).',
                 'Created a massive UI library and design language for a real-time big data web app built on Bootstrap, Angular.js, Node.js & D3.js',
-              ]
+                'Planning & designing entirely new experiences for a new fleet of big data products spanning from customers to developers for both analyst consumption & dba/scientist productivity',
+              ],
 }
   render() {
     const { classes } = this.props;
@@ -30,9 +30,10 @@ class TimelineItem extends Component {
                 </li>
             </ul>
     });
+
     const titleItems = this.props.titles.map(title => {
-      return <ul className={classes.bodyWrapper}>
-                <li className={classes.bodyContent}
+      return <ul className={classes.titleWrapper}>
+                <li className={classes.titleContent}
                     key={title}
                     value={title}>
                         {title}
@@ -40,8 +41,8 @@ class TimelineItem extends Component {
             </ul>
     });
     const detailItems = this.props.details.map(detail => {
-      return <ul className={classes.bodyWrapper}>
-                <li className={classes.bodyContent}
+      return <ul className={classes.detailWrapper}>
+                <li className={classes.detailContent}
                     key={detail}
                     value={detail}>
                         {detail}
@@ -57,10 +58,9 @@ class TimelineItem extends Component {
             <div className={classes.headerContainer}>
               {headerItems}
             </div>
-
             <div className={classes.bodyContainer}>
-              {titleItems}
-              {detailItems}
+              <div>{titleItems}</div>
+              <div>{detailItems}</div>
             </div>
         </div>
       </div>
@@ -97,10 +97,15 @@ const styles = theme => ({
   },
   bodyContainer: {
   },
-  bodyWrapper: {
+  titleWrapper: {
     listStyle: 'none',
   },
-  bodyContent: {
+  titleContent: {
+  },
+  detailWrapper: {
+    listStyle: 'none',
+  },
+  detailContent: {
   },
 });
 export default withStyles(styles, {})(TimelineItem);
