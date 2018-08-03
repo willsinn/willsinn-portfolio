@@ -3,8 +3,21 @@ import { withStyles } from '@material-ui/core/styles';
 
 class TimelineItem extends Component {
   static defaultProps = {
-    headers: ['Header 1', 'Header 2', 'Header 2'],
-    details: ['Detail 1', 'Detail 2', 'Detail 3']
+    headers:  [
+                'UX Architect',
+                'Senior UX Designer',
+                'Principal UX Designer',
+              ],
+    titles:   [
+                'TERADATA',
+                'MICROSTRATEGY',
+                'SEARS HOLDINGS',
+              ],
+    details:  [
+                'Planning & designing entirely new experiences for a new fleet of big data products spanning from customers to developers for both analyst consumption & dba/scientist productivity',
+                'Currently doing R&D for next-gen analytics platform interfaces and experiences built on simplicity and natural language processing (NLP).',
+                'Created a massive UI library and design language for a real-time big data web app built on Bootstrap, Angular.js, Node.js & D3.js',
+              ]
 }
   render() {
     const { classes } = this.props;
@@ -14,6 +27,15 @@ class TimelineItem extends Component {
                     key={header}
                     value={header}>
                         {header}
+                </li>
+            </ul>
+    });
+    const titleItems = this.props.titles.map(title => {
+      return <ul className={classes.bodyWrapper}>
+                <li className={classes.bodyContent}
+                    key={title}
+                    value={title}>
+                        {title}
                 </li>
             </ul>
     });
@@ -37,6 +59,7 @@ class TimelineItem extends Component {
             </div>
 
             <div className={classes.bodyContainer}>
+              {titleItems}
               {detailItems}
             </div>
         </div>
