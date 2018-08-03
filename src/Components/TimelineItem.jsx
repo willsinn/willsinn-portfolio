@@ -20,6 +20,7 @@ class TimelineItem extends Component {
               ],
 }
   render() {
+
     const { classes } = this.props;
     const headerItems = this.props.headers.map(header => {
       return <ul className={classes.headerWrapper}>
@@ -30,7 +31,6 @@ class TimelineItem extends Component {
                 </li>
             </ul>
     });
-
     const titleItems = this.props.titles.map(title => {
       return <ul className={classes.titleWrapper}>
                 <li className={classes.titleContent}
@@ -96,6 +96,7 @@ const styles = theme => ({
     paddingTop: '15%',
   },
   bodyContainer: {
+    display: 'flex',
   },
   titleWrapper: {
     listStyle: 'none',

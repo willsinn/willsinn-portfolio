@@ -6,8 +6,9 @@ class TimelineList extends Component {
   constructor(props){
     super(props);
     this.state = {
-      header:'',
-      detail:'',
+      headers:'',
+      titles: '',
+      details:'',
     }
   }
   render(){
@@ -15,8 +16,8 @@ class TimelineList extends Component {
 
     return(
       <div className={classes.root}>
-        <TimelineItem
-        />
+      <TimelineItem
+      />
       </div>
     );
   }
