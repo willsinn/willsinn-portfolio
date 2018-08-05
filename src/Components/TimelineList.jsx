@@ -16,8 +16,6 @@ class TimelineList extends Component {
 
     return(
       <div className={classes.root}>
-        <div className={classes.ladderLine}>
-        </div>
       <TimelineItem
       />
   </div>
@@ -29,13 +27,6 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  ladderLine: {
-    borderLeft: '4px solid orange',
-    height: '100%',
-    position: 'absolute',
-    left: '13.5%',
-
   },
 });
 export default withStyles(styles, {})(TimelineList);

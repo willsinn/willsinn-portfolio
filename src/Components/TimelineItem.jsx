@@ -13,14 +13,12 @@ class TimelineItem extends Component {
           <ul className={classes.contentList}>
             <li className={classes.listItem}>
               <div className={classes.ladderItemWrapper}>
-              <div className={classes.ladderItem}>
-                <div className={classes.ladderTitle}>
-                TERADATA
-                </div>
                 <div className={classes.titleStyle}>
-                  <div className={classes.titleBullet}>
-                  </div>
+                  <div className={classes.titleBullet}></div>
                 </div>
+                <div className={classes.ladderItem}>
+                  <div className={classes.ladderTitle}>TERADATA</div>
+
               </div>
               <div className={classes.contentContainer}>
                 <div className={classes.contentTitle}>
@@ -101,13 +99,18 @@ const styles = theme => ({
   },
   ladderItemWrapper: {
     display: 'flex',
-    paddingTop: '2%',
   },
   ladderItem: {
     width: '30%',
-    borderBottom: '4px solid orange',
+    borderBottom: '5px solid orange',
+    borderLeft: '5px solid orange',
+    marginLeft: '1%',
   },
   ladderTitle: {
+  },
+  ladderLine: {
+    width: '10%',
+
   },
   contentContainer: {
     display: 'flex',
@@ -115,7 +118,7 @@ const styles = theme => ({
     width: '70%',
   },
   titleStyle: {
-    paddingTop: '7%',
+    paddingTop: '4%',
   },
   titleBullet: {
   backgroundColor: '#F80',
