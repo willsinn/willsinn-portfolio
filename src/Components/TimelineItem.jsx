@@ -16,8 +16,8 @@ class TimelineItem extends Component {
                 <div className={classes.titleStyle}>
                   <div className={classes.titleBullet}></div>
                 </div>
-                <div className={classes.ladderItem}>
-                  <div className={classes.ladderTitle}>TERADATA</div>
+                <div className={classes.ladderItemVertLine}>
+                  <div className={classes.ladderTitleHorzLine}>TERADATA</div>
                 </div>
                 <div className={classes.contentContainer}>
                   <div className={classes.contentTitle}>UX Architect</div>
@@ -30,8 +30,8 @@ class TimelineItem extends Component {
                 <div className={classes.titleStyle}>
                   <div className={classes.titleBullet}></div>
                 </div>
-                <div className={classes.ladderItem}>
-                  <div className={classes.ladderTitle}>MICROSTRATEGY</div>
+                <div className={classes.ladderItemVertLine}>
+                  <div className={classes.ladderTitleHorzLine}>MICROSTRATEGY</div>
                 </div>
                 <div className={classes.contentContainer}>
                   <div className={classes.contentTitle}>Senior UX Designer</div>
@@ -44,8 +44,8 @@ class TimelineItem extends Component {
                 <div className={classes.titleStyle}>
                   <div className={classes.titleBullet}></div>
                 </div>
-                <div className={classes.ladderItem}>
-                  <div className={classes.ladderTitle}>SEARS HOLDINGS</div>
+                <div className={classes.ladderItemVertLine}>
+                  <div className={classes.ladderTitleHorzLine}>SEARS HOLDINGS</div>
                 </div>
                 <div className={classes.contentContainer}>
                   <div className={classes.contentTitle}>Principal UX Designer</div>
@@ -70,29 +70,23 @@ const styles = theme => ({
     listStyleType: 'none',
   },
   listItem: {
+    paddingBottom: '1%',
   },
   ladderItemWrapper: {
     display: 'flex',
   },
-  ladderItem: {
+  ladderItemVertLine: {
     width: '30%',
-    borderBottom: '5px solid orange',
     borderLeft: '5px solid orange',
     marginLeft: '1%',
-    alignItems: 'flex-end',
+    alignItems: 'center',
     display: 'flex',
-
   },
-  ladderTitle: {
+  ladderTitleHorzLine: {
+    display: 'block',
     paddingLeft: '5%',
-  },
-  ladderLine: {
-    width: '10%',
-  },
-  contentContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    width: '70%',
+    borderBottom: '5px solid orange',
+    width: '100%',
   },
   titleStyle: {
     paddingTop: '3.5%',
@@ -106,8 +100,22 @@ const styles = theme => ({
   width: '14px',
   position: 'absolute',
   },
-  contentTitle: {
+  contentContainer: {
+    alignSelf: 'flex-end',
+    display: 'flex',
+    flexDirection: 'column',
+    width: '70%',
+    backgroundColor: 'orange',
+    borderRadius: '2px',
   },
-  contentDetail: {},
+  contentTitle: {
+    fontSize: '18px',
+    fontWeight: '900',
+    padding: '1%',
+  },
+  contentDetail: {
+    padding: '1%',
+
+  },
 });
 export default withStyles(styles, {})(TimelineItem);
