@@ -79,12 +79,15 @@ const styles = theme => ({
     borderBottom: '5px solid orange',
     borderLeft: '5px solid orange',
     marginLeft: '1%',
+    alignItems: 'flex-end',
+    display: 'flex',
+
   },
   ladderTitle: {
+    paddingLeft: '5%',
   },
   ladderLine: {
     width: '10%',
-
   },
   contentContainer: {
     display: 'flex',
