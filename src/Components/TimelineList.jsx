@@ -16,9 +16,10 @@ class TimelineList extends Component {
 
     return(
       <div className={classes.root}>
+
       <TimelineItem
       />
-      </div>
+  </div>
     );
   }
 }
