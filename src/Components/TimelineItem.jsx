@@ -70,34 +70,33 @@ const styles = theme => ({
     listStyleType: 'none',
   },
   listItem: {
-    paddingBottom: '1%',
   },
   ladderItemWrapper: {
     display: 'flex',
   },
   ladderItemVertLine: {
     width: '30%',
-    borderLeft: '5px solid orange',
-    marginLeft: '1%',
+    borderLeft: '4px solid orange',
+    marginLeft: '0.5%',
     alignItems: 'center',
     display: 'flex',
   },
   ladderTitleHorzLine: {
     display: 'block',
     paddingLeft: '5%',
-    borderBottom: '5px solid orange',
+    borderBottom: '4px solid orange',
     width: '100%',
   },
   titleStyle: {
-    paddingTop: '3.5%',
+    paddingTop: '4.5%',
   },
   titleBullet: {
   backgroundColor: '#F80',
   border: '3px solid #FFF',
   borderRadius: '18px',
   boxShadow: '0 0 2px #888',
-  height: '14px',
-  width: '14px',
+  height: '12px',
+  width: '12px',
   position: 'absolute',
   },
   contentContainer: {
@@ -107,6 +106,8 @@ const styles = theme => ({
     width: '70%',
     backgroundColor: 'orange',
     borderRadius: '2px',
+    marginBottom: '1%',
+
   },
   contentTitle: {
     fontSize: '18px',
