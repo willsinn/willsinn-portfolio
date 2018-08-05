@@ -10,28 +10,78 @@ class TimelineItem extends Component {
     return(
       <div className={classes.root}>
         <div className={classes.timelineContainer}>
-          <div className={classes.timelineLadder}>
+          <ul className={classes.contentList}>
+            <li className={classes.listItem}>
+              <div className={classes.ladderItemWrapper}>
+              <div className={classes.ladderItem}>
+                <div className={classes.ladderTitle}>
+                TERADATA
+                </div>
+                <div className={classes.titleStyle}>
+                  <div className={classes.titleBullet}>
+                  </div>
+                </div>
+              </div>
+              <div className={classes.contentContainer}>
+                <div className={classes.contentTitle}>
+                  UX Architect
+                </div>
+                <div className={classes.contentDetail}>
+                  Currently doing R&D for next-gen analytics platform interfaces and experiences built on simplicity and natural language processing (NLP).
+                </div>
+              </div>
+            </div>
+
+            </li>
+            <li className={classes.listItem}>
+              <div className={classes.ladderItemWrapper}>
+
+              <div className={classes.ladderItem}>
+
+                <div className={classes.ladderTitle}>
+              MICROSTRATEGY
+            </div>
+            <div className={classes.titleStyle}>
+              <div className={classes.titleBullet}>
+              </div>
+            </div>
           </div>
 
-            <div className={classes.headerContainer}>
+              <div className={classes.contentContainer}>
+                <div className={classes.contentTitle}>
+
+                Senior UX Designer
+                </div>
+                <div className={classes.contentDetail}>
+                Created a massive UI library and design language for a real-time big data web app built on Bootstrap, Angular.js, Node.js & D3.js
+                </div>
+              </div>
             </div>
-            <div className={classes.bodyContainer}>
+            </li>
+            <li className={classes.listItem}>
+              <div className={classes.ladderItemWrapper}>
+              <div className={classes.ladderItem}>
 
-                          'TERADATA',
-                          'MICROSTRATEGY',
-                          'SEARS HOLDINGS',
-
-                          'UX Architect',
-                          'Senior UX Designer',
-                          'Principal UX Designer',
-
-                          'Currently doing R&D for next-gen analytics platform interfaces and experiences built on simplicity and natural language processing (NLP).',
-                          'Created a massive UI library and design language for a real-time big data web app built on Bootstrap, Angular.js, Node.js & D3.js',
-                          'Planning & designing entirely new experiences for a new fleet of big data products spanning from customers to developers for both analyst consumption & dba/scientist productivity',
-
-
-
+                <div className={classes.ladderTitle}>
+                SEARS HOLDINGS
+              </div>
+              <div className={classes.titleStyle}>
+                <div className={classes.titleBullet}>
+                </div>
+              </div>
             </div>
+
+              <div className={classes.contentContainer}>
+                <div className={classes.contentTitle}>
+                  Principal UX Designer
+                </div>
+                <div className={classes.contentDetail}>
+                  Planning & designing entirely new experiences for a new fleet of big data products spanning from customers to developers for both analyst consumption & dba/scientist productivity
+                </div>
+              </div>
+            </div>
+            </li>
+          </ul>
         </div>
       </div>
     );
@@ -39,20 +89,45 @@ class TimelineItem extends Component {
 }
 const styles = theme => ({
   root: {
-    height: '20%',
     width: '80%',
     backgroundColor: 'purple',
   },
   timelineContainer: {
+  },
+  contentList: {
+    listStyleType: 'none',
+  },
+  listItem: {
+  },
+  ladderItemWrapper: {
     display: 'flex',
+    paddingTop: '2%',
   },
-  timelineLadder: {
-    left: '10%',
-    width: '5px',
-    height: '20%',
-    borderLeft: '5px solid #cc8f19',
-    position: 'absolute',
-    display: 'block'
+  ladderItem: {
+    width: '30%',
+    borderBottom: '4px solid orange',
   },
+  ladderTitle: {
+  },
+  contentContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '70%',
+  },
+  titleStyle: {
+    paddingTop: '7%',
+  },
+  titleBullet: {
+  backgroundColor: '#F80',
+  border: '3px solid #FFF',
+  borderRadius: '18px',
+  boxShadow: '0 0 2px #888',
+  height: '14px',
+  width: '14px',
+  position: 'absolute',
+  },
+  contentTitle: {
+  },
+  contentDetail: {},
 });
 export default withStyles(styles, {})(TimelineItem);
