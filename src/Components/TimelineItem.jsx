@@ -18,66 +18,40 @@ class TimelineItem extends Component {
                 </div>
                 <div className={classes.ladderItem}>
                   <div className={classes.ladderTitle}>TERADATA</div>
-
-              </div>
-              <div className={classes.contentContainer}>
-                <div className={classes.contentTitle}>
-                  UX Architect
                 </div>
-                <div className={classes.contentDetail}>
-                  Currently doing R&D for next-gen analytics platform interfaces and experiences built on simplicity and natural language processing (NLP).
+                <div className={classes.contentContainer}>
+                  <div className={classes.contentTitle}>UX Architect</div>
+                  <div className={classes.contentDetail}>Currently doing R&D for next-gen analytics platform interfaces and experiences built on simplicity and natural language processing (NLP).</div>
                 </div>
               </div>
-            </div>
-
             </li>
             <li className={classes.listItem}>
               <div className={classes.ladderItemWrapper}>
-
-              <div className={classes.ladderItem}>
-
-                <div className={classes.ladderTitle}>
-              MICROSTRATEGY
-            </div>
-            <div className={classes.titleStyle}>
-              <div className={classes.titleBullet}>
-              </div>
-            </div>
-          </div>
-
-              <div className={classes.contentContainer}>
-                <div className={classes.contentTitle}>
-
-                Senior UX Designer
+                <div className={classes.titleStyle}>
+                  <div className={classes.titleBullet}></div>
                 </div>
-                <div className={classes.contentDetail}>
-                Created a massive UI library and design language for a real-time big data web app built on Bootstrap, Angular.js, Node.js & D3.js
+                <div className={classes.ladderItem}>
+                  <div className={classes.ladderTitle}>MICROSTRATEGY</div>
+                </div>
+                <div className={classes.contentContainer}>
+                  <div className={classes.contentTitle}>Senior UX Designer</div>
+                  <div className={classes.contentDetail}>Created a massive UI library and design language for a real-time big data web app built on Bootstrap, Angular.js, Node.js & D3.js</div>
                 </div>
               </div>
-            </div>
             </li>
             <li className={classes.listItem}>
               <div className={classes.ladderItemWrapper}>
-              <div className={classes.ladderItem}>
-
-                <div className={classes.ladderTitle}>
-                SEARS HOLDINGS
-              </div>
-              <div className={classes.titleStyle}>
-                <div className={classes.titleBullet}>
+                <div className={classes.titleStyle}>
+                  <div className={classes.titleBullet}></div>
+                </div>
+                <div className={classes.ladderItem}>
+                  <div className={classes.ladderTitle}>SEARS HOLDINGS</div>
+                </div>
+                <div className={classes.contentContainer}>
+                  <div className={classes.contentTitle}>Principal UX Designer</div>
+                  <div className={classes.contentDetail}>Planning & designing entirely new experiences for a new fleet of big data products spanning from customers to developers for both analyst consumption & dba/scientist productivity.</div>
                 </div>
               </div>
-            </div>
-
-              <div className={classes.contentContainer}>
-                <div className={classes.contentTitle}>
-                  Principal UX Designer
-                </div>
-                <div className={classes.contentDetail}>
-                  Planning & designing entirely new experiences for a new fleet of big data products spanning from customers to developers for both analyst consumption & dba/scientist productivity
-                </div>
-              </div>
-            </div>
             </li>
           </ul>
         </div>
@@ -118,7 +92,7 @@ const styles = theme => ({
     width: '70%',
   },
   titleStyle: {
-    paddingTop: '4%',
+    paddingTop: '3.5%',
   },
   titleBullet: {
   backgroundColor: '#F80',
