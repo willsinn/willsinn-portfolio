@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import TimelineList from './TimelineList';
+import WorkSectionImage from '../Images/WorkSectionImage.jpg';
 
 class WorkSection extends Component {
 
@@ -9,15 +10,21 @@ class WorkSection extends Component {
 
     return (
         <section className={classes.root}>
-          <div className={classes.titleContainer}>
-          <div className={classes.beforeTitle}>
-          _______________</div>
-            <h1 className={classes.workTitle}>WORK</h1>
-          <div className={classes.afterTitle}>
-          _______________</div>
-          </div>
+          <div className={classes.workBackground}>
+            <div className={classes.titleContainer}>
+              <div className={classes.beforeTitle}>_______________</div>
+              <h1 className={classes.workTitle}>WORK</h1>
+              <div className={classes.afterTitle}>_______________</div>
+            </div>
+            <div className={classes.introContainer}>
+              <div className={classes.workIntro}>
+                  My career has taken a natural progression from client websites, to template clubs, to UI templates, to UX design, to complex analytical UX design.
+              </div>
+              <div className={classes.workLine}>_______________________________________</div>
+            </div>
           <TimelineList
           />
+        </div>
         </section>
     );
   }
@@ -26,6 +33,13 @@ const styles = theme => ({
   root: {
     width: '100%',
     backgroundColor: 'orange',
+  },
+  workBackground: {
+    backgroundImage: `url(${ WorkSectionImage })`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    width: '100%',
+    height: '100%',
   },
   titleContainer: {
     paddingTop: '5%',
@@ -36,7 +50,6 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-
   },
   beforeTitle: {
     paddingRight: '20%',
@@ -47,5 +60,20 @@ const styles = theme => ({
     paddingLeft: '20%',
     marginBottom: '4%',
   },
+  workLine: {
+    borderBottom: '5px solid white',
+    color: 'transparent',
+  },
+  introContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  workIntro: {
+    fontSize: '22px',
+    fontWeight: '50',
+    color: 'white',
+ },
 });
 export default withStyles(styles, {})(WorkSection);
