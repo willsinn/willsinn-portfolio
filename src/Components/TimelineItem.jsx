@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
 class TimelineItem extends Component {
-
   render() {
     const { classes }= this.props;
-
 
     return(
       <div className={classes.root}>
@@ -18,6 +16,7 @@ class TimelineItem extends Component {
                 </div>
                 <div className={classes.ladderItemVertLine}>
                   <div className={classes.ladderTitleHorzLine}>TERADATA</div>
+                  <div className={classes.arrowRight}></div>
                 </div>
                 <div className={classes.contentContainer}>
                   <div className={classes.contentTitle}>UX Architect</div>
@@ -85,7 +84,7 @@ const styles = theme => ({
     display: 'block',
     paddingLeft: '5%',
     borderBottom: '4px solid orange',
-    width: '100%',
+    width: '90%',
   },
   titleStyle: {
     paddingTop: '4.5%',
@@ -99,6 +98,15 @@ const styles = theme => ({
   width: '12px',
   position: 'absolute',
   },
+  arrowRight: {
+    width: '0',
+    height: '0',
+    borderTop: '15px solid transparent',
+    borderBottom: '15px solid transparent',
+    borderRight: '15px solid orange',
+    paddingLeft: '3%',
+    marginTop: '5%',
+  },
   contentContainer: {
     alignSelf: 'flex-end',
     display: 'flex',
@@ -107,7 +115,6 @@ const styles = theme => ({
     backgroundColor: 'orange',
     borderRadius: '2px',
     marginBottom: '1%',
-
   },
   contentTitle: {
     fontSize: '18px',
@@ -116,7 +123,6 @@ const styles = theme => ({
   },
   contentDetail: {
     padding: '1%',
-
   },
 });
 export default withStyles(styles, {})(TimelineItem);
