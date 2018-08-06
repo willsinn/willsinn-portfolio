@@ -11,11 +11,14 @@ class ContactSection extends Component {
     const { classes } = this.props;
     return (
             <section className={classes.root}>
+              <div className={classes.titleContainer}>
+                <div className={classes.beforeTitle}>_______________</div>
+                <h1 className={classes.contactTitle}>Thanks!</h1>
+                <div className={classes.afterTitle}>_______________</div>
+              </div>
               <Grid container className={classes.gridWrapper}  spacing={8}>
                 <Grid  item   className={classes.titleWrapper}  xs={12}>
-                    <Paper className={classes.titleThanks}>
-                        Thanks!
-                    </Paper>
+
                     <Paper className={classes.titleQuestion}>
                         Want To chat about something?
                     </Paper>
@@ -72,6 +75,31 @@ const styles = theme => ({
     height: 'auto',
     paddingTop: '10%',
     paddingBottom: '10%',
+  },
+  titleContainer: {
+    paddingTop: '5%',
+    margin: '0',
+    fontSize: '36px',
+    fontWeight: '600',
+    color: 'white',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  beforeTitle: {
+    marginBottom: '3%',
+    marginRight: '15%',
+    borderBottom: '5px solid rgba(0, 0, 0, 0.25)',
+    color: 'transparent',
+  },
+  contactTitle: {
+    textTransform: 'uppercase',
+  },
+  afterTitle: {
+    marginLeft: '15%',
+    marginBottom: '3%',
+    borderBottom: '5px solid rgba(0, 0, 0, 0.25)',
+    color: 'transparent',
   },
   gridWrapper: {
     maxHeight: 120,

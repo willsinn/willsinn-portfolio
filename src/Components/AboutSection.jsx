@@ -16,8 +16,8 @@ class AboutSection extends Component {
             <div className={classes.introName}>
               <div className={classes.nameLineBefore}>
               _______________</div>
-            <h1 className={classes.aboutName}>ABOUT</h1>
-            <h1 className={classes.aboutName}>KYLE</h1>
+            <h1 className={classes.aboutName}>About</h1>
+            <h1 className={classes.aboutName}>Kyle</h1>
               <div className={classes.nameLineAfter}>
               _______________</div>
           </div>
@@ -83,16 +83,21 @@ const styles = theme => ({
 
   },
   nameLineBefore: {
-    paddingRight: '20%',
-    marginBottom: '4%',
+    marginBottom: '3%',
+    marginRight: '15%',
+    borderBottom: '5px solid rgba(0, 0, 0, 0.25)',
+    color: 'transparent',
   },
   aboutName: {
     paddingRight:'1%',
     paddingLeft: '1%',
+    textTransform: 'uppercase',
   },
   nameLineAfter: {
-    paddingLeft: '20%',
-    marginBottom: '4%',
+    marginLeft: '15%',
+    marginBottom: '3%',
+    borderBottom: '5px solid rgba(0, 0, 0, 0.25)',
+    color: 'transparent',
   },
   introDescribe: {
     padding: '0',
@@ -113,7 +118,7 @@ const styles = theme => ({
   },
   aboutLine: {
     borderBottom: '5px solid white',
-    color: 'gray',
+    color: 'transparent',
   },
   aboutContent: {
     display: 'flex',
