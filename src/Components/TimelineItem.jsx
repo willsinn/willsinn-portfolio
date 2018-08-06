@@ -11,7 +11,7 @@ class TimelineItem extends Component {
           <ul className={classes.contentList}>
             <li className={classes.listItem}>
               <div className={classes.ladderItemWrapper}>
-                <div className={classes.titleStyle}>
+                <div className={classes.bulletWrapper}>
                   <div className={classes.titleBullet}></div>
                 </div>
                 <div className={classes.ladderItemVertLine}>
@@ -26,7 +26,7 @@ class TimelineItem extends Component {
             </li>
             <li className={classes.listItem}>
               <div className={classes.ladderItemWrapper}>
-                <div className={classes.titleStyle}>
+                <div className={classes.bulletWrapper}>
                   <div className={classes.titleBullet}></div>
                 </div>
                 <div className={classes.ladderItemVertLine}>
@@ -41,7 +41,7 @@ class TimelineItem extends Component {
             </li>
             <li className={classes.listItem}>
               <div className={classes.ladderItemWrapper}>
-                <div className={classes.titleStyle}>
+                <div className={classes.bulletWrapper}>
                   <div className={classes.titleBullet}></div>
                 </div>
                 <div className={classes.ladderItemVertLine}>
@@ -56,7 +56,7 @@ class TimelineItem extends Component {
             </li>
             <li className={classes.listItem}>
               <div className={classes.ladderItemWrapper}>
-                <div className={classes.titleStyle}>
+                <div className={classes.bulletWrapper}>
                   <div className={classes.titleBullet}></div>
                 </div>
                 <div className={classes.ladderItemVertLine}>
@@ -71,7 +71,7 @@ class TimelineItem extends Component {
             </li>
             <li className={classes.listItem}>
               <div className={classes.ladderItemWrapper}>
-                <div className={classes.titleStyle}>
+                <div className={classes.bulletWrapper}>
                   <div className={classes.titleBullet}></div>
                 </div>
                 <div className={classes.ladderItemVertLine}>
@@ -121,8 +121,8 @@ const styles = theme => ({
     fontWeight: '600',
     fontSize: '16px',
   },
-  titleStyle: {
-    paddingTop: '4.5%',
+  bulletWrapper: {
+    paddingTop: '5.25%',
   },
   titleBullet: {
   backgroundColor: '#ebbc60',
@@ -147,8 +147,9 @@ const styles = theme => ({
     flexDirection: 'column',
     width: '70%',
     backgroundColor: 'rgba(255, 255, 255, 0.6)',
-    borderRadius: '2px',
+    borderRadius: '6px',
     marginBottom: '1.5%',
+    padding: '1%',
   },
   contentTitle: {
     fontSize: '18px',
