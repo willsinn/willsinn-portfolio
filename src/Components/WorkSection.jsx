@@ -13,7 +13,7 @@ class WorkSection extends Component {
           <div className={classes.workBackground}>
             <div className={classes.titleContainer}>
               <div className={classes.beforeTitle}>_______________</div>
-              <h1 className={classes.workTitle}>WORK</h1>
+              <h1 className={classes.workTitle}>Work</h1>
               <div className={classes.afterTitle}>_______________</div>
             </div>
             <div className={classes.introContainer}>
@@ -49,13 +49,19 @@ const styles = theme => ({
     justifyContent: 'center',
   },
   beforeTitle: {
-    paddingRight: '20%',
-    marginBottom: '4%',
+    marginBottom: '3%',
+    marginRight: '15%',
+    borderBottom: '5px solid rgba(0, 0, 0, 0.25)',
+    color: 'transparent',
   },
-  workTitle: {},
+  workTitle: {
+    textTransform: 'uppercase',
+  },
   afterTitle: {
-    paddingLeft: '20%',
-    marginBottom: '4%',
+    marginLeft: '15%',
+    marginBottom: '3%',
+    borderBottom: '5px solid rgba(0, 0, 0, 0.25)',
+    color: 'transparent',
   },
   workLine: {
     borderBottom: '5px solid white',

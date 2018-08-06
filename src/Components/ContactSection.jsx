@@ -65,10 +65,11 @@ class ContactSection extends Component {
 }
 const styles = theme => ({
   root: {
-    backgroundColor: 'gray',
+    backgroundColor: '#39373a',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    height: 'auto',
     paddingTop: '10%',
     paddingBottom: '10%',
   },
