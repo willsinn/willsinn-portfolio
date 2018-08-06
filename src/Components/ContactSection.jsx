@@ -11,18 +11,25 @@ class ContactSection extends Component {
     const { classes } = this.props;
     return (
             <section className={classes.root}>
+
               <div className={classes.titleContainer}>
                 <div className={classes.beforeTitle}>_______________</div>
-                <h1 className={classes.contactTitle}>Thanks!</h1>
+
+
+                <h1>
+                  <div className={classes.contactTextWrapper}>
+                  <div className={classes.contactTitle}>
+                    Thanks!
+                  </div>
+                                <div className={classes.contactQuestion}>Want To chat about something?</div>
+                                </div>
+                </h1>
+
+
                 <div className={classes.afterTitle}>_______________</div>
               </div>
-              <Grid container className={classes.gridWrapper}  spacing={8}>
-                <Grid  item   className={classes.titleWrapper}  xs={12}>
 
-                    <Paper className={classes.titleQuestion}>
-                        Want To chat about something?
-                    </Paper>
-                </Grid>
+              <Grid container className={classes.gridWrapper}  spacing={8}>
                 <Grid item className={classes.contactWrapper}  xs={12}>
                   <ContactFormDrawer
                     className={classes.contactButton}
@@ -79,7 +86,7 @@ const styles = theme => ({
   titleContainer: {
     paddingTop: '5%',
     margin: '0',
-    fontSize: '36px',
+    fontSize: '40px',
     fontWeight: '600',
     color: 'white',
     display: 'flex',
@@ -92,8 +99,19 @@ const styles = theme => ({
     borderBottom: '5px solid rgba(0, 0, 0, 0.25)',
     color: 'transparent',
   },
+  contactTextWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+  },
   contactTitle: {
     textTransform: 'uppercase',
+  },
+  contactQuestion: {
+    fontSize: '16px',
+    fontWeight: '50',
+    color: 'white',
+    textTransform: 'none',
   },
   afterTitle: {
     marginLeft: '15%',
@@ -111,11 +129,7 @@ const styles = theme => ({
     fontSize: 'large',
     textAlign: 'center',
   },
-  titleQuestion: {
-    fontSize: 'small',
-    textAlign: 'center',
 
-  },
   contactWrapper: {
     display: 'flex',
     justifyContent: 'center',
