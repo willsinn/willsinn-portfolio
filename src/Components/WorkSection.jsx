@@ -22,9 +22,9 @@ class WorkSection extends Component {
               </div>
               <div className={classes.workLine}>_______________________________________</div>
             </div>
-          <TimelineList
-          />
-        </div>
+            <TimelineList
+            />
+          </div>
         </section>
     );
   }
@@ -32,14 +32,11 @@ class WorkSection extends Component {
 const styles = theme => ({
   root: {
     width: '100%',
-    backgroundColor: 'orange',
+    paddingBottom: '6%',
   },
   workBackground: {
     backgroundImage: `url(${ WorkSectionImage })`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    width: '100%',
-    height: '100%',
+    backgroundSize: 'auto',
   },
   titleContainer: {
     paddingTop: '5%',
