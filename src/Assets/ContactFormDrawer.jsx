@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { SwipeableDrawer, TextField } from '@material-ui/core';
+import ContactButton from './ContactButton';
 import Email from '../Icons/Email.png';
 
 class ContactFormDrawer extends Component {
@@ -46,19 +47,10 @@ class ContactFormDrawer extends Component {
 
     return (
       <div className={classes.root}>
-        <button
-         className={classes.contactButton}
-         onClick={this.toggleDrawer('right', true)}
-        >
-          <div className={classes.contactButton}>
-            <div className={classes.buttonWrapper}>
-            <img className={classes.buttonIcon} src={Email} />
-            <div className={classes.buttonName}>
-              Contact Me
-            </div>
-            </div>
-          </div>
-        </button>
+        <ContactButton
+          onClick={this.toggleDrawer('right', true)}
+
+          />
         <SwipeableDrawer
           className={classes.formDrawerContainer}
           anchor='right'
@@ -81,26 +73,6 @@ const styles = theme => ({
   root:  {
     display: 'flex',
     flexDirection: 'column',
-    width: '15%',
-  },
-  contactButton: {
-    backgroundColor: 'transparent',
-    borderRadius: '6px',
-  },
-  buttonWrapper: {
-    display: 'flex',
-    padding: '5%',
-    justifyContent: 'center',
-  },
-  buttonIcon: {
-    height: '18px',
-    width: '18px',
-    paddingRight: '1%',
-  },
-  buttonName: {
-    fontSize: '17px',
-    color: 'white',
-    textTransform: 'uppercase',
   },
   formDrawerContainer: {
   },
