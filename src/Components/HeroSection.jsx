@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import HeroImage from '../Images/HeroImage.jpg';
 import ContactDrawerButton from '../Assets/ContactDrawerButton';
+import Github from '../Icons/Github.png';
+import Instagram from '../Icons/Instagram.png';
+import Facebook from '../Icons/Facebook.png';
+import Email from '../Icons/Email.png';
 
 class HeroSection extends Component {
   render() {
@@ -11,12 +15,24 @@ class HeroSection extends Component {
         <section className={classes.root}>
           <div className={classes.heroImage}>
             <div className={classes.heroContent}>
-              <div className={classes.heroTitleContainer}>
                 <div className={classes.titleText1}>User Experience & User Interface</div>
                 <div className={classes.titleText2}>Front End Developer</div>
-              </div>
               <div className={classes.heroLine}>_______________________________________</div>
               <ContactDrawerButton/>
+              <div className={classes.socialContainer}>
+                <div className={classes.socialIcon}>
+                  <img className={classes.socialLink} src={Facebook}/>
+                </div>
+                <div className={classes.socialIcon}>
+                  <img className={classes.socialLink} src={Github} />
+                </div>
+                <div className={classes.socialIcon}>
+                  <img className={classes.socialLink} src={Email} />
+                </div>
+                <div className={classes.socialIcon}>
+                  <img className={classes.socialLink} src={Instagram} />
+                </div>
+              </div>
             </div>
           </div>
 
@@ -40,16 +56,38 @@ const styles = theme => ({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    minHeight: '50%',
+    paddingTop: '15%',
   },
-  heroTitleContainer: {
-    flex: 'none',
-    maxWidth: '50%',
+  titleText1: {
+    fontSize: '48px',
+    fontWeight: '50',
+    color: 'white',
+    textTransform: 'uppercase',
   },
-  titleText1: {},
-  titleText2: {},
-  heroLine: {},
-
+  titleText2: {
+    fontSize: '60px',
+    fontWeight: '300',
+    color: 'white',
+    textTransform: 'uppercase',
+  },
+  heroLine: {
+    color: 'transparent',
+    borderBottom: '5px solid white',
+    marginBottom: '3%',
+  },
+  socialContainer: {
+    width: '25%',
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    paddingTop: '3%',
+  },
+  socialIcon: {
+  },
+  socialLink: {
+    height: '52px',
+    width: '52px',
+  },
 });
 
 export default withStyles(styles, {})(HeroSection);
