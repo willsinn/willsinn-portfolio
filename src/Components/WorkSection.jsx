@@ -32,7 +32,7 @@ class WorkSection extends Component {
 const styles = theme => ({
   root: {
     width: '100%',
-    paddingBottom: '6%',
+    height: 'auto',
   },
   workBackground: {
     backgroundImage: `url(${ WorkSectionImage })`,

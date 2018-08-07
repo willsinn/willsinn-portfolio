@@ -22,8 +22,8 @@ class ContactSection extends Component {
                 </h1>
                 <div className={classes.afterTitle}>_______________</div>
               </div>
-                <ContactFormDrawer
-                />
+              <ContactFormDrawer
+              />
               <Grid container className={classes.gridWrapper}  spacing={8}>
                 <Grid item xs={3} className={classes.socialWrapper}>
                   <Paper className={classes.socialBackground}>
