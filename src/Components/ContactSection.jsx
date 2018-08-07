@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Grid, Paper, SwipeableDrawer } from '@material-ui/core';
 import ContactFormDrawer from '../Assets/ContactFormDrawer';
-import Git from '../Icons/Git.png';
+import Github from '../Icons/Github.png';
 import Instagram from '../Icons/Instagram.png';
 import Facebook from '../Icons/Facebook.png';
+import Email from '../Icons/Email.png';
 
 class ContactSection extends Component {
   render() {
@@ -24,41 +25,26 @@ class ContactSection extends Component {
               </div>
               <ContactFormDrawer
               />
-              <Grid container className={classes.gridWrapper}  spacing={8}>
-                <Grid item xs={3} className={classes.socialWrapper}>
-                  <Paper className={classes.socialBackground}>
-                    <img className={classes.socialLink}
-                        src={Facebook}
-                    />
-                  </Paper>
-                </Grid>
-                <Grid item xs={3} className={classes.socialWrapper}>
-                  <Paper className={classes.socialBackground}>
-                    <img className={classes.socialLink}
-                        src={Git}
-                    />
-                  </Paper>
-                </Grid>
-                <Grid item xs={3} className={classes.socialWrapper}>
-                  <Paper className={classes.socialBackground}>
-                    <i className={classes.socialLink} class="material-icons">
-                        email
-                    </i>
-                  </Paper>
-                </Grid>
-                <Grid item xs={3} className={classes.socialWrapper}>
-                  <Paper className={classes.socialBackground}>
-                    <img className={classes.socialLink}
-                      src={Instagram}
-                    />
-                  </Paper>
-                </Grid>
-                <Grid item xs={12} className={classes.creationWrapper} >
-                  <Paper className={classes.creationText}>
+            <div className={classes.socialContainer}>
+              <div className={classes.socialIcon}>
+                  <img className={classes.socialLink} src={Facebook} />
+              </div>
+                <div className={classes.socialIcon}>
+                  <img className={classes.socialLink} src={Github} />
+
+              </div>
+                <div className={classes.socialIcon}>
+                  <img className={classes.socialLink} src={Email} />
+                </div>
+                <div className={classes.socialIcon}>
+                  <img className={classes.socialLink} src={Instagram} />
+                </div>
+              </div>
+                <div className={classes.creationWrapper} >
+                  <div className={classes.creationText}>
                     Created with ReactJS, MaterialUI
-                  </Paper>
-                </Grid>
-              </Grid>
+                  </div>
+                </div>
             </section>
     );
   }
@@ -75,7 +61,6 @@ const styles = theme => ({
   },
   titleContainer: {
     paddingTop: '5%',
-    margin: '0',
     fontSize: '40px',
     fontWeight: '600',
     color: 'white',
@@ -92,7 +77,6 @@ const styles = theme => ({
   contactTextWrapper: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-around',
   },
   contactTitle: {
     textTransform: 'uppercase',
@@ -109,40 +93,14 @@ const styles = theme => ({
     borderBottom: '5px solid rgba(0, 0, 0, 0.25)',
     color: 'transparent',
   },
-  gridWrapper: {
-    maxHeight: 120,
-    maxWidth: 250,
-  },
-  titleWrapper: {
-  },
-  titleThanks: {
-    fontSize: 'large',
-    textAlign: 'center',
-  },
-
-  contactButton: {
+  socialContainer: {
     display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
-  socialWrapper: {
-    display: 'flex',
-    justifyContent: 'space-around',
-  },
-  socialBackground: {
-    height: '38px',
-    width: '38px',
-    backgroundColor: 'white',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: '18px',
+  socialIcon: {
   },
   socialLink: {
-    height: '24px',
-    width: '24px',
-    padding: '0',
-    margin: '0',
+    height: '36px',
+    width: '36px',
   },
   creationWrapper: {
     display: 'flex',
