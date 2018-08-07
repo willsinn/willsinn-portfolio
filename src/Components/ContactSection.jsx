@@ -14,27 +14,17 @@ class ContactSection extends Component {
 
               <div className={classes.titleContainer}>
                 <div className={classes.beforeTitle}>_______________</div>
-
-
                 <h1>
                   <div className={classes.contactTextWrapper}>
-                  <div className={classes.contactTitle}>
-                    Thanks!
+                    <div className={classes.contactTitle}>Thanks!</div>
+                    <div className={classes.contactQuestion}>Want to chat about something?</div>
                   </div>
-                                <div className={classes.contactQuestion}>Want To chat about something?</div>
-                                </div>
                 </h1>
-
-
                 <div className={classes.afterTitle}>_______________</div>
               </div>
-
+                <ContactFormDrawer
+                />
               <Grid container className={classes.gridWrapper}  spacing={8}>
-                <Grid item className={classes.contactWrapper}  xs={12}>
-                  <ContactFormDrawer
-                    className={classes.contactButton}
-                  />
-                </Grid>
                 <Grid item xs={3} className={classes.socialWrapper}>
                   <Paper className={classes.socialBackground}>
                     <img className={classes.socialLink}
@@ -130,11 +120,6 @@ const styles = theme => ({
     textAlign: 'center',
   },
 
-  contactWrapper: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   contactButton: {
     display: 'flex',
     justifyContent: 'center',
