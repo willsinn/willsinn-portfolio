@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Grid, Paper, SwipeableDrawer } from '@material-ui/core';
 import ContactFormDrawer from '../Assets/ContactFormDrawer';
 import Github from '../Icons/Github.png';
 import Instagram from '../Icons/Instagram.png';
@@ -23,8 +22,10 @@ class ContactSection extends Component {
                 </h1>
                 <div className={classes.afterTitle}>_______________</div>
               </div>
+              <div>
               <ContactFormDrawer
               />
+              </div>
             <div className={classes.socialContainer}>
               <div className={classes.socialIcon}>
                   <img className={classes.socialLink} src={Facebook} />
@@ -56,8 +57,6 @@ const styles = theme => ({
     flexDirection: 'column',
     alignItems: 'center',
     height: 'auto',
-    paddingTop: '10%',
-    paddingBottom: '10%',
   },
   titleContainer: {
     paddingTop: '5%',
@@ -94,9 +93,14 @@ const styles = theme => ({
     color: 'transparent',
   },
   socialContainer: {
+    width: '15%',
     display: 'flex',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+
   },
   socialIcon: {
+
   },
   socialLink: {
     height: '36px',
@@ -106,8 +110,7 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '0',
-    margin: '0',
+
   },
   creationText: {
   },
