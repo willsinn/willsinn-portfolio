@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { SwipeableDrawer, TextField } from '@material-ui/core';
+import { SwipeableDrawer } from '@material-ui/core';
+import Email from '../Icons/Email.png';
 import ContactDrawerForm from './ContactDrawerForm';
 
 class ContactDrawerButton extends Component {
@@ -14,34 +15,8 @@ class ContactDrawerButton extends Component {
   };
     render() {
     const { classes } = this.props;
-    const sideForm = (
-      <div className={classes.formContainer}>
-        <form onSubmit="onSubmit">
-          <ul className={classes.inputListWrapper}>
-            <li> What should I call you?* </li>
-            <li>
-              <input type="text" name="firstName" />
-              <input type="text"  name="lastName" />
-            </li>
-            <li>First Last</li>
-            <li>Email</li>
-            <li>
-              <input type="email" name="user_email" />
-            </li>
-            <li>Phone</li>
-            <li>
-              1-<input className={classes.phoneInput} type="text" name="phone" pattern="[0-9]{3}" title="areaCode" min="3" max="3"  />
-              -<input className={classes.phoneInput} type="text" name="phone" pattern="[0-9]{3}" title="firstThreeDigits" min="3" max="3" />
-              -<input className={classes.phoneInput} type="text" name="phone" pattern="[0-9]{4}" title="lastFourDigits" min="4" max="4"/>
-            </li>
-            <li>
-              <textarea name="message" rows="10" cols="120">
-              </textarea>
-            </li>
-            <input type="Submit" value="submit" />
-          </ul>
-        </form>
-      </div>
+    const drawerForm = (
+      <ContactDrawerForm/>
     );
 
     return (
@@ -60,7 +35,7 @@ class ContactDrawerButton extends Component {
           </div>
         </button>
         <SwipeableDrawer
-          className={classes.formDrawerContainer}
+          className={classes.toggleDrawerStyle}
           anchor='right'
           open={this.state.right}
           onClose={this.toggleDrawer('right', false)}
@@ -71,7 +46,7 @@ class ContactDrawerButton extends Component {
            onClick={this.toggleDrawer('right', false)}>
            Close
          </button>
-         {sideForm}
+         {drawerForm}
        </SwipeableDrawer>
       </div>
     );
@@ -102,20 +77,8 @@ const styles = theme => ({
     color: 'white',
     textTransform: 'uppercase',
   },
-  formDrawerContainer: {
-  },
-  sideFormContainer: {
-  },
-  formContainer: {
-    backgroundColor:'gray',
-    width: '20%',
-  },
-  inputListWrapper: {
-    listStyle: 'none',
-    padding: '1px',
-  },
-  phoneInput: {
-    width: '30px',
-  },
+  toggleDrawerStyle: {
+    },
+  closeDrawerButton: {},
 });
 export default withStyles(styles, { })(ContactDrawerButton);
