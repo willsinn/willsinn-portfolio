@@ -10,9 +10,16 @@ class HeroSection extends Component {
     return (
         <section className={classes.root}>
           <div className={classes.heroImage}>
-            <ContactDrawerButton className={classes.contactButton}
-            />
+            <div className={classes.heroContent}>
+              <div className={classes.heroTitleContainer}>
+                <div className={classes.titleText1}>User Experience & User Interface</div>
+                <div className={classes.titleText2}>Front End Developer</div>
+              </div>
+              <div className={classes.heroLine}>_______________________________________</div>
+              <ContactDrawerButton/>
+            </div>
           </div>
+
         </section>
     );
   }
@@ -28,8 +35,20 @@ const styles = theme => ({
     width: '100%',
     height: '100%',
   },
-  contactButton: {
+  heroContent: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: '50%',
   },
+  heroTitleContainer: {
+    flex: 'none',
+    maxWidth: '50%',
+  },
+  titleText1: {},
+  titleText2: {},
+  heroLine: {},
 
 });
 
