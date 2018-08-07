@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import ContactFormDrawer from '../Assets/ContactFormDrawer';
+import ContactDrawerButton from '../Assets/ContactDrawerButton';
 import Github from '../Icons/Github.png';
 import Instagram from '../Icons/Instagram.png';
 import Facebook from '../Icons/Facebook.png';
@@ -22,7 +22,7 @@ class ContactSection extends Component {
                 </h1>
                 <div className={classes.afterTitle}>_______________</div>
               </div>
-              <ContactFormDrawer
+              <ContactDrawerButton
               />
               <div className={classes.socialContainer}>
                 <div className={classes.socialIcon}>

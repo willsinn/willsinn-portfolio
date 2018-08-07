@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import HeroImage from '../Images/HeroImage.jpg';
-import ContactFormDrawer from '../Assets/ContactFormDrawer';
+import ContactDrawerButton from '../Assets/ContactDrawerButton';
 
 class HeroSection extends Component {
   render() {
@@ -10,7 +10,7 @@ class HeroSection extends Component {
     return (
         <section className={classes.root}>
           <div className={classes.heroImage}>
-            <ContactFormDrawer className={classes.contactButton}
+            <ContactDrawerButton className={classes.contactButton}
             />
           </div>
         </section>
