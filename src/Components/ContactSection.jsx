@@ -41,11 +41,9 @@ class ContactSection extends Component {
                   <img className={classes.socialLink} src={Instagram} />
                 </div>
               </div>
-                <div className={classes.creationWrapper} >
                   <div className={classes.creationText}>
-                    Created with ReactJS, MaterialUI
+                    Made in ATX & © Kyle Ledbetter
                   </div>
-                </div>
             </section>
     );
   }
@@ -57,10 +55,12 @@ const styles = theme => ({
     flexDirection: 'column',
     alignItems: 'center',
     height: 'auto',
+    paddingTop: '5%',
+    paddingBottom: '10%',
   },
   titleContainer: {
-    paddingTop: '5%',
-    fontSize: '40px',
+    paddingTop: '3.25%',
+    fontSize: '38px',
     fontWeight: '600',
     color: 'white',
     display: 'flex',
@@ -97,22 +97,19 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'space-evenly',
     alignItems: 'center',
-
+    paddingTop: '1.5%',
+    paddingBottom: '1.5%',
   },
   socialIcon: {
-
   },
   socialLink: {
     height: '36px',
     width: '36px',
   },
-  creationWrapper: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-
-  },
   creationText: {
+    color: 'white',
+    fontSize: '13px',
+    fontWeight: '50',
   },
 });
 export default withStyles(styles, { })(ContactSection);
