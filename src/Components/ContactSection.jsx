@@ -9,31 +9,28 @@ import Email from '../Icons/Email.png';
 class ContactSection extends Component {
   render() {
     const { classes } = this.props;
+
     return (
             <section className={classes.root}>
-
               <div className={classes.titleContainer}>
                 <div className={classes.beforeTitle}>_______________</div>
                 <h1>
-                  <div className={classes.contactTextWrapper}>
+                  <div className={classes.contactTitleWrapper}>
                     <div className={classes.contactTitle}>Thanks!</div>
                     <div className={classes.contactQuestion}>Want to chat about something?</div>
                   </div>
                 </h1>
                 <div className={classes.afterTitle}>_______________</div>
               </div>
-              <div>
               <ContactFormDrawer
               />
-              </div>
-            <div className={classes.socialContainer}>
-              <div className={classes.socialIcon}>
-                  <img className={classes.socialLink} src={Facebook} />
-              </div>
+              <div className={classes.socialContainer}>
+                <div className={classes.socialIcon}>
+                  <img className={classes.socialLink} src={Facebook}/>
+                </div>
                 <div className={classes.socialIcon}>
                   <img className={classes.socialLink} src={Github} />
-
-              </div>
+                </div>
                 <div className={classes.socialIcon}>
                   <img className={classes.socialLink} src={Email} />
                 </div>
@@ -41,9 +38,7 @@ class ContactSection extends Component {
                   <img className={classes.socialLink} src={Instagram} />
                 </div>
               </div>
-                  <div className={classes.creationText}>
-                    Made in ATX & © Kyle Ledbetter
-                  </div>
+              <div className={classes.creationText}>Made in ATX & © Kyle Ledbetter</div>
             </section>
     );
   }
@@ -73,7 +68,7 @@ const styles = theme => ({
     borderBottom: '5px solid rgba(0, 0, 0, 0.25)',
     color: 'transparent',
   },
-  contactTextWrapper: {
+  contactTitleWrapper: {
     display: 'flex',
     flexDirection: 'column',
   },
