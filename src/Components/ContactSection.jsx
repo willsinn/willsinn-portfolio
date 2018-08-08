@@ -62,7 +62,7 @@ const styles = theme => ({
     justifyContent: 'center',
   },
   beforeTitle: {
-    marginBottom: '3%',
+    marginBottom: '2.5%',
     marginRight: '15%',
     borderBottom: '5px solid rgba(0, 0, 0, 0.25)',
     color: 'transparent',
@@ -82,7 +82,7 @@ const styles = theme => ({
   },
   afterTitle: {
     marginLeft: '15%',
-    marginBottom: '3%',
+    marginBottom: '2.5%',
     borderBottom: '5px solid rgba(0, 0, 0, 0.25)',
     color: 'transparent',
   },

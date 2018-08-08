@@ -13,15 +13,18 @@ class SkillsSection extends Component {
           <div className={classes.titleWrapper}>
             <div className={classes.titleContainer}>
               <div className={classes.beforeTitle}>_______________</div>
-              <h1 className={classes.skillsTitle}>Work</h1>
+              <h1 className={classes.skillsTitle}>Skills</h1>
               <div className={classes.afterTitle}>_______________</div>
             </div>
           </div>
+          <div className={classes.contentWrapper}>
             <div className={classes.contentContainer}>
               <div className={classes.contentText}>Jack of all UX trades, master of a growing list. My passion lies in crafting an emersive UX through beautiful UI & interactions. My current toolset is coding these UIs in Sublime Text, Bootstrap, jQuery, Highcharts and D3.js, but:</div>
-              <div className={classes.contentTextDesigned}>Any good designer can design in ANY medium just likeany good developer can program in ANY language.</div>
+              <div className={classes.styledContainer}>
+                <div className={classes.contentStyledText}>Any good designer can design in ANY medium just like any good developer can program in ANY language.</div>
+              </div>
             </div>
-
+          </div>
           <SkillsCharts />
         </section>
     );
@@ -49,7 +52,7 @@ const styles = theme => ({
     justifyContent: 'center',
   },
   beforeTitle: {
-    marginBottom: '3%',
+    marginBottom: '2.5%',
     marginRight: '15%',
     borderBottom: '5px solid rgba(0, 0, 0, 0.25)',
     color: 'transparent',
@@ -60,16 +63,41 @@ const styles = theme => ({
   },
   afterTitle: {
     marginLeft: '15%',
-    marginBottom: '3%',
+    marginBottom: '2.5%',
     borderBottom: '5px solid rgba(0, 0, 0, 0.25)',
     color: 'transparent',
   },
   titleText: {
     fontSize: '18px',
   },
-  contentContainer: {
+  contentWrapper: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
   },
-  contentText: {},
-  contentTextDesigned: {},
+  contentContainer: {
+    width: '80%',
+    paddingBottom: '5%',
+    textAlign: 'center',
+  },
+  contentText: {
+    paddingBottom: '1.5%',
+    fontSize: '18px',
+    color: 'white',
+  },
+  styledContainer: {
+    padding: '1.5%',
+    border: '1px solid #53867b',
+    backgroundColor: '#609c90',
+    borderRadius: '4px',
+    borderStyle: 'inset',
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  contentStyledText: {
+    width: '40%',
+    fontSize: '18px',
+    color: 'white',
+  },
 });
 export default withStyles(styles, {})(SkillsSection);

@@ -73,7 +73,7 @@ const styles = theme => ({
   heroLine: {
     color: 'transparent',
     borderBottom: '5px solid white',
-    marginBottom: '3%',
+    marginBottom: '2.5%',
   },
   socialContainer: {
     width: '25%',
