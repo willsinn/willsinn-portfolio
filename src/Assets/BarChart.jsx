@@ -15,7 +15,7 @@ class BarChart extends Component {
           <div className={classes.barChart}>
 
             <div className={classes.barWrapper}>
-              <div className={classes.firstBarContainer}>
+              <div className={classes.topBorderRadiusBar}>
                 <div className={classes.skillTitle}>
                   responsive design
                 </div>
@@ -75,7 +75,7 @@ class BarChart extends Component {
               </div>
             </div>
             <div className={classes.barWrapper}>
-              <div className={classes.lastBarContainer}>
+              <div className={classes.bottomBorderRadiusBar}>
                 <div className={classes.skillTitle}>
                   information arcitecture
                 </div>
@@ -113,12 +113,12 @@ const styles = theme => ({
   barWrapper:{
     display: 'flex',
   },
-  firstBarContainer: {
+  topBorderRadiusBar: {
     padding: '2.25%',
     border: '1px solid #53867b',
     borderRadius: '6px 6px 0 0',
   },
-  lastBarContainer: {
+  bottomBorderRadiusBar: {
     padding: '2.25%',
     border: '1px solid #53867b',
     borderRadius: '0 0 6px 6px ',
