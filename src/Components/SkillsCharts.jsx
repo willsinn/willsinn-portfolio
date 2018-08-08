@@ -9,8 +9,10 @@ class SkillsCharts extends Component {
     return (
 
         <section className={classes.root}>
-              <SkillsPieChart />
-              <BarChart />
+              <SkillsPieChart
+                className={classes.pieChart} />
+              <BarChart
+                className={classes.barChart} />
         </section>
     );
   }
@@ -19,7 +21,13 @@ const styles = theme => ({
   root: {
     display: 'flex',
     backgroundColor: '#7fb0a6',
-
+    width: '100%',
+  },
+  pieChart: {
+    width: '65%',
+  },
+  barChart: {
+    width: '35%',
   },
 
 });

@@ -89,7 +89,7 @@ const styles = theme => ({
     width: '100%',
   },
   barChart: {
-    width: '52.5%',
+    width: '35%',
     display: 'flex',
     flexDirection: 'column',
   },

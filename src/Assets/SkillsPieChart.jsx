@@ -100,27 +100,24 @@ const { value, percent, x, y, midAngle } = props;
     return(
         <ResponsiveContainer className={classes.root}>
         <PieChart className={classes.pieChartContainer} onMouseOver= {this.handlePieChartOver}>
-          <Pie
+          <Pie className={classes.innerPie}
            data={web}
            dataKey="value"
            nameKey="name"
            cx="50%"
            cy="50%"
-           outerRadius="40%"
-           fill="red"
-           activeIndex={this.state.activeIndex}
-           activeShape={renderActiveShape}
-           onMouseOver={this.onPieOver}
-           isAnimationActive={false}
+           outerRadius="60%"
+           fill="blue"
+           label={web.name}
            />
-          <Pie
+         <Pie className={classes.outerPie}
           data={focus}
           dataKey="value"
           nameKey="name"
           cx="50%"
           cy="50%"
-          innerRadius="40%"
-          outerRadius="50%"
+          innerRadius="60%"
+          outerRadius="75%"
           fill="red"
           activeIndex={this.state.activeIndex}
           activeShape={renderActiveShape}
@@ -128,7 +125,7 @@ const { value, percent, x, y, midAngle } = props;
           isAnimationActive={false}
           >
           {
-            web.map((skill, index) => (
+            web.map((name, index) => (
           <Cell key={`slice-${index}`} fill={colors[index % 10]}/>
            ))
           }
@@ -145,5 +142,10 @@ const styles = theme => ({
   pieChartContainer: {
     width: '50%',
   },
+  innerPie: {
+    color: 'white',
+  },
+  outerPie: {},
+
 });
 export default withStyles(styles, {})(SkillsPieChart);
