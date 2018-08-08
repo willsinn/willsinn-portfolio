@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SkillsPieChart from '../Assets/SkillsPieChart';
-import LinearDeterminate from '../Assets/LinearDeterminate';
+import BarChart from '../Assets/BarChart';
 import { withStyles } from '@material-ui/core/styles';
 
 class SkillsCharts extends Component {
@@ -10,7 +10,7 @@ class SkillsCharts extends Component {
 
         <section className={classes.root}>
               <SkillsPieChart />
-              <LinearDeterminate />
+              <BarChart />
         </section>
     );
   }
@@ -19,7 +19,7 @@ const styles = theme => ({
   root: {
     display: 'flex',
     backgroundColor: '#7fb0a6',
-    
+
   },
 
 });

@@ -84,6 +84,8 @@ const styles = theme => ({
     paddingBottom: '1.5%',
     fontSize: '18px',
     color: 'white',
+    fontWeight: '50',
+    
   },
   styledContainer: {
     padding: '1.5%',
@@ -98,6 +100,7 @@ const styles = theme => ({
     width: '40%',
     fontSize: '18px',
     color: 'white',
+    fontWeight: '50',
   },
 });
 export default withStyles(styles, {})(SkillsSection);
