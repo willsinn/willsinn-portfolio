@@ -35,7 +35,6 @@ class HeroSection extends Component {
               </div>
             </div>
           </div>
-
         </section>
     );
   }
