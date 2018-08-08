@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
-import PortfolioStyles from '../Styles/PortfolioStyles.css';
+import { withStyles } from '@material-ui/core/styles';
+
 
 class PortfolioSection extends Component {
   render() {
+    const { classes } = this.props;
     return (
-        <section className="portfolio-page">
+
+        <section className={classes.root}>
           Portfolio Page
         </section>
     );
   }
 }
-export default PortfolioSection;
+const styles = theme => ({
+  root: {
+  },
+});
+export default withStyles(styles, {})(PortfolioSection);

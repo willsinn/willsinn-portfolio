@@ -49,7 +49,7 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    height: 'auto',
+    height: 'inherit',
     paddingTop: '5%',
     paddingBottom: '10%',
   },
