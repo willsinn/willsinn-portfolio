@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SkillsPieChart from '../Assets/SkillsPieChart';
 import LinearDeterminate from '../Assets/LinearDeterminate';
 import { withStyles } from '@material-ui/core/styles';
+import SkillsCharts from './SkillsCharts';
 
 class SkillsSection extends Component {
   render() {
@@ -9,22 +10,19 @@ class SkillsSection extends Component {
     return (
 
         <section className={classes.root}>
-          <div className={classes.contentContainer}>
+          <div className={classes.titleWrapper}>
             <div className={classes.titleContainer}>
               <div className={classes.beforeTitle}>_______________</div>
               <h1 className={classes.skillsTitle}>Work</h1>
               <div className={classes.afterTitle}>_______________</div>
             </div>
           </div>
-              <SkillsPieChart className={classes.pieChart} />
-              <div className={classes.pieChart}>
-                aksdlhfhweiuhriqowlberqiuewhrlqhweriquwheruqhwerihqwuehrqwehriqwuehr
-                aksdlhfhweiuhriqowlberqiuewhrlqhweriquwheruqhwerihqwuehrqwehriqwuehr
-                aksdlhfhweiuhriqowlberqiuewhrlqhweriquwheruqhwerihqwuehrqwehriqwuehr
-                aksdlhfhweiuhriqowlberqiuewhrlqhweriquwheruqhwerihqwuehrqwehriqwuehr
-                aksdlhfhweiuhriqowlberqiuewhrlqhweriquwheruqhwerihqwuehrqwehriqwuehr
-                aksdlhfhweiuhriqowlberqiuewhrlqhweriquwheruqhwerihqwuehrqwehriqwuehr
-              </div>
+            <div className={classes.contentContainer}>
+              <div className={classes.contentText}>Jack of all UX trades, master of a growing list. My passion lies in crafting an emersive UX through beautiful UI & interactions. My current toolset is coding these UIs in Sublime Text, Bootstrap, jQuery, Highcharts and D3.js, but:</div>
+              <div className={classes.contentTextDesigned}>Any good designer can design in ANY medium just likeany good developer can program in ANY language.</div>
+            </div>
+
+          <SkillsCharts />
         </section>
     );
   }
@@ -35,7 +33,7 @@ const styles = theme => ({
     backgroundColor: '#7fb0a6',
     paddingBottom: '20%',
   },
-  contentContainer: {
+  titleWrapper: {
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
@@ -58,6 +56,7 @@ const styles = theme => ({
   },
   skillsTitle: {
     textTransform: 'uppercase',
+
   },
   afterTitle: {
     marginLeft: '15%',
@@ -65,16 +64,12 @@ const styles = theme => ({
     borderBottom: '5px solid rgba(0, 0, 0, 0.25)',
     color: 'transparent',
   },
-  workLine: {
-    borderBottom: '5px solid white',
-    color: 'transparent',
+  titleText: {
+    fontSize: '18px',
   },
-  pieChart: {
-    width: '80%',
-    overflow: 'visible',
+  contentContainer: {
   },
-  barChart: {
-    width: '20%',
-  }
+  contentText: {},
+  contentTextDesigned: {},
 });
 export default withStyles(styles, {})(SkillsSection);

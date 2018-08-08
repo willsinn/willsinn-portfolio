@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
-const styles = {
-  root: {
-    flexGrow: 1,
-  },
-};
+
 class LinearDeterminate extends React.Component {
   timer = null;
   state = {
@@ -40,7 +36,13 @@ class LinearDeterminate extends React.Component {
     );
   }
 }
-LinearDeterminate.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+const styles = theme => ({
+  root: {
+    width: '50%',
+    overflow: 'visible',
+    position: 'static',
+
+  },
+});
+
 export default withStyles(styles)(LinearDeterminate);
