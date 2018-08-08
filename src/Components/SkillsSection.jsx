@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import SkillsPieChart from '../Assets/SkillsPieChart';
-import LinearDeterminate from '../Assets/LinearDeterminate';
 import { withStyles } from '@material-ui/core/styles';
 import SkillsCharts from './SkillsCharts';
 
@@ -85,7 +83,7 @@ const styles = theme => ({
     fontSize: '18px',
     color: 'white',
     fontWeight: '50',
-    
+
   },
   styledContainer: {
     padding: '1.5%',

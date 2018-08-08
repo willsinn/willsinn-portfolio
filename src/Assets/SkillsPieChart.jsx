@@ -137,7 +137,7 @@ const { value, percent, x, y, midAngle } = props;
 }
 const styles = theme => ({
   root: {
-    width: '50%',
+    width: '60%',
     overflow: 'visible',
     position: 'static',
 
