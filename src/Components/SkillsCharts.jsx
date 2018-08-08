@@ -22,6 +22,7 @@ const styles = theme => ({
     display: 'flex',
     backgroundColor: '#7fb0a6',
     width: '100%',
+    justifyContent: 'space-between',
   },
   pieChart: {
     width: '65%',

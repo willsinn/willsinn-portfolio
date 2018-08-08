@@ -108,7 +108,7 @@ const { value, percent, x, y, midAngle } = props;
            cy="50%"
            outerRadius="60%"
            fill="blue"
-           label={web.name}
+           label=""
            />
          <Pie className={classes.outerPie}
           data={focus}

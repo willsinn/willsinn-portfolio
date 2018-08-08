@@ -8,7 +8,12 @@ class BarChart extends Component {
     return (
 
         <section className={classes.root}>
+          <div className={classes.chartTitle}>
+            <div className={classes.titleName}>Focus</div>
+            <hr className={classes.titleHR} />
+          </div>
           <div className={classes.barChart}>
+
             <div className={classes.barWrapper}>
               <div className={classes.firstBarContainer}>
                 <div className={classes.skillTitle}>
@@ -89,29 +94,41 @@ const styles = theme => ({
     width: '100%',
   },
   barChart: {
-    width: '35%',
     display: 'flex',
     flexDirection: 'column',
+    alignItems: 'center'
+  },
+  chartTitle: {
+    color: 'white',
+    fontSize: '18px',
+    textTransform: 'uppercase',
+    textAlign: 'center',
+  },
+  titleName: {
+    marginRight: '40%',
+  },
+  titleHR: {
+    width: '50%',
   },
   barWrapper:{
     display: 'flex',
   },
   firstBarContainer: {
-    padding: '3.25%',
+    padding: '2.25%',
     border: '1px solid #53867b',
     borderRadius: '6px 6px 0 0',
   },
   lastBarContainer: {
-    padding: '3.25%',
+    padding: '2.25%',
     border: '1px solid #53867b',
     borderRadius: '0 0 6px 6px ',
   },
   barContainerLight: {
-    padding: '3.25%',
+    padding: '2.25%',
     border: '1px solid #53867b',
   },
   barContainerDark: {
-    padding: '3.25%',
+    padding: '2.25%',
     border: '1px solid #53867b',
     backgroundColor: '#609c90',
   },
