@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ResponsiveContainer, PieChart, Pie, Cell, Sector } from 'recharts';
 import { scaleOrdinal, schemeCategory10 } from 'd3-scale';
+import { withStyles } from '@material-ui/core/styles';
 
 const colors = scaleOrdinal(schemeCategory10).range();
 class SkillsPieChart extends Component {
@@ -41,6 +42,7 @@ const { value, percent, x, y, midAngle } = props;
     const ex = mx + (cos >= 0 ? 1 : -1) * 22;
     const ey = my;
     const textAnchor = cos >= 0 ? 'start' : 'end';
+
 
     return (
       <g>
@@ -92,9 +94,11 @@ const { value, percent, x, y, midAngle } = props;
     { name: 'ES5', value: 100 }
   ];
     const skills = { web, focus };
+    const { classes } = this.props;
+
 
     return(
-        <ResponsiveContainer className="pie-container">
+        <ResponsiveContainer className={classes.root}>
         <PieChart onMouseOver= {this.handlePieChartOver}>
           <Pie
            data={web}
@@ -131,4 +135,12 @@ const { value, percent, x, y, midAngle } = props;
     );
   }
 }
-export default SkillsPieChart;
+const styles = theme => ({
+  root: {
+    width: '500',
+    overflow: 'visible',
+    position: 'static',
+
+  },
+});
+export default withStyles(styles, {})(SkillsPieChart);

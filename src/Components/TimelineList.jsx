@@ -27,7 +27,6 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 'inherit',
   },
 });
 export default withStyles(styles, {})(TimelineList);

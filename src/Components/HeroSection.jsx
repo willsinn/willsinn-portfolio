@@ -42,20 +42,21 @@ class HeroSection extends Component {
 const styles = theme => ({
   root: {
     width: '100%',
+    height: 'auto',
   },
   heroImage: {
     backgroundImage: `url(${ HeroImage })`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     width: '100%',
-    height: '100%',
+    paddingTop: '15%',
+    paddingBottom: '20%',
   },
   heroContent: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: '15%',
   },
   titleText1: {
     fontSize: '48px',

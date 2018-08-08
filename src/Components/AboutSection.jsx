@@ -54,6 +54,7 @@ class AboutSection extends Component {
 const styles = theme => ({
   root: {
     backgroundColor: 'gray',
+    height: 'auto',
   },
   aboutWrapper: {
     display: 'flex',
@@ -125,6 +126,8 @@ const styles = theme => ({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingTop: '1%',
+    height: 'inherit',
+
   },
   contentColumnState1: {
     display: 'flex',
