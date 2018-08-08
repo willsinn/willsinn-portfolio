@@ -61,7 +61,7 @@ const { value, percent, x, y, midAngle } = props;
           startAngle={startAngle}
           endAngle={endAngle}
           innerRadius={outerRadius + 6}
-          outerRadius={outerRadius + 10}
+          outerRadius={outerRadius}
           fill={fill}
         />
         <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none"/>
@@ -99,7 +99,7 @@ const { value, percent, x, y, midAngle } = props;
 
     return(
         <ResponsiveContainer className={classes.root}>
-        <PieChart onMouseOver= {this.handlePieChartOver}>
+        <PieChart className={classes.pieChartContainer} onMouseOver= {this.handlePieChartOver}>
           <Pie
            data={web}
            dataKey="value"
@@ -108,7 +108,10 @@ const { value, percent, x, y, midAngle } = props;
            cy="50%"
            outerRadius="40%"
            fill="red"
-           label=""
+           activeIndex={this.state.activeIndex}
+           activeShape={renderActiveShape}
+           onMouseOver={this.onPieOver}
+           isAnimationActive={false}
            />
           <Pie
           data={focus}
@@ -137,10 +140,10 @@ const { value, percent, x, y, midAngle } = props;
 }
 const styles = theme => ({
   root: {
-    width: '60%',
-    overflow: 'visible',
-    position: 'static',
-
+    width: '100%',
+  },
+  pieChartContainer: {
+    width: '50%',
   },
 });
 export default withStyles(styles, {})(SkillsPieChart);

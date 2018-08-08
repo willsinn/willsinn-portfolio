@@ -32,7 +32,7 @@ const styles = theme => ({
   root: {
     display: 'block',
     backgroundColor: '#7fb0a6',
-    paddingBottom: '20%',
+    paddingBottom: '50%',
   },
   titleWrapper: {
     width: '100%',
