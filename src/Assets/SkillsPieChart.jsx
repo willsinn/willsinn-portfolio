@@ -103,11 +103,24 @@ const { value, percent, x, y, midAngle } = props;
     const x  = cx + radius * Math.cos(-midAngle * RADIAN);
     const y = cy  + radius * Math.sin(-midAngle * RADIAN);
     return (
-      <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} 	dominantBaseline="central" className={classes.innerStaticLabelText}>
+      <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} className={classes.innerStaticLabelText}>
         {payload.name}
       </text>
     );
     };
+    const outerStaticLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index, payload }) => {
+      const RADIAN = Math.PI / 180;
+ 	const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x  = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy  + radius * Math.sin(-midAngle * RADIAN);
+  const cos = Math.cos(-RADIAN * midAngle);
+  return (
+    <text x={x + (cos >= 0 ? 1 : -1) * 12} y={y} fill="white" textAnchor={x} 	dominantBaseline="central">
+    	{payload.name}:{`${(percent * 100).toFixed(0)}%`}
+    </text>
+  );
+};
+
 
 
     return(
@@ -140,7 +153,8 @@ const { value, percent, x, y, midAngle } = props;
           innerRadius="48%"
           outerRadius="60%"
           fill=""
-          label={classes.outerStaticLabels}
+          labelLine={false}
+          label={outerStaticLabel}
           activeIndex={this.state.activeIndex}
           activeShape={renderActiveShape}
           onMouseOver={this.onPieOver}
