@@ -25,6 +25,7 @@ class SkillsPieChart extends Component {
     };
   handleOver = (e, activeIndex) => this.setState({ activeIndex: []  });
   handleOut = () => this.setState({ activeIndex: [-1] });
+
 renderLabelContent = (props) => {
 const { value, percent, x, y, midAngle } = props;
  return(<text x={0} y={0}>{`Count: ${value}`}</text>);}
@@ -106,19 +107,25 @@ const { value, percent, x, y, midAngle } = props;
            nameKey="name"
            cx="50%"
            cy="50%"
-           outerRadius="60%"
-           fill="blue"
-           label=""
+           outerRadius="48%"
+           fill="#8884d8"
+           labelLine={false}
+           label = {renderCustomizedLabel}
            />
+           {
+             web.map((value, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+           }
+
          <Pie className={classes.outerPie}
           data={focus}
           dataKey="value"
           nameKey="name"
           cx="50%"
           cy="50%"
-          innerRadius="60%"
-          outerRadius="75%"
+          innerRadius="48%"
+          outerRadius="60%"
           fill="red"
+          label classname={classes.outerStaticLabels}
           activeIndex={this.state.activeIndex}
           activeShape={renderActiveShape}
           onMouseOver={this.onPieOver}
@@ -129,6 +136,7 @@ const { value, percent, x, y, midAngle } = props;
           <Cell key={`slice-${index}`} fill={colors[index % 10]}/>
            ))
           }
+
          </Pie>
         </PieChart>
         </ResponsiveContainer>
@@ -140,12 +148,35 @@ const styles = theme => ({
     width: '100%',
   },
   pieChartContainer: {
-    width: '50%',
+    width: '750px',
+    height: '400px',
   },
   innerPie: {
     color: 'white',
   },
+  innerLabels: {
+    color: 'rgba(0, 0, 0, 0.4)',
+    position: 'inside',
+  },
   outerPie: {},
+  outerStaticLabels: {},
 
 });
+
+
+    const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
+    const RADIAN = Math.PI / 180;
+    const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+    const x  = cx + radius * Math.cos(-midAngle * RADIAN);
+    const y = cy  + radius * Math.sin(-midAngle * RADIAN);
+
+    return (
+      <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} 	dominantBaseline="central">
+        {`${(percent * 100).toFixed(0)}%`}
+      </text>
+    );
+    };
+
+
 export default withStyles(styles, {})(SkillsPieChart);

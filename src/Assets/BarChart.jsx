@@ -96,7 +96,8 @@ const styles = theme => ({
   barChart: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    paddingTop: '2%',
   },
   chartTitle: {
     color: 'white',

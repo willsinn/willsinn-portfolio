@@ -23,19 +23,18 @@ class SkillsSection extends Component {
               </div>
             </div>
           </div>
-          <SkillsCharts />
+          <SkillsCharts className={classes.chartsContainer} />
         </section>
     );
   }
 }
 const styles = theme => ({
   root: {
-    display: 'block',
+    display: 'flex',
+    flexDirection: 'column',
     backgroundColor: '#7fb0a6',
-    paddingBottom: '50%',
   },
   titleWrapper: {
-    width: '100%',
     display: 'flex',
     flexDirection: 'column',
   },
@@ -99,6 +98,9 @@ const styles = theme => ({
     fontSize: '18px',
     color: 'white',
     fontWeight: '50',
+  },
+  chartsContainer: {
+    display: 'block',
   },
 });
 export default withStyles(styles, {})(SkillsSection);
