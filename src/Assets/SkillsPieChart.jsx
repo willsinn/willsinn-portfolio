@@ -70,10 +70,10 @@ const { value, percent, x, y, midAngle } = props;
         <text className="hover-text-name" x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill={fill} >
           {payload.name}
         </text>
-        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill="green">
+        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill={fill}>
           {`Focus: ${(percent * 100).toFixed(2)}%`}
         </text>
-        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={36} textAnchor={textAnchor} fill="purple" >
+        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={36} textAnchor={textAnchor} fill={fill} >
           {`Value: ${payload.value}`}
         </text>
       </g>
@@ -96,6 +96,19 @@ const { value, percent, x, y, midAngle } = props;
   ];
     const skills = { web, focus };
     const { classes } = this.props;
+    const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
+    const RADIAN = Math.PI / 180;
+    const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, index, payload }) => {
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+    const x  = cx + radius * Math.cos(-midAngle * RADIAN);
+    const y = cy  + radius * Math.sin(-midAngle * RADIAN);
+
+    return (
+      <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} 	dominantBaseline="central">
+        {payload.name}
+      </text>
+    );
+    };
 
 
     return(
@@ -110,10 +123,10 @@ const { value, percent, x, y, midAngle } = props;
            outerRadius="48%"
            fill="#8884d8"
            labelLine={false}
-           label = {renderCustomizedLabel}
+           label={renderCustomizedLabel}
            />
            {
-             web.map((value, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+             web.map((name, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
            }
 
          <Pie className={classes.outerPie}
@@ -132,7 +145,7 @@ const { value, percent, x, y, midAngle } = props;
           isAnimationActive={false}
           >
           {
-            web.map((name, index) => (
+            focus.map((name, index) => (
           <Cell key={`slice-${index}`} fill={colors[index % 10]}/>
            ))
           }
@@ -164,19 +177,7 @@ const styles = theme => ({
 });
 
 
-    const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
-    const RADIAN = Math.PI / 180;
-    const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
-    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-    const x  = cx + radius * Math.cos(-midAngle * RADIAN);
-    const y = cy  + radius * Math.sin(-midAngle * RADIAN);
 
-    return (
-      <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} 	dominantBaseline="central">
-        {`${(percent * 100).toFixed(0)}%`}
-      </text>
-    );
-    };
 
 
 export default withStyles(styles, {})(SkillsPieChart);
