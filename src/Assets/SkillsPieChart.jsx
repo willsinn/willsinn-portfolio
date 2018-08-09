@@ -80,8 +80,8 @@ const { value, percent, x, y, midAngle } = props;
     );
   };
   const web = [
-    { name: 'JavaScript', value: 500 },
-    { name: 'CSS StylesSheets', value: 150},
+    { name: 'JS', value: 500 },
+    { name: 'CSS', value: 150},
     { name: 'HTML', value: 150}
   ];
   const focus = [
@@ -98,13 +98,12 @@ const { value, percent, x, y, midAngle } = props;
     const { classes } = this.props;
     const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
     const RADIAN = Math.PI / 180;
-    const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, index, payload }) => {
+    const innerNameLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, index, payload }) => {
     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
     const x  = cx + radius * Math.cos(-midAngle * RADIAN);
     const y = cy  + radius * Math.sin(-midAngle * RADIAN);
-
     return (
-      <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} 	dominantBaseline="central">
+      <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} 	dominantBaseline="central" className={classes.innerStaticLabelText}>
         {payload.name}
       </text>
     );
@@ -121,14 +120,17 @@ const { value, percent, x, y, midAngle } = props;
            cx="50%"
            cy="50%"
            outerRadius="48%"
-           fill="#8884d8"
+           fill=""
            labelLine={false}
-           label={renderCustomizedLabel}
-           />
+           label={innerNameLabel}
+           isAnimationActive={false}
+           >
            {
-             web.map((name, index) => <Cell fill={COLORS[index % COLORS.length]}/>)
+             web.map((name, index) => (
+               <Cell key={`slice-${index}`} fill={COLORS[index % 10]}/>
+               ))
            }
-
+         </Pie>
          <Pie className={classes.outerPie}
           data={focus}
           dataKey="value"
@@ -137,8 +139,8 @@ const { value, percent, x, y, midAngle } = props;
           cy="50%"
           innerRadius="48%"
           outerRadius="60%"
-          fill="red"
-          label classname={classes.outerStaticLabels}
+          fill=""
+          label={classes.outerStaticLabels}
           activeIndex={this.state.activeIndex}
           activeShape={renderActiveShape}
           onMouseOver={this.onPieOver}
@@ -173,6 +175,7 @@ const styles = theme => ({
   },
   outerPie: {},
   outerStaticLabels: {},
+  innerStaticLabelText: {},
 
 });
 
