@@ -30,10 +30,27 @@ renderLabelContent = (props) => {
 const { value, percent, x, y, midAngle } = props;
  return(<text x={0} y={0}>{`Count: ${value}`}</text>);}
   render() {
+    const skills = { web, focus };
+    const { classes } = this.props;
+    const web = [
+      { name: 'JS', value: 500 },
+      { name: 'CSS', value: 150},
+      { name: 'HTML', value: 150}
+    ];
+    const focus = [
+      { name: 'React', value: 200 },
+      { name: 'Charts', value: 40 },
+      { name: 'Design', value: 50 },
+      { name: 'Typescript', value: 10 },
+      { name: 'Google APIs', value: 20 },
+      { name: 'HTML5', value: 60 },
+      { name: 'ES6', value: 70 },
+      { name: 'ES5', value: 100 }
+    ];
     const renderActiveShape = (props) => {
-    const RADIAN = Math.PI / 180;
     const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle,
       fill, payload, percent } = props;
+    const RADIAN = Math.PI / 180;
     const sin = Math.sin(-RADIAN * midAngle);
     const cos = Math.cos(-RADIAN * midAngle);
     const sx = cx + (outerRadius + 10) * cos;
@@ -43,7 +60,6 @@ const { value, percent, x, y, midAngle } = props;
     const ex = mx + (cos >= 0 ? 1 : -1) * 22;
     const ey = my;
     const textAnchor = cos >= 0 ? 'start' : 'end';
-
 
     return (
       <g>
@@ -79,26 +95,10 @@ const { value, percent, x, y, midAngle } = props;
       </g>
     );
   };
-  const web = [
-    { name: 'JS', value: 500 },
-    { name: 'CSS', value: 150},
-    { name: 'HTML', value: 150}
-  ];
-  const focus = [
-    { name: 'React', value: 200 },
-    { name: 'Charts', value: 40 },
-    { name: 'Design', value: 50 },
-    { name: 'Typescript', value: 10 },
-    { name: 'Google APIs', value: 20 },
-    { name: 'HTML5', value: 60 },
-    { name: 'ES6', value: 70 },
-    { name: 'ES5', value: 100 }
-  ];
-    const skills = { web, focus };
-    const { classes } = this.props;
+
     const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
+    const innerStaticLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, index, payload }) => {
     const RADIAN = Math.PI / 180;
-    const innerNameLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, index, payload }) => {
     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
     const x  = cx + radius * Math.cos(-midAngle * RADIAN);
     const y = cy  + radius * Math.sin(-midAngle * RADIAN);
@@ -122,7 +122,7 @@ const { value, percent, x, y, midAngle } = props;
            outerRadius="48%"
            fill=""
            labelLine={false}
-           label={innerNameLabel}
+           label={innerStaticLabel}
            isAnimationActive={false}
            >
            {
