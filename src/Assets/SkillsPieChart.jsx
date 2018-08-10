@@ -30,34 +30,16 @@ renderLabelContent = (props) => {
 const { value, percent, x, y, midAngle } = props;
  return(<text x={0} y={0}>{`Count: ${value}`}</text>);}
   render() {
-    const skills = { web, focus };
-    const { classes } = this.props;
-    const web = [
-      { name: 'JS', value: 500 },
-      { name: 'CSS', value: 150},
-      { name: 'HTML', value: 150}
-    ];
-    const focus = [
-      { name: 'React', value: 200 },
-      { name: 'Charts', value: 40 },
-      { name: 'Design', value: 50 },
-      { name: 'Typescript', value: 10 },
-      { name: 'Google APIs', value: 20 },
-      { name: 'HTML5', value: 60 },
-      { name: 'ES6', value: 70 },
-      { name: 'ES5', value: 100 }
-    ];
     const renderActiveShape = (props) => {
     const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle,
       fill, payload, percent } = props;
-    const RADIAN = Math.PI / 180;
     const sin = Math.sin(-RADIAN * midAngle);
     const cos = Math.cos(-RADIAN * midAngle);
-    const sx = cx + (outerRadius + 10) * cos;
-    const sy = cy + (outerRadius + 10) * sin;
-    const mx = cx + (outerRadius + 30) * cos;
-    const my = cy + (outerRadius + 30) * sin;
-    const ex = mx + (cos >= 0 ? 1 : -1) * 22;
+    const sx = cx + (outerRadius) * cos;
+    const sy = cy + (outerRadius) * sin;
+    const mx = cx + (outerRadius) * cos;
+    const my = cy + (outerRadius) * sin;
+    const ex = mx - (cos >= 0 ? 1 : -1) * 50;
     const ey = my;
     const textAnchor = cos >= 0 ? 'start' : 'end';
 
@@ -77,83 +59,49 @@ const { value, percent, x, y, midAngle } = props;
           cy={cy}
           startAngle={startAngle}
           endAngle={endAngle}
-          innerRadius={outerRadius + 6}
+          innerRadius={innerRadius}
           outerRadius={outerRadius}
           fill={fill}
         />
-        <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none"/>
+        <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none" />
         <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none"/>
-        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill={fill} >
+        <text className="hover-text-name" x={ex - (cos >= 0 ? 1 : -1) * 50} y={ey} textAnchor={textAnchor} fill="white" >
           {payload.name}
-        </text>
-        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={18} textAnchor={textAnchor} fill={fill}>
-          {`Focus: ${(percent * 100).toFixed(2)}%`}
-        </text>
-        <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} dy={36} textAnchor={textAnchor} fill={fill} >
-          {`Value: ${payload.value}`}
+          {`${(percent * 100).toFixed(2)}%`}
+          {`${payload.value}`}
         </text>
       </g>
     );
   };
-
+  const web = [
+    { name: 'JS', value: 500 },
+    { name: 'CSS', value: 150},
+    { name: 'HTML', value: 150}
+  ];
+  const focus = [
+    { name: 'React', value: 200 },
+    { name: 'Charts', value: 40 },
+    { name: 'Design', value: 50 },
+    { name: 'Typescript', value: 10 },
+    { name: 'Google APIs', value: 20 },
+    { name: 'HTML5', value: 60 },
+    { name: 'ES6', value: 70 },
+    { name: 'ES5', value: 100 }
+  ];
+    const skills = { web, focus };
+    const { classes } = this.props;
     const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
-    const innerStaticLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, index, payload }) => {
     const RADIAN = Math.PI / 180;
+    const innerStaticLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, index, payload }) => {
     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
     const x  = cx + radius * Math.cos(-midAngle * RADIAN);
     const y = cy  + radius * Math.sin(-midAngle * RADIAN);
     return (
-      <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} className={classes.innerStaticLabelText}>
+      <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} 	dominantBaseline="central" className={classes.innerStaticLabelText}>
         {payload.name}
       </text>
     );
     };
-    const outerStaticLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle,
-      fill, payload, percent, index }) => {
-      const RADIAN = Math.PI / 180;
- 	const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-  const x  = cx + radius * Math.cos(-midAngle * RADIAN);
-  const y = cy  + radius * Math.sin(-midAngle * RADIAN);
-  const sin = Math.sin(-RADIAN * midAngle);
-  const cos = Math.cos(-RADIAN * midAngle);
-  const sx = cx + (outerRadius + 10) * cos;
-  const sy = cy + (outerRadius + 10) * sin;
-  const mx = cx + (outerRadius + 30) * cos;
-  const my = cy + (outerRadius + 30) * sin;
-  const ex = mx + (cos >= 0 ? 1 : -1) * 22;
-  const ey = my;
-  const textAnchor = cos >= 0 ? 'start' : 'end';
-
-  return (
-    <g>
-      <Sector
-        cx={cx}
-        cy={cy}
-        innerRadius={innerRadius}
-        outerRadius={outerRadius}
-        startAngle={startAngle}
-        endAngle={endAngle}
-        fill={fill}
-      />
-      <Sector
-        cx={cx}
-        cy={cy}
-        startAngle={startAngle}
-        endAngle={endAngle}
-        innerRadius={outerRadius + 6}
-        outerRadius={outerRadius}
-        fill={fill}
-      />
-      <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none"/>
-      <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none"/>
-      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill={fill} >
-        {payload.name}:{`${(percent * 100).toFixed(0)}%`}
-      </text>
-    </g>
-  );
-};
-
-
 
     return(
         <ResponsiveContainer className={classes.root}>
