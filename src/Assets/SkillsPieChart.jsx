@@ -90,6 +90,45 @@ class SkillsPieChart extends Component {
         </g>
       );
     };
+    const renderActiveInner = (props) => {
+      const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent } = props;
+      const radius = innerRadius + (outerRadius - innerRadius);
+      const x  = radius * Math.cos(-midAngle * RADIAN);
+      const y = radius * Math.sin(-midAngle * RADIAN);
+      const textAnchor = x > cx ? 'start' : 'end';
+      return (
+            <g>
+        <Sector
+          cx={cx}
+          cy={cy}
+          innerRadius={innerRadius}
+          outerRadius={innerRadius}
+          startAngle={startAngle}
+          endAngle={endAngle}
+          fill={fill}
+        />
+        <Sector
+          cx={cx}
+          cy={cy}
+          startAngle={startAngle}
+          endAngle={endAngle}
+          innerRadius={innerRadius}
+          outerRadius={innerRadius}
+          fill={fill}
+        />
+
+      <path d={`M${x},${y}L${x},${y}`} stroke={fill} fill="none" />
+          <circle cx={x} cy={y} fill={fill} stroke="none"/>
+          <text className="hover-text-name" x={x - (x >= 0 ? 1 : -1) * 50} y={y} textAnchor={textAnchor} fill="white" >
+            {payload.name}
+            {`${(percent * 100).toFixed(2)}%`}
+            {`${payload.value}`}
+            Inner
+          </text>
+        </g>
+      );
+    };
+
     const INNERCOLORS = ['#0088FE', '#00C49F', '#FFBB28'];
     const innerStaticLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, index, payload }) => {
       const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
@@ -135,6 +174,10 @@ class SkillsPieChart extends Component {
            fill=""
            labelLine={false}
            label={innerStaticLabel}
+           activeIndex={this.state.activeIndex}
+           activeShape={renderActiveInner}
+           onMouseOver={this.onPieOver}
+           onMouseOut={this.handleOut}
            isAnimationActive={false}
            >
            {
