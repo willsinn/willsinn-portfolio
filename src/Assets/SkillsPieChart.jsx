@@ -59,7 +59,7 @@ const { value, percent, x, y, midAngle } = props;
           cy={cy}
           startAngle={startAngle}
           endAngle={endAngle}
-          innerRadius={innerRadius}
+          innerRadius={outerRadius}
           outerRadius={outerRadius}
           fill={fill}
         />
@@ -102,6 +102,28 @@ const { value, percent, x, y, midAngle } = props;
       </text>
     );
     };
+    const outerStaticLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle,
+      fill, payload, percent, index }) => {
+      const RADIAN = Math.PI / 180;
+  const sin = Math.sin(-RADIAN * midAngle);
+  const cos = Math.cos(-RADIAN * midAngle);
+  const sx = cx + (outerRadius + 10) * cos;
+  const sy = cy + (outerRadius + 10) * sin;
+  const mx = cx + (outerRadius + 30) * cos;
+  const my = cy + (outerRadius + 30) * sin;
+  const ex = mx + (cos >= 0 ? 1 : -1) * 22;
+  const ey = my;
+  const textAnchor = ex > cx ? 'start' : 'end';
+   return (
+     <g>
+    <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none"/>
+      <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none"/>
+      <text x={ex + (cos >= 0 ? 1 : -1) * 12} y={ey} textAnchor={textAnchor} fill={fill} >
+        {payload.name}:{`${(percent * 100).toFixed(0)}%`}
+      </text>
+    </g>
+  );
+};
 
     return(
         <ResponsiveContainer className={classes.root}>
@@ -138,6 +160,7 @@ const { value, percent, x, y, midAngle } = props;
           activeIndex={this.state.activeIndex}
           activeShape={renderActiveShape}
           onMouseOver={this.onPieOver}
+          onMouseOut={this.handleOut}
           isAnimationActive={false}
           >
           {
