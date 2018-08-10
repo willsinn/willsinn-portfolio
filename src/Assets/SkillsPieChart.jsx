@@ -80,7 +80,7 @@ class SkillsPieChart extends Component {
             outerRadius={outerRadius}
             fill={fill}
           />
-          <path d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`} stroke={fill} fill="none" />
+        <path d={`${sx},${sy}${mx},${my}${ex},${ey}`} stroke={fill} fill="none" />
           <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none"/>
           <text className="hover-text-name" x={ex - (cos >= 0 ? 1 : -1) * 50} y={ey} textAnchor={textAnchor} fill="white" >
             {payload.name}
@@ -92,17 +92,16 @@ class SkillsPieChart extends Component {
     };
     const renderActiveInner = (props) => {
       const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent } = props;
-      const radius = innerRadius + (outerRadius - innerRadius);
-      const x  = radius * Math.cos(-midAngle * RADIAN);
-      const y = radius * Math.sin(-midAngle * RADIAN);
+      const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+      const x = cx + radius * Math.cos(-midAngle * RADIAN);
+      const y = cx + radius * Math.sin(-midAngle * RADIAN);
       const textAnchor = x > cx ? 'start' : 'end';
       return (
             <g>
         <Sector
           cx={cx}
           cy={cy}
-          innerRadius={innerRadius}
-          outerRadius={innerRadius}
+          outerRadius={outerRadius}
           startAngle={startAngle}
           endAngle={endAngle}
           fill={fill}
@@ -112,14 +111,12 @@ class SkillsPieChart extends Component {
           cy={cy}
           startAngle={startAngle}
           endAngle={endAngle}
-          innerRadius={innerRadius}
-          outerRadius={innerRadius}
+          outerRadius={outerRadius}
           fill={fill}
         />
 
-      <path d={`M${x},${y}L${x},${y}`} stroke={fill} fill="none" />
-          <circle cx={x} cy={y} fill={fill} stroke="none"/>
-          <text className="hover-text-name" x={x - (x >= 0 ? 1 : -1) * 50} y={y} textAnchor={textAnchor} fill="white" >
+      <path d={`${x},${y}`} stroke={fill} fill="none" />
+          <text className="hover-text-name" x={x} y={y} textAnchor={textAnchor} fill="white" >
             {payload.name}
             {`${(percent * 100).toFixed(2)}%`}
             {`${payload.value}`}
