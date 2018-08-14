@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import OuterPieChart from '../Assets/OuterPieChart';
-import BarChart from '../Assets/BarChart';
+import SkillsPieChart from '../Assets/SkillsPieChart';
+import SkillsBarChart from '../Assets/SkillsBarChart';
 import { withStyles } from '@material-ui/core/styles';
-import InnerPieChart from '../Assets/InnerPieChart';
 
 
 class SkillsCharts extends Component {
@@ -11,9 +10,8 @@ class SkillsCharts extends Component {
     return (
 
         <section className={classes.root}>
-                  <InnerPieChart />
-                  <OuterPieChart />
-                <BarChart
+                <SkillsPieChart />
+                <SkillsBarChart
                   className={classes.barChart} />
         </section>
     );

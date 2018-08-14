@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
 
-class BarChart extends Component {
+class SkillsBarChart extends Component {
   render() {
     const { classes } = this.props;
     return (
@@ -214,4 +214,4 @@ const styles = theme => ({
 
 
 });
-export default withStyles(styles, {})(BarChart);
+export default withStyles(styles, {})(SkillsBarChart);
