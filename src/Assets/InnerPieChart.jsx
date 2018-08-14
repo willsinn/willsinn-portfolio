@@ -9,13 +9,14 @@ class InnerPieChart extends Component {
     super(props);
     this.state = {
       skills: {},
-      activeIndex: [0],
+      active: false,
       animation: false,
     }
   }
   onPieOver = (data, index, e) => {
     this.setState({
-      activeIndex: index,
+      active: true,
+      active: index,
     });
   };
   handleChangeAnimation = () => {
@@ -23,34 +24,31 @@ class InnerPieChart extends Component {
         animation: !this.state.animation,
       });
     };
-  handleOver = (e, activeIndex) => this.setState({ activeIndex: []  });
-  handleOut = () => this.setState({ activeIndex: [-1] });
-  renderLabelContent = (props) => {
-    const { value, percent, x, y, midAngle } = props;
-    return(<text x={0} y={0}>{`Count: ${value}`}</text>);
-  }
+  handleOver = (e, activeIndex) => this.setState({ active: []  });
+  handleOut = () => this.setState({ active: false,
+                                    index: [-1], });
+
   render() {
   const { classes } = this.props;
   const web = [
-    { name: 'JS', value: 500 },
     { name: 'CSS', value: 150},
+    { name: 'JS', value: 500},
     { name: 'HTML', value: 150}
   ];
-  const skills = { web };
+  const skill = web;
   const RADIAN = Math.PI / 180;
   const INNERCOLORS = ['#0088FE', '#00C49F', '#FFBB28'];
   const renderActiveInner = (props) => {
     const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent } = props;
-    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-    const cos = cx + radius * Math.cos(-midAngle * RADIAN);
-    const sin = cy + radius * Math.sin(-midAngle * RADIAN);
-    const sx = cx + (innerRadius) * cos;
-    const sy = cy + (innerRadius) * sin;
-    const mx = cx + (innerRadius) * cos;
-    const my = cy + (innerRadius) * sin;
+    const cos = 0.5 * Math.cos(-midAngle * RADIAN);
+    const sin = Math.sin(-midAngle * RADIAN);
+    const sx = cx + (outerRadius) * cos;
+    const sy = cy + (outerRadius) * sin;
+    const mx = cx + (outerRadius) * cos;
+    const my = cy + (outerRadius) * sin;
     const ex = mx;
     const ey = my;
-    const textAnchor = cos > cx ? 'start' : 'end';
+    const textAnchor = cos >= 0 ? 'start' : 'end';
 
     return (
       <g>
@@ -68,11 +66,11 @@ class InnerPieChart extends Component {
           cy={cy}
           startAngle={startAngle}
           endAngle={endAngle}
-          innerRadius={outerRadius}
+          innerRadius={innerRadius}
           outerRadius={outerRadius}
           fill={fill}
         />
-      <text className="hover-text-name" x={cos} y={sin} textAnchor={textAnchor} fill="white" >
+      <text className="hover-text-name" x={ex-20} y={ey} textAnchor={textAnchor} fill="white" >
           {payload.name}
           {`${(percent * 100).toFixed(2)}%`}
           {`${payload.value}`}
@@ -82,8 +80,8 @@ class InnerPieChart extends Component {
   };
   const innerStaticLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, index, payload }) => {
     const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-    const x  = cx + radius * Math.cos(-midAngle * RADIAN);
-    const y = cy  + radius * Math.sin(-midAngle * RADIAN);
+    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    const y = cy + radius * Math.sin(-midAngle * RADIAN);
     return (
       <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} 	dominantBaseline="central" className={classes.innerStaticLabelText}>
         {payload.name}
@@ -99,9 +97,10 @@ class InnerPieChart extends Component {
          data={web}
          dataKey="value"
          nameKey="name"
-         cx="50%"
-         cy="50%"
-         outerRadius="48%"
+         cx={350}
+         cy={250}
+         innerRadius={0}
+         outerRadius={135}
          fill=""
          labelLine={false}
          label={innerStaticLabel}
@@ -125,9 +124,13 @@ class InnerPieChart extends Component {
 
 const styles = theme => ({
   root: {
-  position: 'absolute',
-  paddingLeft: '10%',
+    position: 'relative',
+    display: 'inline',
+
 },
+  absoluteContainer: {
+
+  },
   innerLabels: {
     color: 'rgba(0, 0, 0, 0.4)',
     position: 'inside',

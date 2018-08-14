@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { ResponsiveContainer, PieChart, Pie, Cell, Sector } from 'recharts';
 import { scaleOrdinal, schemeCategory10 } from 'd3-scale';
 import { withStyles } from '@material-ui/core/styles';
+import InnerPieChart from './InnerPieChart';
 
 const colors = scaleOrdinal(schemeCategory10).range();
 class OuterPieChart extends Component {
@@ -25,10 +26,6 @@ class OuterPieChart extends Component {
     };
   handleOver = (e, activeIndex) => this.setState({ activeIndex: []  });
   handleOut = () => this.setState({ activeIndex: [-1] });
-  renderLabelContent = (props) => {
-    const { value, percent, x, y, midAngle } = props;
-    return(<text x={0} y={0}>{`Count: ${value}`}</text>);
-  }
   render() {
     const { classes } = this.props;
 
@@ -42,7 +39,7 @@ class OuterPieChart extends Component {
       { name: 'ES6', value: 70 },
       { name: 'ES5', value: 100 }
     ];
-    const skills = { focus };
+    const skill = focus;
     const RADIAN = Math.PI / 180;
     const renderActiveOuter = (props) => {
       const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent } = props;
@@ -107,17 +104,17 @@ class OuterPieChart extends Component {
       );
     };
     return(
-        <ResponsiveContainer className={classes.root}>
 
+        <ResponsiveContainer className={classes.root}>
         <PieChart className={classes.pieChartContainer} onMouseOver= {this.handlePieChartOver}>
          <Pie className={classes.outerPie}
           data={focus}
           dataKey="value"
           nameKey="name"
-          cx="50%"
-          cy="50%"
-          innerRadius="48%"
-          outerRadius="60%"
+          cx={350}
+          cy={250}
+          innerRadius={137}
+          outerRadius={162}
           fill=""
           labelLine={false}
           label={outerStaticLabel}
@@ -135,16 +132,18 @@ class OuterPieChart extends Component {
          </Pie>
         </PieChart>
         </ResponsiveContainer>
+
     );
   }
 }
 const styles = theme => ({
   root: {
     width: '100%',
+    position: 'absolute',
+
   },
   pieChartContainer: {
-    width: '750px',
-    height: '400px',
+
   },
   outerPie: {},
   outerStaticLabels: {},

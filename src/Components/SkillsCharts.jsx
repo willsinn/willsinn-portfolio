@@ -11,11 +11,10 @@ class SkillsCharts extends Component {
     return (
 
         <section className={classes.root}>
-              <InnerPieChart />
-              <OuterPieChart
-                className={classes.pieChart} />
-              <BarChart
-                className={classes.barChart} />
+                  <InnerPieChart />
+                  <OuterPieChart />
+                <BarChart
+                  className={classes.barChart} />
         </section>
     );
   }
@@ -26,10 +25,13 @@ const styles = theme => ({
     backgroundColor: '#7fb0a6',
     width: '100%',
     justifyContent: 'space-around',
-    position: 'relative',
   },
   pieChart: {
     width: '65%',
+  },
+  innerPie: {
+  },
+  outerPie: {
   },
   barChart: {
     width: '35%',
