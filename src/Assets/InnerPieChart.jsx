@@ -9,14 +9,13 @@ class InnerPieChart extends Component {
     super(props);
     this.state = {
       skills: {},
-      active: false,
+      activeInner: [0],
       animation: false,
     }
   }
   onPieOver = (data, index, e) => {
     this.setState({
-      active: true,
-      active: index,
+      activeInner: index,
     });
   };
   handleChangeAnimation = () => {
@@ -24,9 +23,8 @@ class InnerPieChart extends Component {
         animation: !this.state.animation,
       });
     };
-  handleOver = (e, activeIndex) => this.setState({ active: []  });
-  handleOut = () => this.setState({ active: false,
-                                    index: [-1], });
+  handleOver = (e, activeInner) => this.setState({ activeInner: []  });
+  handleOut = () => this.setState({ activeInner: [-1] });
 
   render() {
   const { classes } = this.props;
@@ -40,8 +38,8 @@ class InnerPieChart extends Component {
   const INNERCOLORS = ['#0088FE', '#00C49F', '#FFBB28'];
   const renderActiveInner = (props) => {
     const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent } = props;
-    const cos = 0.5 * Math.cos(-midAngle * RADIAN);
-    const sin = Math.sin(-midAngle * RADIAN);
+    const cos = 0.5 * Math.cos(midAngle * -RADIAN);
+    const sin = Math.sin(midAngle * -RADIAN);
     const sx = cx + (outerRadius) * cos;
     const sy = cy + (outerRadius) * sin;
     const mx = cx + (outerRadius) * cos;
@@ -104,7 +102,7 @@ class InnerPieChart extends Component {
          fill=""
          labelLine={false}
          label={innerStaticLabel}
-         activeIndex={this.state.activeIndex}
+         activeIndex={this.state.activeInner}
          activeShape={renderActiveInner}
          onMouseOver={this.onPieOver}
          onMouseOut={this.handleOut}
@@ -125,7 +123,7 @@ class InnerPieChart extends Component {
 const styles = theme => ({
   root: {
     position: 'relative',
-    display: 'inline',
+    zIndex: '5',
 
 },
   absoluteContainer: {

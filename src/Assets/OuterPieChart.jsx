@@ -138,9 +138,8 @@ class OuterPieChart extends Component {
 }
 const styles = theme => ({
   root: {
-    width: '100%',
+    zIndex: '3',
     position: 'absolute',
-
   },
   pieChartContainer: {
 
