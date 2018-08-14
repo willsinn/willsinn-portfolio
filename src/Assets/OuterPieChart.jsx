@@ -4,7 +4,7 @@ import { scaleOrdinal, schemeCategory10 } from 'd3-scale';
 import { withStyles } from '@material-ui/core/styles';
 
 const colors = scaleOrdinal(schemeCategory10).range();
-class SkillsPieChart extends Component {
+class OuterPieChart extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,11 +31,7 @@ class SkillsPieChart extends Component {
   }
   render() {
     const { classes } = this.props;
-    const web = [
-      { name: 'JS', value: 500 },
-      { name: 'CSS', value: 150},
-      { name: 'HTML', value: 150}
-    ];
+
     const focus = [
       { name: 'React', value: 200 },
       { name: 'Charts', value: 40 },
@@ -46,7 +42,7 @@ class SkillsPieChart extends Component {
       { name: 'ES6', value: 70 },
       { name: 'ES5', value: 100 }
     ];
-    const skills = { web, focus };
+    const skills = { focus };
     const RADIAN = Math.PI / 180;
     const renderActiveOuter = (props) => {
       const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent } = props;
@@ -88,17 +84,7 @@ class SkillsPieChart extends Component {
         </g>
       );
     };
-    const INNERCOLORS = ['#0088FE', '#00C49F', '#FFBB28'];
-    const innerStaticLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, index, payload }) => {
-      const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-      const x  = cx + radius * Math.cos(-midAngle * RADIAN);
-      const y = cy  + radius * Math.sin(-midAngle * RADIAN);
-      return (
-        <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} 	dominantBaseline="central" className={classes.innerStaticLabelText}>
-          {payload.name}
-        </text>
-      );
-    };
+
     const outerStaticLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle,
       fill, payload, percent, index }) => {
       const sin = Math.sin(-RADIAN * midAngle);
@@ -122,25 +108,8 @@ class SkillsPieChart extends Component {
     };
     return(
         <ResponsiveContainer className={classes.root}>
+
         <PieChart className={classes.pieChartContainer} onMouseOver= {this.handlePieChartOver}>
-          <Pie className={classes.innerPie}
-           data={web}
-           dataKey="value"
-           nameKey="name"
-           cx="50%"
-           cy="50%"
-           outerRadius="48%"
-           fill=""
-           labelLine={false}
-           label={innerStaticLabel}
-           isAnimationActive={false}
-           >
-           {
-             web.map((name, index) => (
-               <Cell key={`slice-${index}`} fill={INNERCOLORS[index % 10]}/>
-               ))
-           }
-         </Pie>
          <Pie className={classes.outerPie}
           data={focus}
           dataKey="value"
@@ -163,7 +132,6 @@ class SkillsPieChart extends Component {
           <Cell key={`slice-${index}`} fill={colors[index % 10]}/>
            ))
           }
-
          </Pie>
         </PieChart>
         </ResponsiveContainer>
@@ -178,13 +146,6 @@ const styles = theme => ({
     width: '750px',
     height: '400px',
   },
-  innerPie: {
-    color: 'white',
-  },
-  innerLabels: {
-    color: 'rgba(0, 0, 0, 0.4)',
-    position: 'inside',
-  },
   outerPie: {},
   outerStaticLabels: {},
   innerStaticLabelText: {},
@@ -195,4 +156,4 @@ const styles = theme => ({
 
 
 
-export default withStyles(styles, {})(SkillsPieChart);
+export default withStyles(styles, {})(OuterPieChart);
