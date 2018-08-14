@@ -14,12 +14,12 @@ class SkillsPieChart extends Component {
       animation: false,
     }
   }
-  onInnerMouseOver = (data, index, e) => {
+  onInnerPieMouseOver = (data, index, e) => {
     this.setState({
       activeInner: index,
     });
   };
-  onOuterPieOver = (data, index, e) => {
+  onOuterPieMouseOver = (data, index, e) => {
     this.setState({
       activeOuter: index,
     });
@@ -29,8 +29,8 @@ class SkillsPieChart extends Component {
         animation: !this.state.animation,
       });
     };
-  handleOuterMouseOut = () => this.setState({ activeOuter: [-1] });
-  handleInnerMouseOut = () => this.setState({ activeInner: [-1] });
+  handleOuterPieMouseOut = () => this.setState({ activeOuter: [-1] });
+  handleInnerPieMouseOut = () => this.setState({ activeInner: [-1] });
 
   render() {
     const { classes } = this.props;
@@ -183,8 +183,8 @@ class SkillsPieChart extends Component {
            label={innerStaticLabel}
            activeIndex={this.state.activeInner}
            activeShape={renderActiveInner}
-           onMouseOver={this.onInnerMouseOver}
-           onMouseOut={this.handleInnerMouseOut}
+           onMouseOver={this.onInnerPieMouseOver}
+           onMouseOut={this.handleInnerPieMouseOut}
            isAnimationActive={false}
            >
            {
@@ -206,8 +206,8 @@ class SkillsPieChart extends Component {
           label={outerStaticLabel}
           activeIndex={this.state.activeOuter}
           activeShape={renderActiveOuter}
-          onMouseOver={this.onOuterPieOver}
-          onMouseOut={this.handleOuterMouseOut}
+          onMouseOver={this.onOuterPieMouseOver}
+          onMouseOut={this.handleOuterPieMouseOut}
           isAnimationActive={false}
           >
           {
