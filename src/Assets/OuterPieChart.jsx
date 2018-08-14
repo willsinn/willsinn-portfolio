@@ -10,11 +10,11 @@ class OuterPieChart extends Component {
     super(props);
     this.state = {
       skills: {},
-      activeIndex: [0],
+      activeIndex: [],
       animation: false,
     }
   }
-  onPieOver = (data, index, e) => {
+  onOuterPieOver = (data, index, e) => {
     this.setState({
       activeIndex: index,
     });
@@ -24,7 +24,6 @@ class OuterPieChart extends Component {
         animation: !this.state.animation,
       });
     };
-  handleOver = (e, activeIndex) => this.setState({ activeIndex: []  });
   handleOut = () => this.setState({ activeIndex: [-1] });
   render() {
     const { classes } = this.props;
@@ -39,7 +38,7 @@ class OuterPieChart extends Component {
       { name: 'ES6', value: 70 },
       { name: 'ES5', value: 100 }
     ];
-    const skill = focus;
+    const skills = { focus };
     const RADIAN = Math.PI / 180;
     const renderActiveOuter = (props) => {
       const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent } = props;
@@ -106,21 +105,21 @@ class OuterPieChart extends Component {
     return(
 
         <ResponsiveContainer className={classes.root}>
-        <PieChart className={classes.pieChartContainer} onMouseOver= {this.handlePieChartOver}>
+        <PieChart className={classes.pieChartContainer} >
          <Pie className={classes.outerPie}
           data={focus}
           dataKey="value"
           nameKey="name"
           cx={350}
           cy={250}
-          innerRadius={137}
-          outerRadius={162}
+          innerRadius={130}
+          outerRadius={160}
           fill=""
           labelLine={false}
           label={outerStaticLabel}
           activeIndex={this.state.activeIndex}
           activeShape={renderActiveOuter}
-          onMouseOver={this.onPieOver}
+          onMouseOver={this.onOuterPieOver}
           onMouseOut={this.handleOut}
           isAnimationActive={false}
           >
@@ -138,7 +137,7 @@ class OuterPieChart extends Component {
 }
 const styles = theme => ({
   root: {
-    zIndex: '3',
+    zIndex: '5',
     position: 'absolute',
   },
   pieChartContainer: {
