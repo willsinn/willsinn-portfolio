@@ -71,6 +71,7 @@ const styles = theme => ({
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
+    paddingBottom: '5%',
   },
   contentContainer: {
     width: '80%',
@@ -100,7 +101,6 @@ const styles = theme => ({
     fontWeight: '50',
   },
   chartsContainer: {
-    display: 'block',
   },
 });
 export default withStyles(styles, {})(SkillsSection);

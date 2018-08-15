@@ -92,27 +92,28 @@ class SkillsBarChart extends Component {
 const styles = theme => ({
   root: {
     width: '100%',
+    marginRight: '10%',
   },
   barChart: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
     paddingTop: '2%',
+    margin: '0',
   },
   chartTitle: {
     color: 'white',
     fontSize: '18px',
     textTransform: 'uppercase',
-    textAlign: 'center',
   },
   titleName: {
-    marginRight: '40%',
   },
   titleHR: {
-    width: '50%',
   },
   barWrapper:{
     display: 'flex',
+    width: '375px',
   },
   topBorderRadiusBar: {
     padding: '2.25%',

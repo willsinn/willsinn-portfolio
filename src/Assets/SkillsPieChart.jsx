@@ -24,17 +24,16 @@ class SkillsPieChart extends Component {
       activeOuter: index,
     });
   };
-  handleChangeAnimation = () => {
-      this.setState({
-        animation: !this.state.animation,
-      });
-    };
-  handleOuterPieMouseOut = () => this.setState({ activeOuter: [-1] });
   handleInnerPieMouseOut = () => this.setState({ activeInner: [-1] });
-
+  handleOuterPieMouseOut = () => this.setState({ activeOuter: [-1] });
   render() {
     const { classes } = this.props;
-
+    const web = [
+      { name: 'JS', value: 500},
+      { name: 'CSS', value: 150},
+      { name: 'HTML', value: 150}
+    ];
+    const INNERCOLORS = ['#0088FE', '#00C49F', '#FFBB28'];
     const focus = [
       { name: 'React', value: 200 },
       { name: 'Charts', value: 40 },
@@ -45,13 +44,48 @@ class SkillsPieChart extends Component {
       { name: 'ES6', value: 70 },
       { name: 'ES5', value: 100 }
     ];
-    const web = [
-      { name: 'JS', value: 500},
-      { name: 'CSS', value: 150},
-      { name: 'HTML', value: 150}
-    ];
     const skills = { focus, web };
     const RADIAN = Math.PI / 180;
+    const renderActiveInner = (props) => {
+      const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent } = props;
+      const cos = 0.5 * Math.cos(-midAngle * RADIAN);
+      const sin = 0.5 * Math.sin(-midAngle * RADIAN);
+      const sx = cx + (outerRadius) * cos;
+      const sy = cy + (outerRadius) * sin;
+      const mx = cx + (outerRadius) * cos;
+      const my = cy + (outerRadius) * sin;
+      const ex = mx - (cos >= 0 ? 1 : -1);
+      const ey = my + (sin >= 0 ? 1 : -1) * 22;
+      const textAnchor = ex > cx ? 'start' : 'end';
+
+      return (
+        <g>
+          <Sector
+            cx={cx}
+            cy={cy}
+            innerRadius={innerRadius}
+            outerRadius={outerRadius}
+            startAngle={startAngle}
+            endAngle={endAngle}
+            fill={fill}
+          />
+          <Sector
+            cx={cx}
+            cy={cy}
+            startAngle={startAngle}
+            endAngle={endAngle}
+            innerRadius={outerRadius}
+            outerRadius={outerRadius}
+            fill={fill}
+          />
+        <text x={ex} y={ey} textAnchor={textAnchor} fill="white" >
+            {payload.name}
+            {`${(percent * 100).toFixed(2)}%`}
+            {`${payload.value}`}
+          </text>
+        </g>
+      );
+    };
     const renderActiveOuter = (props) => {
       const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent } = props;
       const sin = Math.sin(-RADIAN * midAngle);
@@ -92,48 +126,6 @@ class SkillsPieChart extends Component {
         </g>
       );
     };
-    const INNERCOLORS = ['#0088FE', '#00C49F', '#FFBB28'];
-
-    const renderActiveInner = (props) => {
-      const { cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle, fill, payload, percent } = props;
-      const cos = 0.5 * Math.cos(midAngle * -RADIAN);
-      const sin = 0.5 * Math.sin(midAngle * -RADIAN);
-      const sx = cx + (outerRadius) * cos;
-      const sy = cy + (outerRadius) * sin;
-      const mx = cx + (outerRadius) * cos;
-      const my = cy + (outerRadius) * sin;
-      const ex = mx - (cos >= 0 ? 1 : -1) * 30;
-      const ey = my;
-      const textAnchor = ex > cx ? 'start' : 'end';
-
-      return (
-        <g>
-          <Sector
-            cx={cx}
-            cy={cy}
-            innerRadius={innerRadius}
-            outerRadius={outerRadius}
-            startAngle={startAngle}
-            endAngle={endAngle}
-            fill={fill}
-          />
-          <Sector
-            cx={cx}
-            cy={cy}
-            startAngle={startAngle}
-            endAngle={endAngle}
-            innerRadius={outerRadius}
-            outerRadius={outerRadius}
-            fill={fill}
-          />
-        <text className="hover-text-name" x={ex} y={ey} textAnchor={textAnchor} fill="white" >
-            {payload.name}
-            {`${(percent * 100).toFixed(2)}%`}
-            {`${payload.value}`}
-          </text>
-        </g>
-      );
-    };
     const innerStaticLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, index, payload }) => {
       const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
       const x = cx + radius * Math.cos(-midAngle * RADIAN);
@@ -144,7 +136,6 @@ class SkillsPieChart extends Component {
         </text>
       );
     };
-
     const outerStaticLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, startAngle, endAngle,
       fill, payload, percent, index }) => {
       const sin = Math.sin(-RADIAN * midAngle);
@@ -167,70 +158,89 @@ class SkillsPieChart extends Component {
       );
     };
     return(
-
-        <ResponsiveContainer className={classes.root}>
-        <PieChart className={classes.pieChartContainer} >
-          <Pie className={classes.InnerPieChart}
-           data={web}
-           dataKey="value"
-           nameKey="name"
-           cx={350}
-           cy={250}
-           innerRadius={0}
-           outerRadius={120}
-           fill=""
-           labelLine={false}
-           label={innerStaticLabel}
-           activeIndex={this.state.activeInner}
-           activeShape={renderActiveInner}
-           onMouseOver={this.onInnerPieMouseOver}
-           onMouseOut={this.handleInnerPieMouseOut}
-           isAnimationActive={false}
-           >
-           {
-             web.map((name, index) => (
-               <Cell key={`slice-${index}`} fill={colors[index % 10]}/>
-               ))
-           }
-         </Pie>
-         <Pie className={classes.outerPie}
-          data={focus}
-          dataKey="value"
-          nameKey="name"
-          cx={350}
-          cy={250}
-          innerRadius={130}
-          outerRadius={160}
-          fill=""
-          labelLine={false}
-          label={outerStaticLabel}
-          activeIndex={this.state.activeOuter}
-          activeShape={renderActiveOuter}
-          onMouseOver={this.onOuterPieMouseOver}
-          onMouseOut={this.handleOuterPieMouseOut}
-          isAnimationActive={false}
-          >
-          {
-            focus.map((name, index) => (
-          <Cell key={`slice-${index}`} fill={colors[index % 10]}/>
-           ))
-          }
-         </Pie>
-        </PieChart>
+      <section className={classes.root}>
+        <div className={classes.chartTitle}>
+          <div className={classes.titleName}>Skill Distribution</div>
+          <hr className={classes.titleHR} />
+        </div>
+        <ResponsiveContainer className={classes.pieChartContainer}>
+          <PieChart className={classes.pieContainer}>
+            <Pie className={classes.innerPie}
+               data={web}
+               dataKey="value"
+               nameKey="name"
+               cx={350}
+               cy={250}
+               innerRadius={0}
+               outerRadius={130}
+               fill=""
+               labelLine={false}
+               label={innerStaticLabel}
+               activeIndex={this.state.activeInner}
+               activeShape={renderActiveInner}
+               onMouseOver={this.onInnerPieMouseOver}
+               onMouseOut={this.handleInnerPieMouseOut}
+               isAnimationActive={false}
+             >
+             {
+              web.map((name, index) => (
+                <Cell key={`slice-${index}`} fill={INNERCOLORS[index % 10]}/>
+              ))
+             }
+            </Pie>
+            <Pie className={classes.outerPie}
+              data={focus}
+              dataKey="value"
+              nameKey="name"
+              cx={350}
+              cy={250}
+              innerRadius={130}
+              outerRadius={163}
+              fill=""
+              labelLine={false}
+              label={outerStaticLabel}
+              activeIndex={this.state.activeOuter}
+              activeShape={renderActiveOuter}
+              onMouseOver={this.onOuterPieMouseOver}
+              onMouseOut={this.handleOuterPieMouseOut}
+              isAnimationActive={false}
+              >
+            {
+              focus.map((name, index) => (
+                <Cell key={`slice-${index}`} fill={colors[index % 10]}/>
+             ))
+            }
+           </Pie>
+          </PieChart>
         </ResponsiveContainer>
-
+      </section>
     );
   }
 }
 const styles = theme => ({
   root: {
-    zIndex: '5',
-    position: 'absolute',
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  chartTitle: {
+    color: 'white',
+    fontSize: '18px',
+    textTransform: 'uppercase',
+    textAlign: 'left',
+  },
+  titleName: {
+  },
+  titleHR: {
   },
   pieChartContainer: {
-
   },
-  outerPie: {},
+  pieContainer: {
+  },
+  outerPie: {
+    width: '1000px',
+  },
   outerStaticLabels: {},
   innerStaticLabelText: {},
 
