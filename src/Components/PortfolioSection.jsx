@@ -1,134 +1,84 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import { Card, CardHeader, CardContent, Typography, Tabs, Tab, Paper, Avatar, CardMedia } from '@material-ui/core';
 
 
 class PortfolioSection extends Component {
-  render() {
-    const { classes } = this.props;
+  constructor() {
+    super();
+    this.state = { activeTab:0 };
+  }
+  handleChange = (event, value) => {
+    this.setState({ activeTab : value });
+  };
+  toggleProjects() {
     return (
-
-        <section className={classes.root}>
-        
-        import React, { Component } from 'react';
-        import { Tabs, Tab, Cell, Grid, Card, CardTitle, CardText, CardActions, Button, CardMenu, IconButton } from 'react-mdl';
-
-
-        class Projects extends Component {
-            constructor() {
-              super();
-              this.state = { activeTab:0 };
+      <Card>
+          <CardHeader
+            avatar={
+              <Avatar aria-label="Recipe">
+                R
+              </Avatar>
             }
+            title="Shrimp and Chorizo Paella"
+            subheader="September 14, 2016"
+          />
+          <CardMedia
 
-            toggleCategories() {
-              /* Create a file for each project page and import into mainpage, Projects, */
-
-              if(this.state.activeTab === 0){
-
-                return (
-                  <Card shadow={5} styles={{minWidth: '450', margin:'auto'}}>
-                    <CardTitle styles=
-                        {{color: '#fff', height: '176px', background:'url(https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg) center / cover'}}
-                        >React Project #1</CardTitle>
-                    <CardText>
-                      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-                    </CardText>
-                    <CardActions border>
-                      <Button colored>GitHub</Button>
-                      <Button colored>LiveDemo</Button>
-                    </CardActions>
-                    <CardMenu styles={{color: '#fff'}}>
-                      <IconButton name="share" />
-                    </CardMenu>
-                  </Card>
-                )
-              } else if (this.state.activeTab === 1){
-                return(
-                    <Card shadow={5} styles={{minWidth: '450', margin:'auto'}}>
-                      <CardTitle styles=
-                          {{color: '#fff', height: '176px', background:'url(https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg) center / cover'}}
-                          >React Project #2</CardTitle>
-                      <CardText>
-                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-                      </CardText>
-                      <CardActions border>
-                        <Button colored>GitHub</Button>
-                        <Button colored>LiveDemo</Button>
-                        </CardActions>
-                      <CardMenu styles={{color: '#fff'}}>
-                        <IconButton name="share" />
-                      </CardMenu>
-                    </Card>
-                )
-              } else if (this.state.activeTab === 2){
-                return(
-                    <Card shadow={5} styles={{minWidth: '450', margin:'auto'}}>
-                      <CardTitle styles=
-                          {{color: '#fff', height: '176px', background:'url(https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg) center / cover'}}
-                          >React Project #3</CardTitle>
-                      <CardText>
-                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-                      </CardText>
-                      <CardActions border>
-                        <Button colored>GitHub</Button>
-                        <Button colored>LiveDemo</Button>
-                        </CardActions>
-                      <CardMenu styles={{color: '#fff'}}>
-                        <IconButton name="share" />
-                      </CardMenu>
-                    </Card>
-                )
-              }
-              else if (this.state.activeTab === 3){
-                return(
-                    <Card shadow={5} styles={{minWidth: '450', margin:'auto'}}>
-                      <CardTitle styles=
-                          {{color: '#fff', height: '176px', background:'url(https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg) center / cover'}}
-                          >React Project #4</CardTitle>
-                      <CardText>
-                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
-                      </CardText>
-                      <CardActions border>
-                        <Button colored>GitHub</Button>
-                        <Button colored>LiveDemo</Button>
-                        </CardActions>
-                      <CardMenu styles={{color: '#fff'}}>
-                        <IconButton name="share" />
-                      </CardMenu>
-                    </Card>
-               )
-              }
-            }
-
-          render() {
-            return(
-              <div>
-              <div className="category-tabs">
-                <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({ activeTab:tabId })} ripple>
-                  <Tab>React</Tab>
-                  <Tab>GoogleSheets</Tab>
-                  <Tab>ReactRedux</Tab>
-                  <Tab>Calculator</Tab>
-                </Tabs>
-              </div>
-              <div>
-                  <Grid>
-                   <Cell col={12}>
-                    <div className="content">{this.toggleCategories()}</div>
-                   </Cell>
-                  </Grid>
-              </div>
-              </div>
-            );
+            image="/static/images/cards/paella.jpg"
+            title="Contemplative Reptile"
+          />
+          <CardContent>
+            <Typography component="p">
+              This impressive paella is a perfect party dish and a fun meal to cook together with
+              your guests. Add 1 cup of frozen peas along with the mussels, if you like.
+            </Typography>
+          </CardContent>
+          <button>
+            View Code
+          </button>
+          <button>
+            Try it Out
+          </button>
+      </Card>
+          );
+          if(this.state.activeTab === 0){
+            return ( <Card>proj2</Card> )
+          } else if (this.state.activeTab === 1){
+            return ( <Card>proj3</Card> )
+          } else if (this.state.activeTab === 2){
+            return ( <Card>proj4</Card> )
           }
         }
+        render() {
+        const { classes } = this.props;
 
-        export default Projects;
-        </section>
-    );
+        return(
+          <section className={classes.root}>
+            <Paper>
+              <Tabs
+                value={this.state.activeTab}
+                onChange={this.handleChange}
+                indicatorColor="primary"
+                textColor="primary"
+                centered
+                >
+                  <Tab label="Item One" />
+                  <Tab label="Item Two" />
+                  <Tab label="Item Three" />
+                  <Tab label="Item Four" />
+              </Tabs>
+            </Paper>
+            <Paper className="content">{this.toggleProjects()}</Paper>
+          </section>
+      );
   }
 }
 const styles = theme => ({
   root: {
   },
+  firstCard: {},
+  firstAvatar: {},
+  firstMedia: {},
 });
 export default withStyles(styles, {})(PortfolioSection);
