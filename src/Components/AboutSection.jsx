@@ -54,7 +54,6 @@ class AboutSection extends Component {
 const styles = theme => ({
   root: {
     backgroundColor: 'gray',
-    height: 'auto',
   },
   aboutWrapper: {
     display: 'flex',

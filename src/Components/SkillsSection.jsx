@@ -83,7 +83,6 @@ const styles = theme => ({
     fontSize: '18px',
     color: 'white',
     fontWeight: '50',
-
   },
   styledContainer: {
     padding: '1.5%',

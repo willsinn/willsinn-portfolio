@@ -51,6 +51,7 @@ const styles = theme => ({
     alignItems: 'center',
     paddingTop: '5%',
     paddingBottom: '10%',
+    height: 'auto',
   },
   titleContainer: {
     paddingTop: '3.25%',
