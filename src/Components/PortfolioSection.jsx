@@ -53,7 +53,34 @@ class PortfolioSection extends Component {
                  Try it Out
                </button>
            </Card>}
-           {activeTab === 1 && <Card>Item Two</Card>}
+           {activeTab === 1 && <Card>
+               <CardHeader
+                 avatar={
+                   <Avatar aria-label="Website">
+                     W
+                   </Avatar>
+                 }
+                 title="Site"
+                 subheader="Blah Blah"
+               />
+               <CardMedia
+
+                 image="/static/images/cards/paella.jpg"
+                 title="Whatchu talking about"
+               />
+               <CardContent>
+                 <Typography component="p">
+                   This impressive paella is a perfect party dish and a fun meal to cook together with
+                   your guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                 </Typography>
+               </CardContent>
+               <button>
+                 View Code
+               </button>
+               <button>
+                 Try it Out
+               </button>
+           </Card> }
            {activeTab === 2 && <Card>Item Three</Card>}
          </div>
        );
