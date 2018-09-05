@@ -16,7 +16,7 @@ class PortfolioSection extends Component {
        const { activeTab } = this.state;
 
        return (
-         <div className={classes.root}>
+         <section className={classes.root}>
            <AppBar position="static">
              <Tabs activeTab={activeTab}
                   onChange={this.handleChange}>
@@ -82,7 +82,7 @@ class PortfolioSection extends Component {
                </button>
            </Card> }
            {activeTab === 2 && <Card>Item Three</Card>}
-         </div>
+         </section>
        );
      }
    }
