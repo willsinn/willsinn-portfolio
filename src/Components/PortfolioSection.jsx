@@ -25,6 +25,8 @@ class PortfolioSection extends Component {
              </div>
            </div>
            <div className={classes.projectsWrapper}>
+           <div className={classes.projectsContainer}>
+
            <AppBar className={classes.projectNav}>
              <Tabs activeTab={activeTab}
                   onChange={this.handleChange}>
@@ -91,6 +93,7 @@ class PortfolioSection extends Component {
            </Card> }
            {activeTab === 2 && <Card>Item Three</Card>}
            </div>
+           </div>
          </section>
        );
      }
@@ -134,7 +137,12 @@ const styles = theme => ({
     fontSize: '18px',
   },
   projectsWrapper: {
-    width: '70%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  projectsContainer: {
+    width: '70%',    
   },
   projectNav: {
     position: 'static',
