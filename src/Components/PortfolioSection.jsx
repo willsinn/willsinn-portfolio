@@ -17,7 +17,14 @@ class PortfolioSection extends Component {
 
        return (
          <section className={classes.root}>
-           <AppBar position="static">
+           <div className={classes.titleWrapper}>
+             <div className={classes.titleContainer}>
+               <div className={classes.beforeTitle}>_______________</div>
+               <h1 className={classes.skillsTitle}>Skills</h1>
+               <div className={classes.afterTitle}>_______________</div>
+             </div>
+           </div>
+           <AppBar className={classes.projectNav}>
              <Tabs activeTab={activeTab}
                   onChange={this.handleChange}>
                <Tab label="Item One" />
@@ -89,7 +96,47 @@ class PortfolioSection extends Component {
 
 const styles = theme => ({
   root: {
+    backgroundColor: '#e39f1c',
   },
+  titleWrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  titleContainer: {
+    paddingTop: '5%',
+    margin: '0',
+    fontSize: '36px',
+    fontWeight: '600',
+    color: 'white',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  beforeTitle: {
+    marginBottom: '2.5%',
+    marginRight: '15%',
+    borderBottom: '5px solid rgba(0, 0, 0, 0.25)',
+    color: 'transparent',
+  },
+  skillsTitle: {
+    textTransform: 'uppercase',
+
+  },
+  afterTitle: {
+    marginLeft: '15%',
+    marginBottom: '2.5%',
+    borderBottom: '5px solid rgba(0, 0, 0, 0.25)',
+    color: 'transparent',
+  },
+  titleText: {
+    fontSize: '18px',
+  },
+  projectNav: {
+    width: '60%',
+    position: 'static',
+    paddingTop: ''
+  },
+
   firstCard: {},
   firstAvatar: {},
   firstMedia: {},
