@@ -4,23 +4,35 @@ import { Tab, Tabs, AppBar } from '@material-ui/core';
 
 
 class AboutStickyNavigation extends Component {
-     render() {
-       const { classes } = this.props;
+    state = {
+      activeSection : 0
+    };
+    handleChange = (event, activeSection) => {
+       this.setState({ activeSection });
+    };
 
-       return (
-         <div className={classes.root}>
-        <AppBar>
-          <Tabs>
-            <Tab label="About" />
-            <Tab label="Hero" />
-            <Tab label="Contact" href="#basic-tabs" />
-          </Tabs>
-        </AppBar>
-           </div>
+    render() {
+      const { classes } = this.props;
+      const { activeSection } = this.state;
+
+        return (
+       <div className={classes.root}>
+          <AppBar>
+              <Tabs
+              activeSection={activeSection}
+              onChange={this.handleChange}
+              >
+                <Tab label="About" />
+                <Tab label="Portfolio" />
+                <Tab label="Skills" href="#basic-tabs" />
+                <Tab label="Work" />
+                <Tab label="Contact" />
+              </Tabs>
+          </AppBar>
+        </div>
        );
      }
    }
-
 const styles = theme => ({
   root: {
   },

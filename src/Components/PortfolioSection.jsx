@@ -35,6 +35,7 @@ class PortfolioSection extends Component {
                <Tab label="Item Three" href="#basic-tabs" />
              </Tabs>
            </AppBar>
+           
            {activeTab === 0 && <Card>
                <CardHeader
                  avatar={
@@ -142,7 +143,7 @@ const styles = theme => ({
     alignItems: 'center',
   },
   projectsContainer: {
-    width: '70%',    
+    width: '70%',
   },
   projectNav: {
     position: 'static',
