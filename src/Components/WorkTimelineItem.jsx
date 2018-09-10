@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
-class TimelineItem extends Component {
+class WorkTimelineItem extends Component {
   render() {
     const { classes }= this.props;
 
@@ -166,4 +166,4 @@ const styles = theme => ({
     fontWeight: '100',
   },
 });
-export default withStyles(styles, {})(TimelineItem);
+export default withStyles(styles, {})(WorkTimelineItem);

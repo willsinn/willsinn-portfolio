@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import TimelineList from './TimelineList';
+import WorkTimelineList from './WorkTimelineList';
 import WorkSectionImage from '../Assets/Images/WorkSectionImage.jpg';
 
 class WorkSection extends Component {
@@ -22,7 +22,7 @@ class WorkSection extends Component {
               </div>
               <div className={classes.workLine}>_______________________________________</div>
             </div>
-            <TimelineList
+            <WorkTimelineList
             />
           </div>
         </section>

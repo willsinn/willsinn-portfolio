@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import TimelineItem from './TimelineItem';
+import WorkTimelineItem from './WorkTimelineItem';
 
-class TimelineList extends Component {
+class WorkTimelineList extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -16,7 +16,7 @@ class TimelineList extends Component {
 
     return(
       <div className={classes.root}>
-      <TimelineItem
+      <WorkTimelineItem
       />
   </div>
     );
@@ -29,4 +29,4 @@ const styles = theme => ({
     alignItems: 'center',
   },
 });
-export default withStyles(styles, {})(TimelineList);
+export default withStyles(styles, {})(WorkTimelineList);
