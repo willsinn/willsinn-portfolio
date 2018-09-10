@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import SkillsPieChart from '../Assets/SkillsPieChart';
-import SkillsBarChart from '../Assets/SkillsBarChart';
+import SkillsPieChart from './SkillsPieChart';
+import SkillsBarChart from './SkillsBarChart';
 import { withStyles } from '@material-ui/core/styles';
 
 

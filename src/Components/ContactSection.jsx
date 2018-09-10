@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import ContactDrawerButton from '../Assets/ContactDrawerButton';
-import Github from '../Icons/Github.png';
-import Instagram from '../Icons/Instagram.png';
-import Facebook from '../Icons/Facebook.png';
-import Email from '../Icons/Email.png';
+import ContactDrawerButton from './ContactDrawerButton';
+import Github from '../Assets/Icons/Github.png';
+import Instagram from '../Assets/Icons/Instagram.png';
+import Facebook from '../Assets/Icons/Facebook.png';
+import Email from '../Assets/Icons/Email.png';
 
 class ContactSection extends Component {
   render() {

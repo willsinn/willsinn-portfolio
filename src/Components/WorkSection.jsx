@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import TimelineList from './TimelineList';
-import WorkSectionImage from '../Images/WorkSectionImage.jpg';
+import WorkSectionImage from '../Assets/Images/WorkSectionImage.jpg';
 
 class WorkSection extends Component {
 
