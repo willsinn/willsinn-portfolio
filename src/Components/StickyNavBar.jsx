@@ -17,21 +17,11 @@ class StickyNavBar extends Component {
           <AppBar>
             <nav>
               <ul>
-                <li>
-                  <Link to = "/about">AboutSection</Link>
-                </li>
-                <li>
-                  <Link to = "/portfolio">PortfolioSection</Link>
-                </li>
-                <li>
-                  <Link to = "/skills">SkillsSection</Link>
-                </li>
-                <li>
-                  <Link to = "/work">WorkSection</Link>
-                </li>
-                <li>
-                  <Link to = "/contact">ContactSection</Link>
-                </li>
+                <li><Link to = "/about">AboutSection</Link></li>
+                <li><Link to = "/portfolio">PortfolioSection</Link></li>
+                <li><Link to = "/skills">SkillsSection</Link></li>
+                <li><Link to = "/work">WorkSection</Link></li>
+                <li><Link to = "/contact">ContactSection</Link></li>
               </ul>
             </nav>
           </AppBar>
