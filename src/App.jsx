@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import HeroSection from './Components/HeroSection';
+import StickyNavBar from './Components/StickyNavBar';
+import Main from './Components/Main';
 import AboutSection from './Components/AboutSection';
 import PortfolioSection from './Components/PortfolioSection';
 import SkillsSection from './Components/SkillsSection';
@@ -13,7 +15,10 @@ class App extends Component {
     return (
 
       <section className={classes.root}>
+
             <HeroSection />
+            <StickyNavBar />
+            <Main />
             <AboutSection />
             <PortfolioSection />
             <SkillsSection />

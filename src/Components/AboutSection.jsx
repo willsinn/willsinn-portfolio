@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import AboutStickyNavigation from './AboutStickyNavigation';
 import CA from '../Images/States/CA.png';
 import LA from '../Images/States/LA.png';
 import TX from '../Images/States/TX.png';
@@ -11,7 +10,6 @@ class AboutSection extends Component {
 
     return (
       <section className={classes.root}>
-        <AboutStickyNavigation />
         <div className={classes.aboutWrapper}>
         <div className={classes.aboutContainer}>
           <div className={classes.aboutIntroduction}>
