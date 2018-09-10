@@ -20,10 +20,11 @@ class PortfolioSection extends Component {
            <div className={classes.titleWrapper}>
              <div className={classes.titleContainer}>
                <div className={classes.beforeTitle}>_______________</div>
-               <h1 className={classes.skillsTitle}>Skills</h1>
+               <h1 className={classes.portfolioTitle}>Portfolio</h1>
                <div className={classes.afterTitle}>_______________</div>
              </div>
            </div>
+           <div className={classes.projectsWrapper}>
            <AppBar className={classes.projectNav}>
              <Tabs activeTab={activeTab}
                   onChange={this.handleChange}>
@@ -89,6 +90,7 @@ class PortfolioSection extends Component {
                </button>
            </Card> }
            {activeTab === 2 && <Card>Item Three</Card>}
+           </div>
          </section>
        );
      }
@@ -118,7 +120,7 @@ const styles = theme => ({
     borderBottom: '5px solid rgba(0, 0, 0, 0.25)',
     color: 'transparent',
   },
-  skillsTitle: {
+  portfolioTitle: {
     textTransform: 'uppercase',
 
   },
@@ -131,12 +133,12 @@ const styles = theme => ({
   titleText: {
     fontSize: '18px',
   },
-  projectNav: {
-    width: '60%',
-    position: 'static',
-    paddingTop: ''
+  projectsWrapper: {
+    width: '70%',
   },
-
+  projectNav: {
+    position: 'static',
+  },
   firstCard: {},
   firstAvatar: {},
   firstMedia: {},
