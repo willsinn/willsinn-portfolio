@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Tabs, AppBar } from '@material-ui/core';
+import { Tab, Tabs, AppBar } from '@material-ui/core';
 
 
-class StickyNavigation extends Component {
+class AboutStickyNavigation extends Component {
      render() {
        const { classes } = this.props;
-       const { activeTab } = this.state;
 
        return (
          <div className={classes.root}>
         <AppBar>
-          <Tabs activeTab={activeTab}
-               onChange={this.handleChange}>
+          <Tabs>
             <Tab label="About" />
             <Tab label="Hero" />
             <Tab label="Contact" href="#basic-tabs" />
@@ -26,4 +24,5 @@ class StickyNavigation extends Component {
 const styles = theme => ({
   root: {
   },
-export default withStyles(styles, {})(StickyNavigation);
+});
+export default withStyles(styles, {})(AboutStickyNavigation);
