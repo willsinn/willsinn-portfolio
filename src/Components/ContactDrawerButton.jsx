@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { SwipeableDrawer } from '@material-ui/core';
-import Email from '../Icons/Email.png';
+import Email from '../Assets/Icons/Email.png';
 import ContactDrawerForm from './ContactDrawerForm';
 
 class ContactDrawerButton extends Component {

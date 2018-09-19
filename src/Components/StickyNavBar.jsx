@@ -13,10 +13,9 @@ class StickyNavBar extends Component {
 
         return (
        <div className={classes.root}>
-
           <AppBar>
             <nav>
-              <ul>
+              <ul className={classes.linkList}>
                 <li><Link to = "/about">AboutSection</Link></li>
                 <li><Link to = "/portfolio">PortfolioSection</Link></li>
                 <li><Link to = "/skills">SkillsSection</Link></li>
@@ -31,6 +30,13 @@ class StickyNavBar extends Component {
    }
 const styles = theme => ({
   root: {
+
+  },
+  linkList: {
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    listStyleType: 'none',
+    fontSize: '18px',
   },
 });
 export default withStyles(styles, {})(StickyNavBar);

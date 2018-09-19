@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import CA from '../Images/States/CA.png';
-import LA from '../Images/States/LA.png';
-import TX from '../Images/States/TX.png';
+import CA from '../Assets/Images/States/CA.png';
+import LA from '../Assets/Images/States/LA.png';
+import TX from '../Assets/Images/States/TX.png';
 
 class AboutSection extends Component {
   render() {
