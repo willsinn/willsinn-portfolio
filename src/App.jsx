@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import HeroSection from './Components/HeroSection';
-import StickyNavBar from './Components/StickyNavBar';
 import Main from './Components/Main';
 import AboutSection from './Components/AboutSection';
 import PortfolioSection from './Components/PortfolioSection';
@@ -17,7 +16,6 @@ class App extends Component {
       <section className={classes.root}>
 
             <HeroSection />
-            <StickyNavBar />
             <Main />
             <AboutSection />
             <PortfolioSection />
