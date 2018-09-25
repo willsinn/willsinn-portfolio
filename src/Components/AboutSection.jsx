@@ -16,13 +16,15 @@ class AboutSection extends Component {
             <div className={classes.introName}>
               <div className={classes.nameLineBefore}>
               _______________</div>
-            <h1 className={classes.aboutName}>About</h1>
-            <h1 className={classes.aboutName}>Kyle</h1>
+              <div className={classes.nameWrapper}>
+                <h1 className={classes.aboutName}>About</h1>
+                <h1 className={classes.aboutName}>Will</h1>
+              </div>
               <div className={classes.nameLineAfter}>
               _______________</div>
           </div>
             <h2 className={classes.introDescribe}>
-              My career began in Louisiana designing Flash and 3D animation, and I’ve arrived as an all around UX designer working in Texas & California.
+              My interest in web development began with a snippet of code I wrote using Googlesheets A.P.I. that extracted information from Emails then appended the payload to a shared spreadsheet for use. 
             </h2>
             <h2 className={classes.introNext}>
               I wonder what’s next...
@@ -87,6 +89,10 @@ const styles = theme => ({
     marginRight: '15%',
     borderBottom: '5px solid rgba(0, 0, 0, 0.25)',
     color: 'transparent',
+  },
+  nameWrapper: {
+    display: 'flex',
+    justifyContent: 'space-evenly',
   },
   aboutName: {
     paddingRight:'1%',
