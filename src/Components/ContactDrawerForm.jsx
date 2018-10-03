@@ -10,6 +10,8 @@ class ContactDrawerForm extends Component {
       <div className={classes.root}>
         <form className={classes.contactForm} onSubmit="onSubmit">
           <ul className={classes.inputListWrapper}>
+            <h1> Contact Kyle </h1>
+            <p> You're awesome and I'm flattered. Whats on your mind? </p>
             <li> What should I call you?* </li>
             <li>
               <input type="text" name="firstName" />
