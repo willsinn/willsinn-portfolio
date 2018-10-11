@@ -6,6 +6,8 @@ import SkillsSection from './Components/SkillsSection';
 import WorkSection from './Components/WorkSection';
 import ContactSection from './Components/ContactSection';
 import { withStyles } from '@material-ui/core/styles';
+import StickyNavBar from './Components/StickyNavBar';
+import Main from './Components/Main';
 
 class App extends Component {
   render() {
@@ -15,6 +17,8 @@ class App extends Component {
       <section className={classes.root}>
 
             <HeroSection />
+            <StickyNavBar />
+            <Main />
             <AboutSection />
             <PortfolioSection />
             <SkillsSection />
