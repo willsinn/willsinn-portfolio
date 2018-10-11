@@ -3,6 +3,7 @@
 
 1. Lambda Function, AWS
 2. API Gateway has to be pointed at the Lambda Function
+https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-lambda-example-functions.html
 
 -SSL Encryption (https)-
 - Go to AWS Certificate Manager
