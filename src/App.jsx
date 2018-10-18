@@ -58,7 +58,7 @@ componentDidMount() {
 }
 const styles = theme => ({
   root: {
-  },
+  },                           
   navBar: {
     display: 'flex',
     flexDirection: 'row',
