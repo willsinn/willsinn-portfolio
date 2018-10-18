@@ -18,7 +18,8 @@ class HeroSection extends Component {
                 <div className={classes.titleText1}>User Experience & User Interface</div>
                 <div className={classes.titleText2}>Front End Developer</div>
               <div className={classes.heroLine}>_______________________________________</div>
-              <ContactDrawerButton/>
+              <ContactDrawerButton
+              />
               <div className={classes.socialContainer}>
                 <div className={classes.socialIcon}>
                   <img className={classes.socialLink} src={Facebook}/>
