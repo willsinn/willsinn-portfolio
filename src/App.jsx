@@ -32,7 +32,9 @@ componentDidMount() {
           <button className={classes.navButton} onClick={() => scrollToComponent(this.Portfolio, { offset: 0, align: 'middle', duration: 300, ease:'inQuad'})}>Portfolio</button>
           <div>
           <button className={classes.navButton} onClick={() => scrollToComponent(this.Hero, { offset: 0, align: 'middle', duration: 300, ease:'inQuad'})}>Will Sinn</button>
-          <ContactDrawerButton  />
+          <ContactDrawerButton
+              className={classes.contactButton}
+          />
           </div>
           <button className={classes.navButton} onClick={() => scrollToComponent(this.Skills, { offset: 0, align: 'middle', duration: 300, ease:'inQuad'})}>Skills</button>
           <button className={classes.navButton} onClick={() => scrollToComponent(this.Work, { offset: 0, align: 'middle', duration: 300, ease:'inQuad'})}>Work</button>
@@ -42,6 +44,7 @@ componentDidMount() {
         <section className='portfolio' ref={(section) => { this.Portfolio = section; }}><PortfolioSection /></section>
         <section className='skills' ref={(section) => { this.Skills = section; }}><SkillsSection /></section>
         <section className='work' ref={(section) => { this.Work = section; }}><WorkSection /></section>
+        <ContactSection />
       </div>
 
 
@@ -72,6 +75,10 @@ const styles = theme => ({
     textTransform: 'uppercase',
     color: 'white',
     fontWeight: '650',
+  },
+  contactButton: {
+    fontSize:'10px',
+    display: 'flex',
   }
 
 });

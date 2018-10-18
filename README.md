@@ -2,6 +2,11 @@
 -How to extract data from Contact form-
 
 1. Lambda Function, AWS
+
+- Verify Email
+
+
+
 2. API Gateway has to be pointed at the Lambda Function
 https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-action-lambda-example-functions.html
 
