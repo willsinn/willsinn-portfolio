@@ -60,7 +60,7 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    backgroundColor: 'rgba(192,192,192,0.6)',
+    backgroundColor: 'rgba(56,56,56,0.7)',
     paddingLeft: '15%',
     paddingRight: '15%',
   },
