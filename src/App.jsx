@@ -18,21 +18,24 @@ class App extends Component {
 }
 
 componentDidMount() {
-  scrollToComponent(this.Hero, { offset: 0, align: 'middle', duration: 0, ease:'inExpo'});
+  scrollToComponent(this.Hero, { offset: 0, align: 'middle', duration: 0, ease:'inQuad'});
 }
+
 
   render() {
     const { classes } = this.props;
     return (
 
       <div className={classes.root}>
-        <AppBar className='button_group'>
-          <button onClick={() => scrollToComponent(this.About, { offset: 0, align: 'middle', duration: 300, ease:'inExpo'})}>About</button>
-          <button onClick={() => scrollToComponent(this.Portfolio, { offset: 0, align: 'middle', duration: 300, ease:'inCirc'})}>Portfolio</button>
-          <button onClick={() => scrollToComponent(this.Hero, { offset: 0, align: 'middle', duration: 300, ease:'inExpo'})}>Will Sinn</button>
-          <ContactDrawerButton />
-          <button onClick={() => scrollToComponent(this.Skills, { offset: 0, align: 'middle', duration: 300, ease:'inExpo'})}>Skills</button>
-          <button onClick={() => scrollToComponent(this.Work, { offset: 0, align: 'middle', duration: 300, ease:'inCirc'})}>Work</button>
+        <AppBar className={classes.navBar}>
+          <button className={classes.navButton} onClick={() => scrollToComponent(this.About, { offset: 0, align: 'middle', duration: 300, ease:'inQuad'})}>About</button>
+          <button className={classes.navButton} onClick={() => scrollToComponent(this.Portfolio, { offset: 0, align: 'middle', duration: 300, ease:'inQuad'})}>Portfolio</button>
+          <div>
+          <button className={classes.navButton} onClick={() => scrollToComponent(this.Hero, { offset: 0, align: 'middle', duration: 300, ease:'inQuad'})}>Will Sinn</button>
+          <ContactDrawerButton  />
+          </div>
+          <button className={classes.navButton} onClick={() => scrollToComponent(this.Skills, { offset: 0, align: 'middle', duration: 300, ease:'inQuad'})}>Skills</button>
+          <button className={classes.navButton} onClick={() => scrollToComponent(this.Work, { offset: 0, align: 'middle', duration: 300, ease:'inQuad'})}>Work</button>
         </AppBar>
         <section className='hero' ref={(section) => { this.Hero = section; }}><HeroSection /></section>
         <section className='about' ref={(section) => { this.About = section; }}><AboutSection /></section>
@@ -53,6 +56,24 @@ componentDidMount() {
 const styles = theme => ({
   root: {
   },
+  navBar: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    backgroundColor: 'rgba(192,192,192,0.6)',
+    paddingLeft: '15%',
+    paddingRight: '15%',
+  },
+  navButton: {
+    padding: '0',
+    border: 'none',
+    background: 'none',
+    fontSize: '15px',
+    textTransform: 'uppercase',
+    color: 'white',
+    fontWeight: '650',
+  }
+
 });
 
 export default withStyles(styles, {})(App);
