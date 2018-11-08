@@ -3,36 +3,75 @@ import { withStyles } from '@material-ui/core/styles';
 import { TextField } from '@material-ui/core';
 
 
+const emailEndpoint = 'https://sdjtbwjph7.execute-api.us-east-1.amazonaws.com/default/receiving-emails';
+
 class ContactDrawerForm extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+          subject: '',
+          body: ''
+      };
+
+      this.updateSubject = this.updateSubject.bind(this);
+      this.updateBody = this.updateBody.bind(this);
+      this.submitForm = this.submitForm.bind(this);
+  }
+
+  updateSubject(event) {
+      const val = event.target.value;
+      this.setState({ subject: val });
+  }
+
+  updateBody(event) {
+      const val = event.target.value;
+      this.setState({ body: val });
+  }
+
+  submitForm(event) {
+      event.preventDefault();
+      return fetch('https://cors-anywhere.herokuapp.com/' + emailEndpoint, {
+          method: "POST",
+          headers: {
+              'Access-Control-Allow-Origin':'*',
+              "Content-Type": "application/json",
+              'x-api-key': 'tGQ3kR4ViO25Xg7B1AZ7M61KcswsnqQf1Q79LJwY',
+              mode: "no-cors", // no-cors, cors, *same-origin
+          },
+          body: JSON.stringify({
+            subject: this.state.subject,
+            body: this.state.body
+          }),
+      })
+      .then(response => {
+          console.log('RESPONSE!!', response.json());
+      });
+  }
+
   render() {
     const { classes } = this.props;
     return(
       <div className={classes.root}>
-        <form className={classes.contactForm} onSubmit="onSubmit">
+        <form className={classes.contactForm}>
           <ul className={classes.inputListWrapper}>
             <h1> Contact Kyle </h1>
             <p> You're awesome and I'm flattered. Whats on your mind? </p>
             <li> What should I call you?* </li>
             <li>
-              <input type="text" name="firstName" />
-              <input type="text"  name="lastName" />
+              <input
+                type="text"
+                value={this.state.subject}
+                onChange={this.updateSubject}
+              />
+              <input
+                type="text"
+                value={this.state.body}
+                onChange={this.updateBody}
+              />
             </li>
-            <li>First Last</li>
-            <li>Email</li>
-            <li>
-              <input type="email" name="user_email" />
-            </li>
-            <li>Phone</li>
-            <li>
-              1-<input className={classes.phoneInput} type="text" name="phone" pattern="[0-9]{3}" title="areaCode" min="3" max="3"  />
-              -<input className={classes.phoneInput} type="text" name="phone" pattern="[0-9]{3}" title="firstThreeDigits" min="3" max="3" />
-              -<input className={classes.phoneInput} type="text" name="phone" pattern="[0-9]{4}" title="lastFourDigits" min="4" max="4"/>
-            </li>
-            <li>
-              <textarea name="message" rows="10" cols="120">
-              </textarea>
-            </li>
-            <input type="Submit" value="submit" />
+            <button onClick={this.submitForm}>
+              Submit
+            </button>
           </ul>
         </form>
       </div>
